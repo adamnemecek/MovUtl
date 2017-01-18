@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */; };
+		FB4071C01E21FF8E00FA7777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BF1E21FF8E00FA7777 /* ViewController.swift */; };
+		FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4071C11E21FF8E00FA7777 /* Assets.xcassets */; };
+		FB4071C51E21FF8E00FA7777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4071C31E21FF8E00FA7777 /* Main.storyboard */; };
+		FB4071CE1E22005D00FA7777 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071CD1E22005D00FA7777 /* AVKit.framework */; };
+		FB4071D01E22006100FA7777 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071CF1E22006100FA7777 /* AVFoundation.framework */; };
+		FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071D11E22006600FA7777 /* QuartzCore.framework */; };
+		FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D31E22008000FA7777 /* TimeLineView.swift */; };
+		FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D51E22098400FA7777 /* TimeLineObject.swift */; };
+		FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE01E28BB9E00ECF218 /* EditView.swift */; };
+		FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE21E28C05D00ECF218 /* LayerView.swift */; };
+		FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */; };
+		FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE61E28C68000ECF218 /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FB4071BA1E21FF8E00FA7777 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB4071BF1E21FF8E00FA7777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB4071C11E21FF8E00FA7777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB4071C41E21FF8E00FA7777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB4071C61E21FF8E00FA7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4071CD1E22005D00FA7777 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		FB4071CF1E22006100FA7777 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FB4071D11E22006600FA7777 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FB4071D31E22008000FA7777 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
+		FB4071D51E22098400FA7777 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
+		FBFBCFE01E28BB9E00ECF218 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		FBFBCFE21E28C05D00ECF218 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
+		FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
+		FBFBCFE61E28C68000ECF218 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB4071B71E21FF8E00FA7777 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */,
+				FB4071D01E22006100FA7777 /* AVFoundation.framework in Frameworks */,
+				FB4071CE1E22005D00FA7777 /* AVKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB4071B11E21FF8E00FA7777 = {
+			isa = PBXGroup;
+			children = (
+				FB4071BC1E21FF8E00FA7777 /* MovUtl */,
+				FB4071BB1E21FF8E00FA7777 /* Products */,
+				FB4071CC1E22005C00FA7777 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB4071BB1E21FF8E00FA7777 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB4071BA1E21FF8E00FA7777 /* MovUtl.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB4071BC1E21FF8E00FA7777 /* MovUtl */ = {
+			isa = PBXGroup;
+			children = (
+				FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */,
+				FB4071BF1E21FF8E00FA7777 /* ViewController.swift */,
+				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
+				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
+				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
+				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
+				FBFBCFE21E28C05D00ECF218 /* LayerView.swift */,
+				FB4071D51E22098400FA7777 /* TimeLineObject.swift */,
+				FB4071C11E21FF8E00FA7777 /* Assets.xcassets */,
+				FB4071C31E21FF8E00FA7777 /* Main.storyboard */,
+				FB4071C61E21FF8E00FA7777 /* Info.plist */,
+			);
+			path = MovUtl;
+			sourceTree = "<group>";
+		};
+		FB4071CC1E22005C00FA7777 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB4071D11E22006600FA7777 /* QuartzCore.framework */,
+				FB4071CF1E22006100FA7777 /* AVFoundation.framework */,
+				FB4071CD1E22005D00FA7777 /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB4071B91E21FF8E00FA7777 /* MovUtl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4071C91E21FF8E00FA7777 /* Build configuration list for PBXNativeTarget "MovUtl" */;
+			buildPhases = (
+				FB4071B61E21FF8E00FA7777 /* Sources */,
+				FB4071B71E21FF8E00FA7777 /* Frameworks */,
+				FB4071B81E21FF8E00FA7777 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovUtl;
+			productName = MovUtl;
+			productReference = FB4071BA1E21FF8E00FA7777 /* MovUtl.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB4071B21E21FF8E00FA7777 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Masanori Kanda";
+				TargetAttributes = {
+					FB4071B91E21FF8E00FA7777 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB4071B51E21FF8E00FA7777 /* Build configuration list for PBXProject "MovUtl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB4071B11E21FF8E00FA7777;
+			productRefGroup = FB4071BB1E21FF8E00FA7777 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB4071B91E21FF8E00FA7777 /* MovUtl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB4071B81E21FF8E00FA7777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */,
+				FB4071C51E21FF8E00FA7777 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB4071B61E21FF8E00FA7777 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */,
+				FB4071C01E21FF8E00FA7777 /* ViewController.swift in Sources */,
+				FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */,
+				FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */,
+				FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */,
+				FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */,
+				FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */,
+				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB4071C31E21FF8E00FA7777 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4071C41E21FF8E00FA7777 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB4071C71E21FF8E00FA7777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB4071C81E21FF8E00FA7777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		FB4071CA1E21FF8E00FA7777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MovUtl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkanda.MovUtl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB4071CB1E21FF8E00FA7777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MovUtl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkanda.MovUtl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB4071B51E21FF8E00FA7777 /* Build configuration list for PBXProject "MovUtl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4071C71E21FF8E00FA7777 /* Debug */,
+				FB4071C81E21FF8E00FA7777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4071C91E21FF8E00FA7777 /* Build configuration list for PBXNativeTarget "MovUtl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4071CA1E21FF8E00FA7777 /* Debug */,
+				FB4071CB1E21FF8E00FA7777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB4071B21E21FF8E00FA7777 /* Project object */;
+}
