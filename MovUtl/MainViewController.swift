@@ -9,5 +9,4 @@ class MainViewController : NSViewController {
     @IBAction func nextFrame(_ sender: NSButton) {
         
     }
-    
 }

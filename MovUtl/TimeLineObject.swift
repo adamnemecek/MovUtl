@@ -6,4 +6,5 @@ class TimeLineObject: NSObject {
     var name : NSString = "Untitled"
     var firstColor = NSColor.black, secondColor = NSColor.white
     var useCameraControll, useClipping, useMouseMoving, isEnabled : Bool?
+    var layer : CALayer?
 }

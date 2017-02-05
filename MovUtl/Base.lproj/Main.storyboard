@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
@@ -61,7 +61,12 @@
                                     <items>
                                         <menuItem title="New Project" keyEquivalent="n" id="vYE-Sa-TKO">
                                             <connections>
-                                                <segue destination="C6g-Ce-SOY" kind="show" id="OFG-CL-4rT"/>
+                                                <action selector="newDocument:" target="TIt-C4-BgS" id="79w-lq-DjX"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open Project..." keyEquivalent="o" id="8Lp-2b-Ls9">
+                                            <connections>
+                                                <action selector="openDocument:" target="TIt-C4-BgS" id="p86-6w-2zo"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Recent" id="RLc-ZQ-czV">
@@ -70,11 +75,18 @@
                                                 <items>
                                                     <menuItem title="Clear Menu" id="ynz-8U-FVt">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="clearRecentDocuments:" target="TIt-C4-BgS" id="OyV-Cg-y2j"/>
+                                                        </connections>
                                                     </menuItem>
                                                 </items>
                                             </menu>
                                         </menuItem>
-                                        <menuItem title="Save Project…" keyEquivalent="s" id="62g-3k-Nd6"/>
+                                        <menuItem title="Save Project…" keyEquivalent="s" id="62g-3k-Nd6">
+                                            <connections>
+                                                <action selector="saveAllDocuments:" target="TIt-C4-BgS" id="MHN-Ky-kbO"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Save Project As…" keyEquivalent="S" id="IrI-Ra-vms">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                         </menuItem>
@@ -215,101 +227,9 @@
                     </menu>
                 </application>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="TIt-C4-BgS" customClass="MovUtlDocumentController" customModule="MovUtl" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-631" y="-179"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="93s-Iw-xYv">
-            <objects>
-                <windowController storyboardIdentifier="New Project Window Controller" id="C6g-Ce-SOY" sceneMemberID="viewController">
-                    <window key="window" identifier="New Project Window" title="New Project" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="7aY-ea-iUr">
-                        <windowStyleMask key="styleMask" titled="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="163" y="199" width="126" height="152"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-                    </window>
-                    <connections>
-                        <segue destination="CdB-vj-eQB" kind="relationship" relationship="window.shadowedContentViewController" id="A3A-2Y-mMc"/>
-                    </connections>
-                </windowController>
-                <customObject id="RWG-pE-qG1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-719" y="112"/>
-        </scene>
-        <!--New Project View Controller-->
-        <scene sceneID="oeh-5m-b5T">
-            <objects>
-                <viewController id="CdB-vj-eQB" customClass="NewProjectViewController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="3mw-dH-A8r">
-                        <rect key="frame" x="0.0" y="0.0" width="126" height="152"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRg-Tj-opL">
-                                <rect key="frame" x="63" y="110" width="43" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="640" drawsBackground="YES" id="x5f-nu-Fet">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBJ-Ld-mIw">
-                                <rect key="frame" x="63" y="78" width="43" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="480" drawsBackground="YES" id="RsX-es-8dG">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iS-TN-M1o">
-                                <rect key="frame" x="3" y="13" width="121" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Create Project" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Yb-it-1Fz">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="createProject:" target="CdB-vj-eQB" id="CGl-d8-Im8"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-Jp-X4R">
-                                <rect key="frame" x="15" y="115" width="42" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Width" id="gL2-fL-hNa">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-Wl-TrK">
-                                <rect key="frame" x="15" y="83" width="42" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height" id="Go9-Sy-Gnl">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyI-et-z7A">
-                                <rect key="frame" x="7" y="54" width="113" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Auto Resizing" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bHj-pN-YAv">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="heightText" destination="BBJ-Ld-mIw" id="XOk-gf-Czt"/>
-                        <outlet property="isAutoResize" destination="kyI-et-z7A" id="N89-zR-yCg"/>
-                        <outlet property="widthText" destination="ZRg-Tj-opL" id="GYQ-sd-SP3"/>
-                    </connections>
-                </viewController>
-                <customObject id="csf-x2-i7y" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-535" y="112"/>
         </scene>
         <!--Main Window Controller-->
         <scene sceneID="E1T-yu-cnF">
@@ -334,7 +254,7 @@
             <objects>
                 <windowController storyboardIdentifier="Time Line Window" id="y4v-0j-v8y" userLabel="TimeLine Window Controller" sceneMemberID="viewController">
                     <window key="window" title="Time Line" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="b5L-Rv-Lfc">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="500" height="280"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -352,7 +272,7 @@
             <objects>
                 <windowController storyboardIdentifier="Components Panel" id="fgM-nc-rGw" userLabel="Components Panel Controller" sceneMemberID="viewController">
                     <window key="window" title="Components" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="E6W-Qh-k2l">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="270" height="35"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -442,20 +362,14 @@
             </objects>
             <point key="canvasLocation" x="163" y="462"/>
         </scene>
-        <!--View Controller-->
+        <!--Time Line View Controller-->
         <scene sceneID="XXQ-f6-FcJ">
             <objects>
-                <viewController id="BxD-DQ-1ZB" sceneMemberID="viewController">
+                <viewController id="BxD-DQ-1ZB" customClass="TimeLineViewController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="yUq-2f-Ebe">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="lha-RM-q0q">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
-                                <connections>
-                                    <segue destination="RYC-iv-3a7" kind="embed" id="Rom-I8-t0K"/>
-                                </connections>
-                            </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="8eo-ZB-jsx">
                                 <rect key="frame" x="0.0" y="250" width="500" height="30"/>
                                 <constraints>
@@ -465,17 +379,24 @@
                                     <segue destination="pat-9E-CE6" kind="embed" id="phU-v7-36m"/>
                                 </connections>
                             </containerView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="HOh-Iv-9sz" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
+                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lha-RM-q0q" firstAttribute="leading" secondItem="yUq-2f-Ebe" secondAttribute="leading" id="0tu-oq-04I"/>
-                            <constraint firstItem="lha-RM-q0q" firstAttribute="top" secondItem="8eo-ZB-jsx" secondAttribute="bottom" id="BNL-Yp-5Oq"/>
-                            <constraint firstItem="8eo-ZB-jsx" firstAttribute="leading" secondItem="lha-RM-q0q" secondAttribute="leading" id="Du2-Pl-bjC"/>
-                            <constraint firstAttribute="trailing" secondItem="lha-RM-q0q" secondAttribute="trailing" id="GOk-BR-bJY"/>
-                            <constraint firstAttribute="bottom" secondItem="lha-RM-q0q" secondAttribute="bottom" id="I44-KU-lgO"/>
-                            <constraint firstItem="8eo-ZB-jsx" firstAttribute="trailing" secondItem="lha-RM-q0q" secondAttribute="trailing" id="PW2-5j-PPV"/>
+                            <constraint firstAttribute="trailing" secondItem="8eo-ZB-jsx" secondAttribute="trailing" id="8Ma-m2-wp6"/>
+                            <constraint firstItem="8eo-ZB-jsx" firstAttribute="trailing" secondItem="HOh-Iv-9sz" secondAttribute="trailing" id="LDL-qw-UdC"/>
+                            <constraint firstItem="HOh-Iv-9sz" firstAttribute="top" secondItem="8eo-ZB-jsx" secondAttribute="bottom" id="NIA-7c-j8G"/>
+                            <constraint firstItem="8eo-ZB-jsx" firstAttribute="leading" secondItem="yUq-2f-Ebe" secondAttribute="leading" id="Q8Q-ll-Uun"/>
+                            <constraint firstItem="8eo-ZB-jsx" firstAttribute="leading" secondItem="HOh-Iv-9sz" secondAttribute="leading" id="Wb0-zs-Efa"/>
                             <constraint firstItem="8eo-ZB-jsx" firstAttribute="top" secondItem="yUq-2f-Ebe" secondAttribute="top" id="eq4-QH-ioL"/>
+                            <constraint firstAttribute="bottom" secondItem="HOh-Iv-9sz" secondAttribute="bottom" id="fZz-5O-YhR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headView" destination="8eo-ZB-jsx" id="6C5-E8-Qwd"/>
+                        <outlet property="timeLineView" destination="HOh-Iv-9sz" id="L3M-Is-4kq"/>
+                    </connections>
                 </viewController>
                 <customObject id="pge-03-f1d" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -485,7 +406,7 @@
         <scene sceneID="YyV-VG-hmW">
             <objects>
                 <viewController id="mG1-Xd-tCc" customClass="MainViewController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="0BL-H6-xcW" customClass="MainView">
+                    <view key="view" id="0BL-H6-xcW">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -499,7 +420,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="nextFrame:" target="mG1-Xd-tCc" id="GOH-l0-w17"/>
+                                    <action selector="nextFrame:" target="mG1-Xd-tCc" id="8mB-cz-7vh"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1hA-lc-ibH">
@@ -512,7 +433,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="backFrame:" target="mG1-Xd-tCc" id="wyD-6k-J3y"/>
+                                    <action selector="backFrame:" target="mG1-Xd-tCc" id="TcA-Np-prg"/>
                                 </connections>
                             </button>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-DK-ja5">
@@ -535,9 +456,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editView" destination="Nmr-4M-dFs" id="HTs-ln-PDc"/>
-                        <outlet property="mainView" destination="0BL-H6-xcW" id="1Hh-YG-N0s"/>
-                        <outlet property="seekBar" destination="u4c-DK-ja5" id="d3w-pP-2Zi"/>
+                        <outlet property="editView" destination="Nmr-4M-dFs" id="sfL-L0-E16"/>
+                        <outlet property="seekBar" destination="u4c-DK-ja5" id="tyw-t3-qaq"/>
                     </connections>
                 </viewController>
                 <customObject id="hSY-AA-59c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -553,9 +473,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j5L-B6-7md" userLabel="Scenes">
-                                <rect key="frame" x="3" y="2" width="89" height="26"/>
+                                <rect key="frame" x="3" y="2" width="114" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="84" id="BtI-r7-XOe"/>
+                                    <constraint firstAttribute="width" constant="109" id="BtI-r7-XOe"/>
                                     <constraint firstAttribute="height" constant="21" id="tcp-xx-Z7X"/>
                                 </constraints>
                                 <popUpButtonCell key="cell" type="push" title="Root" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Sec-fd-fGX" id="DZQ-0G-PWB">
@@ -600,7 +520,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="j5L-B6-7md" firstAttribute="top" secondItem="ffw-SB-bYf" secondAttribute="top" constant="4" id="3pw-3D-Zsn"/>
-                            <constraint firstAttribute="trailing" secondItem="j5L-B6-7md" secondAttribute="trailing" constant="411" id="Ppv-dn-lu4"/>
+                            <constraint firstAttribute="trailing" secondItem="j5L-B6-7md" secondAttribute="trailing" constant="386" id="Ppv-dn-lu4"/>
                             <constraint firstItem="j5L-B6-7md" firstAttribute="leading" secondItem="ffw-SB-bYf" secondAttribute="leading" constant="5" id="Vvs-QO-KdU"/>
                             <constraint firstAttribute="bottom" secondItem="j5L-B6-7md" secondAttribute="bottom" constant="5" id="Wnv-nf-7VN"/>
                         </constraints>
@@ -609,28 +529,6 @@
                 <customObject id="RQt-Wh-LEF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1061" y="-60"/>
-        </scene>
-        <!--Time Line View Controller-->
-        <scene sceneID="1ly-GC-qYd">
-            <objects>
-                <viewController id="RYC-iv-3a7" customClass="TimeLineViewController" sceneMemberID="viewController">
-                    <view key="view" id="fjk-NS-2w8" customClass="TimeLineView">
-                        <rect key="frame" x="0.0" y="0.0" width="406" height="280"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-Iv-9sz" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="406" height="280"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
-                        </subviews>
-                    </view>
-                    <connections>
-                        <outlet property="timeLineView" destination="fjk-NS-2w8" id="UGu-6n-0od"/>
-                    </connections>
-                </viewController>
-                <customObject id="fbB-8O-ceO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1343" y="155"/>
         </scene>
     </scenes>
     <resources>

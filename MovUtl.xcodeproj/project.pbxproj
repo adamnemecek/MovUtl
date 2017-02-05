@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */; };
 		FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */; };
 		FB4071C01E21FF8E00FA7777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BF1E21FF8E00FA7777 /* ViewController.swift */; };
 		FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4071C11E21FF8E00FA7777 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 		FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071D11E22006600FA7777 /* QuartzCore.framework */; };
 		FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D31E22008000FA7777 /* TimeLineView.swift */; };
 		FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D51E22098400FA7777 /* TimeLineObject.swift */; };
+		FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */; };
+		FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */; };
 		FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE01E28BB9E00ECF218 /* EditView.swift */; };
 		FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE21E28C05D00ECF218 /* LayerView.swift */; };
 		FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */; };
@@ -23,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		FB4071BA1E21FF8E00FA7777 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB4071BF1E21FF8E00FA7777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		FB4071D11E22006600FA7777 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FB4071D31E22008000FA7777 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		FB4071D51E22098400FA7777 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
+		FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocument.swift; sourceTree = "<group>"; };
+		FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
 		FBFBCFE01E28BB9E00ECF218 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		FBFBCFE21E28C05D00ECF218 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
 		FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
@@ -76,8 +82,11 @@
 			children = (
 				FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */,
 				FB4071BF1E21FF8E00FA7777 /* ViewController.swift */,
+				FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */,
+				FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */,
 				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
 				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
+				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
 				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
 				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
 				FBFBCFE21E28C05D00ECF218 /* LayerView.swift */,
@@ -175,9 +184,12 @@
 				FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */,
 				FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */,
 				FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */,
+				FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */,
 				FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */,
 				FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */,
+				FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */,
 				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
+				FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

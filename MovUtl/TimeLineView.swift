@@ -18,7 +18,7 @@ class TimeLineView : NSView {
         NSBezierPath.strokeLine(from: CGPoint(x: timeBarX, y: 0), to: CGPoint(x: timeBarX, y: self.frame.size.height))
         if (self.layerViews != nil) {
             for view in self.layerViews! {
-                if (view != nil) {
+                if (view.layer != nil) {
                     for object in view.objects! {
                         let gradient = NSGradient.init(starting: object.firstColor, ending: object.secondColor)
                 
