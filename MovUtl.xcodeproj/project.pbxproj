@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AEE531E477160000307CE /* PreferencesViewController.swift */; };
 		FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */; };
 		FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */; };
 		FB4071C01E21FF8E00FA7777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BF1E21FF8E00FA7777 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB0AEE531E477160000307CE /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		FB4071BA1E21FF8E00FA7777 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */,
 				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
 				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
+				FB0AEE531E477160000307CE /* PreferencesViewController.swift */,
 				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
 				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
 				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
@@ -190,6 +193,7 @@
 				FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */,
 				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
 				FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */,
+				FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
