@@ -14,12 +14,68 @@ class PreferncesViewController : NSViewController {
     @IBOutlet var moveAnyC: NSTextField!
     @IBOutlet var moveAnyD: NSTextField!
     
+    let userDefaults = UserDefaults.standard
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        addObserver(self, forKeyPath: "maxBufWidth", options: [.new, .old], context: nil)
+        if userDefaults.integer(forKey: "maxBufWidth") != 0 {
+            maxBufWidth.integerValue = userDefaults.integer(forKey: "maxBufWidth")
+            maxBufHeight.integerValue = userDefaults.integer(forKey: "maxBufHeight")
+            maxFrames.integerValue = userDefaults.integer(forKey: "maxFrames")
+            cashFrames.integerValue = userDefaults.integer(forKey: "cashFrames")
+            cashCodecInfo.state = userDefaults.integer(forKey: "cashCodecInfo")
+            saveEncodeSetting.state = userDefaults.integer(forKey: "saveEncodeSetting")
+            displayFrom1.state = userDefaults.integer(forKey: "displayFrom1")
+            useYUY2.state = userDefaults.integer(forKey: "useYUY2")
+            moveAnyA.integerValue = userDefaults.integer(forKey: "moveAnyA")
+            moveAnyB.integerValue = userDefaults.integer(forKey: "moveAnyB")
+            moveAnyC.integerValue = userDefaults.integer(forKey: "moveAnyC")
+            moveAnyD.integerValue = userDefaults.integer(forKey: "moveAnyD")
+        }
+        for key in ["maxBufWidth", "maxBufHeight", "maxFrames", "cashFrames", "cashCodecInfo", "saveEncodeSetting", "displayFrom1", "useYUY2", "moveAnyA", "moveAnyB", "moveAnyC", "moveAnyD"] {
+            addObserver(self, forKeyPath: key, options: [.new], context: nil)
+        }
+    }
+    
+    deinit {
+        for key in ["maxBufWidth", "maxBufHeight", "maxFrames", "cashFrames", "cashCodecInfo", "saveEncodeSetting", "displayFrom1", "useYUY2", "moveAnyA", "moveAnyB", "moveAnyC", "moveAnyD"] {
+            removeObserver(self, forKeyPath: key)
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
+        let key = keyPath ?? ""
+        switch key {
+        case "maxBufWifth":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "maxBufHeight":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "maxFrames":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "cashFrames":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "cashCodecInfo":
+            userDefaults.set((change![.newKey] as? NSButton)?.state, forKey: key)
+        case "saveEncodeSetting":
+            userDefaults.set((change![.newKey] as? NSButton)?.state, forKey: key)
+        case "displayFrom1":
+            userDefaults.set((change![.newKey] as? NSButton)?.state, forKey: key)
+        case "useYYUY2":
+            userDefaults.set((change![.newKey] as? NSButton)?.state, forKey: key)
+        case "moveAnyA":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "moveAnyB":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "moveAnyC":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        case "moveAnyD":
+            userDefaults.set((change![.newKey] as? NSTextField)?.integerValue, forKey: key)
+        default: break
+        }
+        userDefaults.synchronize()
+    }
+    
+    @IBAction func reset(_ sender: NSButton) {
+        UserDefaults.resetStandardUserDefaults()
     }
 }

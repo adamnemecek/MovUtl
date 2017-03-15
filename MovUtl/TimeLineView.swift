@@ -1,6 +1,6 @@
 import Cocoa
 
-class TimeLineView : NSView {
+class TimeLineView : NSScrollView {
     var timeBarX : CGFloat = 0.0
     var pasteBoard : NSPasteboard?
     

@@ -13,5 +13,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return false
     }
+    
+    var preferencesController : NSWindowController?
+    
+    @IBAction func openPreferences(_ sender: NSMenuItem) {
+        if preferencesController == nil {
+            preferencesController = NSWindowController(windowNibName: "PreferencesWindow")
+        }
+        preferencesController?.showWindow(sender)
+    }
 }
 
