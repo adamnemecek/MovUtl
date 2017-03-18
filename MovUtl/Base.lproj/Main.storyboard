@@ -294,11 +294,11 @@
             </objects>
             <point key="canvasLocation" x="-253" y="462"/>
         </scene>
-        <!--View Controller-->
+        <!--Components Panel View Controller-->
         <scene sceneID="WbB-Rn-cUQ">
             <objects>
-                <viewController id="H9Y-wc-pmR" sceneMemberID="viewController">
-                    <view key="view" id="FzF-kM-tc4" customClass="ComponentsPanelView">
+                <viewController id="H9Y-wc-pmR" customClass="ComponentsPanelViewController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="FzF-kM-tc4">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="35"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -310,29 +310,29 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="lockControll:" target="FzF-kM-tc4" id="eMq-3p-nck"/>
+                                    <action selector="disable:" target="H9Y-wc-pmR" id="Hvc-TT-n9P"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0J0-hh-Fqm">
                                 <rect key="frame" x="36" y="7" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRefreshTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5mE-tQ-YcN">
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSActionTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5mE-tQ-YcN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="modeChange:" target="FzF-kM-tc4" id="HGp-4I-gLw"/>
+                                    <action selector="toggleMouseMoving:" target="H9Y-wc-pmR" id="Rsd-Cn-QSd"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRH-Re-xY4">
                                 <rect key="frame" x="243" y="7" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OxG-Qi-Nen">
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSExitFullScreenTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OxG-Qi-Nen">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="addComponent:" target="FzF-kM-tc4" id="y2e-39-2Ql"/>
+                                    <action selector="toggleClippingObjectBelow:" target="H9Y-wc-pmR" id="ktr-lM-fpr"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjM-6M-O9V">
@@ -343,29 +343,35 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="setCameraControll:" target="FzF-kM-tc4" id="sZ2-tJ-uc4"/>
+                                    <action selector="toggleCameraControll:" target="H9Y-wc-pmR" id="4hq-wt-ByZ"/>
                                 </connections>
                             </button>
                             <colorWell fixedFrame="YES" bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSI-hX-CEt">
                                 <rect key="frame" x="65" y="7" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeFirstColor:" target="H9Y-wc-pmR" id="f5t-So-Dc2"/>
+                                </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" bordered="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivs-Mq-xxJ">
                                 <rect key="frame" x="185" y="7" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeSecondColor:" target="H9Y-wc-pmR" id="La9-kY-nU9"/>
+                                </connections>
                             </colorWell>
                         </subviews>
-                        <connections>
-                            <outlet property="addButton" destination="lRH-Re-xY4" id="KMY-1J-sFF"/>
-                            <outlet property="cameraButton" destination="OjM-6M-O9V" id="T7B-b4-YFd"/>
-                            <outlet property="firstColorWell" destination="aSI-hX-CEt" id="KbM-T8-szG"/>
-                            <outlet property="lockButton" destination="udw-5Z-Nul" id="hm7-Pi-kXf"/>
-                            <outlet property="modeButton" destination="0J0-hh-Fqm" id="uQu-4I-wFt"/>
-                            <outlet property="secondColorWell" destination="ivs-Mq-xxJ" id="KEd-S9-T7K"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="OjM-6M-O9V" id="K2b-W8-vwH"/>
+                        <outlet property="clippingButton" destination="lRH-Re-xY4" id="hMi-Lp-FHX"/>
+                        <outlet property="disableButton" destination="udw-5Z-Nul" id="ghA-ne-3eH"/>
+                        <outlet property="firstColorWell" destination="aSI-hX-CEt" id="yLE-2Y-Sbd"/>
+                        <outlet property="mouseMovingButton" destination="0J0-hh-Fqm" id="97C-fh-o2t"/>
+                        <outlet property="secondColorWell" destination="ivs-Mq-xxJ" id="mAw-D4-MSe"/>
+                    </connections>
                 </viewController>
                 <customObject id="DlY-9s-eZw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,11 +547,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSExitFullScreenTemplate" width="15" height="15"/>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
         <image name="NSLockLockedTemplate" width="10" height="14"/>
         <image name="NSQuickLookTemplate" width="19" height="12"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
     </resources>
 </document>

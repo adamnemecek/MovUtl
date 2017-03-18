@@ -4,6 +4,25 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        var defaults: [String : Any] = [:]
+        
+        defaults["maxBufWidth"] = 4096
+        defaults["maxBufHeight"] = 3072
+        defaults["maxFrames"] = 20000
+        defaults["cashFrames"] = 10
+        defaults["cashCodecInfo"] = true
+        defaults["saveEncodeSetting"] = true
+        defaults["displayFrom1"] = true
+        defaults["useYUY2"] = false
+        defaults["moveAnyA"] = 5
+        defaults["moveAnyB"] = 10
+        defaults["moveAnyC"] = 50
+        defaults["moveAnyD"] = 100
+        
+        UserDefaults.standard.register(defaults: defaults)
+        if UserDefaults.standard.synchronize() {
+            print("Notifcated!")
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -14,13 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
     
-    var preferencesController : NSWindowController?
-    
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        if preferencesController == nil {
-            preferencesController = NSWindowController(windowNibName: "PreferencesWindow")
-        }
-        preferencesController?.showWindow(sender)
+        PreferencesWindowController.instance.showWindow(sender)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB05639D1E79751700B17D58 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */; };
 		FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AEE531E477160000307CE /* PreferencesViewController.swift */; };
 		FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */; };
 		FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 		FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D51E22098400FA7777 /* TimeLineObject.swift */; };
 		FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */; };
 		FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */; };
+		FB7AD2371E7CEFE50097E349 /* ComponentsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */; };
 		FBC43A3A1E6D562C00579037 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC43A391E6D562C00579037 /* PreferencesWindow.xib */; };
 		FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE01E28BB9E00ECF218 /* EditView.swift */; };
 		FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE21E28C05D00ECF218 /* LayerView.swift */; };
@@ -27,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		FB0AEE531E477160000307CE /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		FB4071BA1E21FF8E00FA7777 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +44,7 @@
 		FB4071D51E22098400FA7777 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
 		FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocument.swift; sourceTree = "<group>"; };
 		FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
+		FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentsPanelViewController.swift; path = ../ComponentsPanelViewController.swift; sourceTree = "<group>"; };
 		FBC43A391E6D562C00579037 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		FBFBCFE01E28BB9E00ECF218 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		FBFBCFE21E28C05D00ECF218 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB05639E1E797DEB00B17D58 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
+				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
+				FB0AEE531E477160000307CE /* PreferencesViewController.swift */,
+				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
+				FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FB05639F1E797E2E00B17D58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
+				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
+				FBFBCFE21E28C05D00ECF218 /* LayerView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FB4071B11E21FF8E00FA7777 = {
 			isa = PBXGroup;
 			children = (
@@ -83,18 +109,14 @@
 			isa = PBXGroup;
 			children = (
 				FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */,
-				FBC43A391E6D562C00579037 /* PreferencesWindow.xib */,
 				FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */,
 				FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */,
-				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
-				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
-				FB0AEE531E477160000307CE /* PreferencesViewController.swift */,
-				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
-				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
-				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
-				FBFBCFE21E28C05D00ECF218 /* LayerView.swift */,
+				FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */,
 				FB4071D51E22098400FA7777 /* TimeLineObject.swift */,
+				FB05639E1E797DEB00B17D58 /* ViewControllers */,
+				FB05639F1E797E2E00B17D58 /* Views */,
 				FB4071C11E21FF8E00FA7777 /* Assets.xcassets */,
+				FBC43A391E6D562C00579037 /* PreferencesWindow.xib */,
 				FB4071C31E21FF8E00FA7777 /* Main.storyboard */,
 				FB4071C61E21FF8E00FA7777 /* Info.plist */,
 			);
@@ -189,8 +211,10 @@
 				FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */,
 				FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */,
 				FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */,
+				FB05639D1E79751700B17D58 /* PreferencesWindowController.swift in Sources */,
 				FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */,
 				FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */,
+				FB7AD2371E7CEFE50097E349 /* ComponentsPanelViewController.swift in Sources */,
 				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
 				FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */,
 				FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */,

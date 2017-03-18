@@ -7,4 +7,16 @@ class TimeLineObject: NSObject {
     var firstColor = NSColor.black, secondColor = NSColor.white
     var useCameraControll, useClipping, useMouseMoving, isEnabled : Bool?
     var layer : CALayer?
+    enum ObjectType: Int {
+        case movie = 0
+        case audio = 1
+        case picture = 2
+        case controll = 3
+        case filter = 4
+        case audiowave = 5
+        case shape = 6
+        case text = 7
+    }
+    var objectType : ObjectType = .movie
+    var referencingFile: String = ""
 }

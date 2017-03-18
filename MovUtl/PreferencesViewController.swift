@@ -18,20 +18,6 @@ class PreferncesViewController : NSViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        if userDefaults.integer(forKey: "maxBufWidth") != 0 {
-            maxBufWidth.integerValue = userDefaults.integer(forKey: "maxBufWidth")
-            maxBufHeight.integerValue = userDefaults.integer(forKey: "maxBufHeight")
-            maxFrames.integerValue = userDefaults.integer(forKey: "maxFrames")
-            cashFrames.integerValue = userDefaults.integer(forKey: "cashFrames")
-            cashCodecInfo.state = userDefaults.integer(forKey: "cashCodecInfo")
-            saveEncodeSetting.state = userDefaults.integer(forKey: "saveEncodeSetting")
-            displayFrom1.state = userDefaults.integer(forKey: "displayFrom1")
-            useYUY2.state = userDefaults.integer(forKey: "useYUY2")
-            moveAnyA.integerValue = userDefaults.integer(forKey: "moveAnyA")
-            moveAnyB.integerValue = userDefaults.integer(forKey: "moveAnyB")
-            moveAnyC.integerValue = userDefaults.integer(forKey: "moveAnyC")
-            moveAnyD.integerValue = userDefaults.integer(forKey: "moveAnyD")
-        }
         for key in ["maxBufWidth", "maxBufHeight", "maxFrames", "cashFrames", "cashCodecInfo", "saveEncodeSetting", "displayFrom1", "useYUY2", "moveAnyA", "moveAnyB", "moveAnyC", "moveAnyD"] {
             addObserver(self, forKeyPath: key, options: [.new], context: nil)
         }
@@ -73,6 +59,7 @@ class PreferncesViewController : NSViewController {
         default: break
         }
         userDefaults.synchronize()
+        print(key)
     }
     
     @IBAction func reset(_ sender: NSButton) {
