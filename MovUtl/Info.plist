@@ -15,6 +15,8 @@
 			<array>
 				<string>mup</string>
 			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
@@ -25,6 +27,8 @@
 			<array>
 				<string>muo</string>
 			</array>
+			<key>LSTypeIsPackage</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

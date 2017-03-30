@@ -18,9 +18,13 @@
 		FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071D11E22006600FA7777 /* QuartzCore.framework */; };
 		FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D31E22008000FA7777 /* TimeLineView.swift */; };
 		FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D51E22098400FA7777 /* TimeLineObject.swift */; };
+		FB56855D1E7ED96900C838F4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB56855C1E7ED96900C838F4 /* CoreText.framework */; };
+		FB56855F1E7ED97100C838F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */; };
+		FB5685611E7ED97800C838F4 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5685601E7ED97800C838F4 /* CoreAudio.framework */; };
 		FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */; };
 		FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */; };
-		FB7AD2371E7CEFE50097E349 /* ComponentsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */; };
+		FB95DD881E85100C003AA682 /* NewProjectWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB95DD871E85100C003AA682 /* NewProjectWindow.xib */; };
+		FB95DD891E8515AE003AA682 /* ComponentsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */; };
 		FBC43A3A1E6D562C00579037 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC43A391E6D562C00579037 /* PreferencesWindow.xib */; };
 		FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE01E28BB9E00ECF218 /* EditView.swift */; };
 		FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE21E28C05D00ECF218 /* LayerView.swift */; };
@@ -42,9 +46,13 @@
 		FB4071D11E22006600FA7777 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FB4071D31E22008000FA7777 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
 		FB4071D51E22098400FA7777 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
+		FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsPanelViewController.swift; sourceTree = "<group>"; };
+		FB56855C1E7ED96900C838F4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FB5685601E7ED97800C838F4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocument.swift; sourceTree = "<group>"; };
 		FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
-		FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentsPanelViewController.swift; path = ../ComponentsPanelViewController.swift; sourceTree = "<group>"; };
+		FB95DD871E85100C003AA682 /* NewProjectWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewProjectWindow.xib; sourceTree = "<group>"; };
 		FBC43A391E6D562C00579037 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		FBFBCFE01E28BB9E00ECF218 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		FBFBCFE21E28C05D00ECF218 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
@@ -57,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5685611E7ED97800C838F4 /* CoreAudio.framework in Frameworks */,
+				FB56855F1E7ED97100C838F4 /* CoreGraphics.framework in Frameworks */,
+				FB56855D1E7ED96900C838F4 /* CoreText.framework in Frameworks */,
 				FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */,
 				FB4071D01E22006100FA7777 /* AVFoundation.framework in Frameworks */,
 				FB4071CE1E22005D00FA7777 /* AVKit.framework in Frameworks */,
@@ -73,7 +84,7 @@
 				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
 				FB0AEE531E477160000307CE /* PreferencesViewController.swift */,
 				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
-				FB7AD2361E7CEFE50097E349 /* ComponentsPanelViewController.swift */,
+				FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 				FB4071C11E21FF8E00FA7777 /* Assets.xcassets */,
 				FBC43A391E6D562C00579037 /* PreferencesWindow.xib */,
 				FB4071C31E21FF8E00FA7777 /* Main.storyboard */,
+				FB95DD871E85100C003AA682 /* NewProjectWindow.xib */,
 				FB4071C61E21FF8E00FA7777 /* Info.plist */,
 			);
 			path = MovUtl;
@@ -126,6 +138,9 @@
 		FB4071CC1E22005C00FA7777 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB5685601E7ED97800C838F4 /* CoreAudio.framework */,
+				FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */,
+				FB56855C1E7ED96900C838F4 /* CoreText.framework */,
 				FB4071D11E22006600FA7777 /* QuartzCore.framework */,
 				FB4071CF1E22006100FA7777 /* AVFoundation.framework */,
 				FB4071CD1E22005D00FA7777 /* AVKit.framework */,
@@ -194,6 +209,7 @@
 			files = (
 				FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */,
 				FBC43A3A1E6D562C00579037 /* PreferencesWindow.xib in Resources */,
+				FB95DD881E85100C003AA682 /* NewProjectWindow.xib in Resources */,
 				FB4071C51E21FF8E00FA7777 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB95DD891E8515AE003AA682 /* ComponentsPanelViewController.swift in Sources */,
 				FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */,
 				FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */,
 				FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */,
@@ -214,7 +231,6 @@
 				FB05639D1E79751700B17D58 /* PreferencesWindowController.swift in Sources */,
 				FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */,
 				FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */,
-				FB7AD2371E7CEFE50097E349 /* ComponentsPanelViewController.swift in Sources */,
 				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
 				FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */,
 				FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */,
@@ -332,7 +348,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MovUtl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mkanda.MovUtl;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -345,7 +361,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MovUtl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mkanda.MovUtl;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
