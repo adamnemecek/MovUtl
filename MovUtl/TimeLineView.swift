@@ -20,11 +20,11 @@ class TimeLineView : NSScrollView {
         }
         NSColor.red.set()
         NSBezierPath.strokeLine(from: CGPoint(x: timeBarX, y: 0), to: CGPoint(x: timeBarX, y: self.frame.size.height))
-        if (self.layerViews != nil) {
+        if self.layerViews != nil {
             for view in self.layerViews! {
-                if (view.layer != nil) {
+                if view.layer != nil {
                     for object in view.objects! {
-                        let gradient = NSGradient.init(starting: object.firstColor, ending: object.secondColor)
+                        let gradient = NSGradient.init(starting: NSColor(cgColor: object.firstColor)!, ending: NSColor(cgColor: object.secondColor)!)
                 
                         let attributes = [NSFontAttributeName: NSFont(name: "Helvetica Neue", size: 4.0),
                                   NSParagraphStyleAttributeName: NSParagraphStyle.default().mutableCopy()]
@@ -40,38 +40,38 @@ class TimeLineView : NSScrollView {
         let menu = NSMenu()
         
         // Make a menu of adding media object
-        let addMediaObjectMenu = NSMenu(title: "Add Media Object")
+        let addMediaObjectMenu = NSMenu()
         
-            let addMovie = NSMenuItem(title: "Add Movie", action: #selector(self.addMovie(sender:)), keyEquivalent: "")
+            let addMovie = NSMenuItem(title: "Movie", action: #selector(self.addMovie(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addMovie)
             
-            let addAudio = NSMenuItem(title: "Add Audio", action: #selector(self.addAudio(sender:)), keyEquivalent: "")
+            let addAudio = NSMenuItem(title: "Audio", action: #selector(self.addAudio(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addAudio)
         
-            let addPicture = NSMenuItem(title: "Add Picture", action: #selector(self.addPicture(sender:)), keyEquivalent: "")
+            let addPicture = NSMenuItem(title: "Picture", action: #selector(self.addPicture(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addPicture)
         
-            let addCameraControll = NSMenuItem(title: "Add Camera Controll", action: #selector(self.addCameraControll(sender:)), keyEquivalent: "")
+            let addCameraControll = NSMenuItem(title: "Camera Controll", action: #selector(self.addCameraControll(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addCameraControll)
         
-            let addOneFilter = NSMenuItem(title: "Add One Filter", action: #selector(self.addOneFilter(sender:)), keyEquivalent: "")
+            let addOneFilter = NSMenuItem(title: "One Filter", action: #selector(self.addOneFilter(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addOneFilter)
         
-            let addAudioWave = NSMenuItem(title: "Add Audio Wave", action: #selector(self.addAudioWave(sender:)), keyEquivalent: "")
+            let addAudioWave = NSMenuItem(title: "Audio Wave", action: #selector(self.addAudioWave(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addAudioWave)
         
-            let addShape = NSMenuItem(title: "Add Shape", action: #selector(self.addShape(sender:)), keyEquivalent: "")
+            let addShape = NSMenuItem(title: "Shape", action: #selector(self.addShape(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addShape)
         
-            let addText = NSMenuItem(title: "Add Text", action: #selector(self.addText(sender:)), keyEquivalent: "")
+            let addText = NSMenuItem(title: "Text", action: #selector(self.addText(sender:)), keyEquivalent: "")
             addMediaObjectMenu.addItem(addText)
         
-        let addMediaObject = NSMenuItem()
+        let addMediaObject = NSMenuItem(title: "Add Media Object", action: nil, keyEquivalent: "")
         addMediaObject.submenu = addMediaObjectMenu
         menu.addItem(addMediaObject)
         
         // Make a menu of adding filter object
-        let addFilterObjectMenu = NSMenu(title: "Add Filter Object")
+        let addFilterObjectMenu = NSMenu(title: "")
         
             let sceneChange = NSMenuItem(title: "Scene Change", action: #selector(self.addFilterSceneChange(sender:)), keyEquivalent: "")
             addFilterObjectMenu.addItem(sceneChange)
@@ -154,7 +154,7 @@ class TimeLineView : NSScrollView {
             let volumeControll = NSMenuItem(title: "Volume Controll", action: #selector(self.addFilterVolumeControll(sender:)), keyEquivalent: "")
             addFilterObjectMenu.addItem(volumeControll)
         
-        let addFilterObject = NSMenuItem()
+        let addFilterObject = NSMenuItem(title: "Filter Object", action: nil, keyEquivalent: "")
         addFilterObject.submenu = addFilterObjectMenu
         menu.addItem(addFilterObject)
         
@@ -166,7 +166,7 @@ class TimeLineView : NSScrollView {
     }
     
     func addMovie(sender: NSMenuItem) {
-        
+        //self.window?.windowController?.setDocumentEdited(true)
     }
     
     func addAudio(sender: NSMenuItem) {
