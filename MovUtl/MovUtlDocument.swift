@@ -14,9 +14,10 @@ class MovUtlDocument: NSDocument {
     var layerViews : [LayerView] = []
     var selectingObject : TimeLineObject?
     var currentFrame : UInt64 = 0
+    var totalFrame : UInt64 = 1800
     var fps : Double = 30.0
     var audioUnit : AudioUnit?
-    var audioSampleRate : Double = 44100.0
+    var audioSampleRate : Float64 = 44100.0
     
     override func read(from data: Data, ofType typeName: String) throws {
     }

@@ -15,9 +15,10 @@ class TimeLineObject {
     var objectType : ObjectType = .movie
     var filterType : FilterType = .sceneChange
     var referencingFile: String = ""
-    var properties: [Any] = []
+    var properties : [Int] = []
     var effectFilters: [FilterType] = []
     var blendMode: CGBlendMode?
+    var alpha: CGFloat = 0.0
 }
 
 enum ObjectType: Int {
