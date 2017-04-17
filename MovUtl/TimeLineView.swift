@@ -26,7 +26,7 @@ class TimeLineView : NSScrollView {
                     for object in view.objects! {
                         let gradient = NSGradient.init(starting: NSColor(cgColor: object.firstColor)!, ending: NSColor(cgColor: object.secondColor)!)
                 
-                        let attributes = [NSFontAttributeName: NSFont(name: "Helvetica Neue", size: 4.0),
+                        let attributes = [NSFontAttributeName: NSFont(name: "Helvetica Neue", size: 4.0)!,
                                   NSParagraphStyleAttributeName: NSParagraphStyle.default().mutableCopy()]
                         gradient?.draw(in: dirtyRect, angle: 0)
                         object.name.draw(with: dirtyRect, options: NSStringDrawingOptions.usesFontLeading, attributes: attributes)

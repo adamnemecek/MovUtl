@@ -1,0 +1,243 @@
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "1C6-BS-tDI"; */
+"1C6-BS-tDI.title" = "Paste and Match Style";
+
+/* Class = "NSMenuItem"; title = "AviEx"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "AviEx";
+
+/* Class = "NSMenuItem"; title = "AviEx Help"; ObjectID = "3lL-pi-Uwn"; */
+"3lL-pi-Uwn.title" = "AviEx Help";
+
+/* Class = "NSMenuItem"; title = "Components"; ObjectID = "4E7-ly-z2z"; */
+"4E7-ly-z2z.title" = "Components";
+
+/* Class = "NSMenuItem"; title = "Quit AviEX"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit AviEX";
+
+/* Class = "NSMenuItem"; title = "About AviEX"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About AviEX";
+
+/* Class = "NSMenuItem"; title = "Save Project…"; ObjectID = "62g-3k-Nd6"; */
+"62g-3k-Nd6.title" = "Save Project…";
+
+/* Class = "NSMenu"; title = "Settings"; ObjectID = "6WK-n0-kKf"; */
+"6WK-n0-kKf.title" = "Settings";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "7DU-7p-M5B"; */
+"7DU-7p-M5B.title" = "Select All";
+
+/* Class = "NSMenuItem"; title = "Scene 9"; ObjectID = "7MW-Eb-1yl"; */
+"7MW-Eb-1yl.title" = "Scene 9";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "8Hz-7K-9by"; */
+"8Hz-7K-9by.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Open Project..."; ObjectID = "8Lp-2b-Ls9"; */
+"8Lp-2b-Ls9.title" = "Open Project...";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "8fk-3G-3V4"; */
+"8fk-3G-3V4.title" = "File";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Scene 5"; ObjectID = "B6f-Nm-WjM"; */
+"B6f-Nm-WjM.title" = "Scene 5";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSMenuItem"; title = "Scene 2"; ObjectID = "Bsh-wp-wYL"; */
+"Bsh-wp-wYL.title" = "Scene 2";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "DIA-hP-qJX"; */
+"DIA-hP-qJX.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "Scene 6"; ObjectID = "DxW-iw-VZm"; */
+"DxW-iw-VZm.title" = "Scene 6";
+
+/* Class = "NSWindow"; title = "Components"; ObjectID = "E6W-Qh-k2l"; */
+"E6W-Qh-k2l.title" = "Components";
+
+/* Class = "NSMenu"; title = "Zoom"; ObjectID = "FW5-Er-Uvp"; */
+"FW5-Er-Uvp.title" = "Zoom";
+
+/* Class = "NSMenuItem"; title = "300%"; ObjectID = "GP1-X1-Y79"; */
+"GP1-X1-Y79.title" = "300%";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "Gbz-Tm-fay"; */
+"Gbz-Tm-fay.title" = "Copy";
+
+/* Class = "NSMenuItem"; title = "Edit Profile…"; ObjectID = "GiJ-sJ-Yfn"; */
+"GiJ-sJ-Yfn.title" = "Edit Profile…";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "HBv-6H-6K1"; */
+"HBv-6H-6K1.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "Output Audio Only"; ObjectID = "HZZ-Ym-wdX"; */
+"HZZ-Ym-wdX.title" = "Output Audio Only";
+
+/* Class = "NSMenuItem"; title = "Save Project As…"; ObjectID = "IrI-Ra-vms"; */
+"IrI-Ra-vms.title" = "Save Project As…";
+
+/* Class = "NSWindow"; title = "AviEx"; ObjectID = "J1u-JP-sSh"; */
+"J1u-JP-sSh.title" = "AviEx";
+
+/* Class = "NSMenuItem"; title = "Output Movie"; ObjectID = "JnS-nu-zvl"; */
+"JnS-nu-zvl.title" = "Output Movie";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Time Line"; ObjectID = "LMg-Zs-Heu"; */
+"LMg-Zs-Heu.title" = "Time Line";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Hide AviEx"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide AviEx";
+
+/* Class = "NSMenuItem"; title = "Scene 7"; ObjectID = "Oo6-3Z-c8H"; */
+"Oo6-3Z-c8H.title" = "Scene 7";
+
+/* Class = "NSMenuItem"; title = "Noise Removing Filter"; ObjectID = "PAr-gk-t2M"; */
+"PAr-gk-t2M.title" = "Noise Removing Filter";
+
+/* Class = "NSMenuItem"; title = "100%"; ObjectID = "Q6s-JY-ARN"; */
+"Q6s-JY-ARN.title" = "100%";
+
+/* Class = "NSMenuItem"; title = "400%"; ObjectID = "QhN-ss-P7Y"; */
+"QhN-ss-P7Y.title" = "400%";
+
+/* Class = "NSMenuItem"; title = "Open Recent"; ObjectID = "RLc-ZQ-czV"; */
+"RLc-ZQ-czV.title" = "Open Recent";
+
+/* Class = "NSMenuItem"; title = "Filter"; ObjectID = "SXw-S5-Hmg"; */
+"SXw-S5-Hmg.title" = "Filter";
+
+/* Class = "NSMenuItem"; title = "Root"; ObjectID = "Sec-fd-fGX"; */
+"Sec-fd-fGX.title" = "Root";
+
+/* Class = "NSMenuItem"; title = "50%"; ObjectID = "Tnh-uO-DN3"; */
+"Tnh-uO-DN3.title" = "50%";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "Uqr-td-6Gp"; */
+"Uqr-td-6Gp.title" = "Paste";
+
+/* Class = "NSMenuItem"; title = "Default"; ObjectID = "Uze-qR-PmG"; */
+"Uze-qR-PmG.title" = "Default";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSMenuItem"; title = "Settings"; ObjectID = "XBv-w2-aKu"; */
+"XBv-w2-aKu.title" = "Settings";
+
+/* Class = "NSMenuItem"; title = "25%"; ObjectID = "Yx4-lZ-NYC"; */
+"Yx4-lZ-NYC.title" = "25%";
+
+/* Class = "NSMenu"; title = "Filter"; ObjectID = "ZEl-i1-xZ3"; */
+"ZEl-i1-xZ3.title" = "Filter";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "ZO0-Mw-frV"; */
+"ZO0-Mw-frV.title" = "Cut";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "aJh-hI-eJG"; */
+"aJh-hI-eJG.title" = "File";
+
+/* Class = "NSMenuItem"; title = "Item 1"; ObjectID = "af5-hk-G1p"; */
+"af5-hk-G1p.title" = "Item 1";
+
+/* Class = "NSWindow"; title = "Time Line"; ObjectID = "b5L-Rv-Lfc"; */
+"b5L-Rv-Lfc.title" = "Time Line";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "cGe-Hs-Rgb"; */
+"cGe-Hs-Rgb.title" = "Item 3";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "cX3-ZZ-ovE"; */
+"cX3-ZZ-ovE.title" = "Delete";
+
+/* Class = "NSMenuItem"; title = "200%"; ObjectID = "eiK-UM-fgL"; */
+"eiK-UM-fgL.title" = "200%";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "ijX-zd-CCo"; */
+"ijX-zd-CCo.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Scene 1"; ObjectID = "j4B-qF-EGy"; */
+"j4B-qF-EGy.title" = "Scene 1";
+
+/* Class = "NSMenu"; title = "Profile"; ObjectID = "kTK-lg-JT0"; */
+"kTK-lg-JT0.title" = "Profile";
+
+/* Class = "NSMenuItem"; title = "Profile"; ObjectID = "l3p-BK-7HY"; */
+"l3p-BK-7HY.title" = "Profile";
+
+/* Class = "NSMenuItem"; title = "Scene 4"; ObjectID = "lMu-p8-bmk"; */
+"lMu-p8-bmk.title" = "Scene 4";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "n6g-6l-Zud"; */
+"n6g-6l-Zud.title" = "Close";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "oO8-XQ-8Ra"; */
+"oO8-XQ-8Ra.title" = "Item 2";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "okk-t0-53x"; */
+"okk-t0-53x.title" = "Undo";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "qrd-Al-lbO"; */
+"qrd-Al-lbO.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "rnT-uf-9B5"; */
+"rnT-uf-9B5.title" = "Redo";
+
+/* Class = "NSMenuItem"; title = "Item 2"; ObjectID = "s8j-Jg-ypz"; */
+"s8j-Jg-ypz.title" = "Item 2";
+
+/* Class = "NSMenuItem"; title = "Scene 3"; ObjectID = "tSm-4l-UuB"; */
+"tSm-4l-UuB.title" = "Scene 3";
+
+/* Class = "NSMenu"; title = "Open Recent"; ObjectID = "ttm-Wr-z7s"; */
+"ttm-Wr-z7s.title" = "Open Recent";
+
+/* Class = "NSMenuItem"; title = "Zoom Down"; ObjectID = "uOJ-Vf-SDn"; */
+"uOJ-Vf-SDn.title" = "Zoom Down";
+
+/* Class = "NSMenu"; title = "AviEx"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "AviEx";
+
+/* Class = "NSMenuItem"; title = "Window Size"; ObjectID = "ubs-93-RzM"; */
+"ubs-93-RzM.title" = "Window Size";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "uoy-po-jTB"; */
+"uoy-po-jTB.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "New Project"; ObjectID = "vYE-Sa-TKO"; */
+"vYE-Sa-TKO.title" = "New Project";
+
+/* Class = "NSMenuItem"; title = "Tool"; ObjectID = "vmO-Af-pcd"; */
+"vmO-Af-pcd.title" = "Tool";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "wKj-Dl-7uP"; */
+"wKj-Dl-7uP.title" = "Edit";
+
+/* Class = "NSMenuItem"; title = "Main"; ObjectID = "wvP-2T-dkw"; */
+"wvP-2T-dkw.title" = "Main";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "yGd-Aj-Shj"; */
+"yGd-Aj-Shj.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "Item 3"; ObjectID = "yaG-zo-ZwJ"; */
+"yaG-zo-ZwJ.title" = "Item 3";
+
+/* Class = "NSMenuItem"; title = "Clear Menu"; ObjectID = "ynz-8U-FVt"; */
+"ynz-8U-FVt.title" = "Clear Menu";
+
+/* Class = "NSMenuItem"; title = "Scene 8"; ObjectID = "zRh-aH-pbQ"; */
+"zRh-aH-pbQ.title" = "Scene 8";
+
+/* Class = "NSMenuItem"; title = "Zoom Up"; ObjectID = "zgH-uo-6jS"; */
+"zgH-uo-6jS.title" = "Zoom Up";
