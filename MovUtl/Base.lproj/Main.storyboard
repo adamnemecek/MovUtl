@@ -282,7 +282,7 @@
             <objects>
                 <windowController storyboardIdentifier="Components Panel" id="fgM-nc-rGw" userLabel="Components Panel Controller" sceneMemberID="viewController">
                     <window key="window" title="Components" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="E6W-Qh-k2l">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="270" height="35"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -387,25 +387,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="HOh-Iv-9sz" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="250"/>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="QzL-iv-vUt" customClass="NSRulerView">
-                                <rect key="frame" x="0.0" y="249" width="500" height="31"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="280"/>
                             </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="HOh-Iv-9sz" firstAttribute="leading" secondItem="yUq-2f-Ebe" secondAttribute="leading" id="D1l-HT-YeJ"/>
-                            <constraint firstItem="HOh-Iv-9sz" firstAttribute="trailing" secondItem="QzL-iv-vUt" secondAttribute="trailing" id="THN-sw-3rv"/>
                             <constraint firstAttribute="bottom" secondItem="HOh-Iv-9sz" secondAttribute="bottom" id="fZz-5O-YhR"/>
-                            <constraint firstItem="HOh-Iv-9sz" firstAttribute="top" secondItem="yUq-2f-Ebe" secondAttribute="top" constant="30" id="hp3-EK-zAg"/>
-                            <constraint firstItem="QzL-iv-vUt" firstAttribute="top" secondItem="yUq-2f-Ebe" secondAttribute="top" id="jSc-GA-oWc"/>
+                            <constraint firstItem="HOh-Iv-9sz" firstAttribute="top" secondItem="yUq-2f-Ebe" secondAttribute="top" id="hp3-EK-zAg"/>
                             <constraint firstAttribute="trailing" secondItem="HOh-Iv-9sz" secondAttribute="trailing" id="nBJ-Wz-Fdr"/>
-                            <constraint firstItem="HOh-Iv-9sz" firstAttribute="leading" secondItem="QzL-iv-vUt" secondAttribute="leading" id="ps3-aJ-Uek"/>
-                            <constraint firstAttribute="bottom" secondItem="QzL-iv-vUt" secondAttribute="bottom" constant="249" id="xSZ-nW-nL4"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="headView" destination="QzL-iv-vUt" id="tEG-jU-6Vf"/>
                         <outlet property="timeLineView" destination="HOh-Iv-9sz" id="L3M-Is-4kq"/>
                     </connections>
                 </viewController>

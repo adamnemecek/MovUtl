@@ -1,7 +1,11 @@
 import Cocoa
 
 class TimeLineViewController : NSViewController {
-    @IBOutlet var headView: NSRulerView!
+    var headView: NSRulerView?
     @IBOutlet var timeLineView: TimeLineView!
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        headView = NSRulerView(scrollView: timeLineView, orientation: .horizontalRuler)
+    }
 }
