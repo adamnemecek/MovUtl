@@ -19,7 +19,42 @@ class MovUtlDocument: NSDocument {
     var audioUnit : AudioUnit?
     var audioSampleRate : Float64 = 44100.0
     
-    override func read(from data: Data, ofType typeName: String) throws {
+    override func read(from url: URL, ofType typeName: String) throws {
+        do {
+            let textBuffer = try String(contentsOf: url, encoding: .utf8)
+            
+            for i in 0..<textBuffer.components(separatedBy: ";").count {
+                let component = textBuffer.components(separatedBy: ";")[i]
+                let value = component.components(separatedBy: ":")[i + 1]
+                if let depth = Int(value) {
+                    let object = TimeLineObject()
+                    object.startFrame = UInt64(textBuffer.components(separatedBy: ";")[i + 1].components(separatedBy: ":")[1])!
+                    object.endFrame = UInt64(textBuffer.components(separatedBy: ";")[i + 2].components(separatedBy: ":")[1])!
+                    object.name = textBuffer.components(separatedBy: ";")[i + 3].components(separatedBy: ":")[1] as NSString
+                    let firstColorR = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 4].components(separatedBy: ":")[1])!)
+                    let firstColorG = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 5].components(separatedBy: ":")[1])!)
+                    let firstColorB = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 6].components(separatedBy: ":")[1])!)
+                    object.firstColor = CGColor(red: firstColorR, green: firstColorG, blue: firstColorB, alpha: 0)
+                    let secondColorR = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 4].components(separatedBy: ":")[1])!)
+                    let secondColorG = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 5].components(separatedBy: ":")[1])!)
+                    let secondColorB = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 6].components(separatedBy: ":")[1])!)
+                    object.secondColor = CGColor(red: secondColorR, green: secondColorG, blue: secondColorB, alpha: 0)
+                    object.layer = CALayer()
+                    object.layer?.zPosition = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 7].components(separatedBy: ":")[1])!)
+                    object.useCameraControll = Bool(textBuffer.components(separatedBy: ";")[i + 8].components(separatedBy: ":")[1])!
+                    object.useClipping = Bool(textBuffer.components(separatedBy: ";")[i + 9].components(separatedBy: ":")[1])!
+                    object.useMouseMoving = Bool(textBuffer.components(separatedBy: ";")[i + 10].components(separatedBy: ":")[1])!
+                    object.isEnabled = Bool(textBuffer.components(separatedBy: ";")[i + 11].components(separatedBy: ":")[1])!
+                    object.objectType = ObjectType(rawValue: Int(textBuffer.components(separatedBy: ";")[i + 12].components(separatedBy: ":")[1])!)!
+                    object.referencingFile = textBuffer.components(separatedBy: ";")[i + 3].components(separatedBy: ":")[1]
+                    
+                    layerViews[depth].objects?.append(object)
+                }
+            }
+        } catch {
+            Swift.print("Error to load the file.")
+            layerViews = []
+        }
     }
     
     override func data(ofType typeName: String) throws -> Data {
