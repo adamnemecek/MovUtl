@@ -310,12 +310,12 @@ class TimeLineView : NSScrollView {
     }
     
     override func mouseDown(with event: NSEvent) {
-        timeBarX = event.locationInWindow.x - 94;
+        timeBarX = event.locationInWindow.x
         self.setNeedsDisplay(self.frame)
     }
     
     override func mouseDragged(with event: NSEvent) {
-        timeBarX = event.locationInWindow.x - 94;
+        timeBarX = event.locationInWindow.x
         self.setNeedsDisplay(self.frame)
     }
 }
