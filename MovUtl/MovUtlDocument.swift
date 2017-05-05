@@ -10,7 +10,7 @@ class MovUtlDocument: NSDocument {
     var isInputed : Bool = false
     var width : Int = 1024
     var height : Int = 768
-    var context : CGContext!
+    var context : CGContext?
     var layerViews : [LayerView] = []
     var selectingObject : TimeLineObject?
     var currentFrame : UInt64 = 0
@@ -57,31 +57,34 @@ class MovUtlDocument: NSDocument {
         }
     }
     
-    override func data(ofType typeName: String) throws -> Data {
-        var data = Data()
-        for i in 0..<layerViews.count {
-            let layer = layerViews[i]
-            data.append("Layer:\(i);".data(using: .utf8)!)
-            for object in layer.objects! {
-                data.append("StartFrame:\(object.startFrame);".data(using: .utf8)!)
-                data.append("EndFrame:\(object.endFrame);".data(using: .utf8)!)
-                data.append("Name:\(object.name);".data(using: .utf8)!)
-                data.append("FirstColorR:\(object.firstColor.components?[0] ?? 0);".data(using: .utf8)!)
-                data.append("FirstColorG:\(object.firstColor.components?[1] ?? 0);".data(using: .utf8)!)
-                data.append("FirstColorB:\(object.firstColor.components?[2] ?? 0);".data(using: .utf8)!)
-                data.append("SecondColorR:\(object.secondColor.components?[0] ?? 0);".data(using: .utf8)!)
-                data.append("SecondColorG:\(object.secondColor.components?[1] ?? 0);".data(using: .utf8)!)
-                data.append("SecondColorB:\(object.secondColor.components?[2] ?? 0);".data(using: .utf8)!)
-                data.append("LayerDepth:\(object.layer?.zPosition ?? 0);".data(using: .utf8)!)
-                data.append("UseCameraControll:\(object.useCameraControll);".data(using: .utf8)!)
-                data.append("UseClipping:\(object.useClipping);".data(using: .utf8)!)
-                data.append("UseMouseMoving:\(object.useMouseMoving);".data(using: .utf8)!)
-                data.append("IsEnabled:\(object.isEnabled);".data(using: .utf8)!)
-                data.append("ObjectType:\(object.objectType);".data(using: .utf8)!)
-                data.append("ReferencingFile:\(object.referencingFile);".data(using: .utf8)!)
+    override func write(to url: URL, ofType typeName: String) throws {
+        do {
+            
+            for i in 0..<layerViews.count {
+                let layer = layerViews[i]
+                try "Layer:\(i);".write(to: url, atomically: true, encoding: .utf8)
+                for object in layer.objects ?? [] {
+                    try "StartFrame:\(object.startFrame);".write(to: url, atomically: true, encoding: .utf8)
+                    try "EndFrame:\(object.endFrame);".write(to: url, atomically: true, encoding: .utf8)
+                    try "Name:\(object.name);".write(to: url, atomically: true, encoding: .utf8)
+                    try "FirstColorR:\(object.firstColor.components?[0] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "FirstColorG:\(object.firstColor.components?[1] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "FirstColorB:\(object.firstColor.components?[2] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "SecondColorR:\(object.secondColor.components?[0] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "SecondColorG:\(object.secondColor.components?[1] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "SecondColorB:\(object.secondColor.components?[2] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "LayerDepth:\(object.layer?.zPosition ?? 0);".write(to: url, atomically: true, encoding: .utf8)
+                    try "UseCameraControll:\(object.useCameraControll);".write(to: url, atomically: true, encoding: .utf8)
+                    try "UseClipping:\(object.useClipping);".write(to: url, atomically: true, encoding: .utf8)
+                    try "UseMouseMoving:\(object.useMouseMoving);".write(to: url, atomically: true, encoding: .utf8)
+                    try "IsEnabled:\(object.isEnabled);".write(to: url, atomically: true, encoding: .utf8)
+                    try "ObjectType:\(object.objectType);".write(to: url, atomically: true, encoding: .utf8)
+                    try "ReferencingFile:\(object.referencingFile);".write(to: url, atomically: true, encoding: .utf8)
+                }
             }
+        } catch {
+            Swift.print("Error to save the file.")
         }
-        return data
     }
     
     override init() {
@@ -109,8 +112,7 @@ class MovUtlDocument: NSDocument {
         mainWindow.document = self
         timeLine.document = self
         componentsPanel.document = self
+        _=[mainWindow, timeLine, componentsPanel].map { addWindowController($0) }
         mainWindow.showWindow(nil)
-        timeLine.showWindow(nil)
-        componentsPanel.showWindow(nil)
     }
 }

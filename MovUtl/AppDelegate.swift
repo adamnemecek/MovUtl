@@ -33,6 +33,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
     
+    func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
+        return false
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        return false
+    }
+    
     @IBAction func openPreferences(_ sender: NSMenuItem) {
         PreferencesWindowController.instance.showWindow(sender)
     }
