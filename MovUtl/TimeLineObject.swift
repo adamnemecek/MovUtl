@@ -1,6 +1,6 @@
 import Cocoa
 
-class TimeLineObject {
+class TimeLineObject: NSObject {
     var endFrame: UInt64 = 0
     var startFrame: UInt64 = 0
     var name : NSString = ""

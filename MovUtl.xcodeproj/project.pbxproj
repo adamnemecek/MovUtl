@@ -7,144 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB05639D1E79751700B17D58 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */; };
-		FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0AEE531E477160000307CE /* PreferencesViewController.swift */; };
-		FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */; };
-		FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */; };
-		FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4071C11E21FF8E00FA7777 /* Assets.xcassets */; };
-		FB4071C51E21FF8E00FA7777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4071C31E21FF8E00FA7777 /* Main.storyboard */; };
-		FB4071CE1E22005D00FA7777 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071CD1E22005D00FA7777 /* AVKit.framework */; };
-		FB4071D01E22006100FA7777 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071CF1E22006100FA7777 /* AVFoundation.framework */; };
-		FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4071D11E22006600FA7777 /* QuartzCore.framework */; };
-		FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D31E22008000FA7777 /* TimeLineView.swift */; };
-		FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4071D51E22098400FA7777 /* TimeLineObject.swift */; };
-		FB56855D1E7ED96900C838F4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB56855C1E7ED96900C838F4 /* CoreText.framework */; };
-		FB56855F1E7ED97100C838F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */; };
-		FB5685611E7ED97800C838F4 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5685601E7ED97800C838F4 /* CoreAudio.framework */; };
-		FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */; };
-		FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */; };
-		FB95DD881E85100C003AA682 /* NewProjectWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB95DD871E85100C003AA682 /* NewProjectWindow.xib */; };
-		FB95DD891E8515AE003AA682 /* ComponentsPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */; };
-		FBC43A3A1E6D562C00579037 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC43A391E6D562C00579037 /* PreferencesWindow.xib */; };
-		FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE01E28BB9E00ECF218 /* EditView.swift */; };
-		FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE21E28C05D00ECF218 /* LayerView.swift */; };
-		FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */; };
-		FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBCFE61E28C68000ECF218 /* MainViewController.swift */; };
+		7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */; };
+		7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */; };
+		7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB31EE6C0E50017D6A8 /* Document.swift */; };
+		7BD12DB61EE6C0E50017D6A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD12DB51EE6C0E50017D6A8 /* Assets.xcassets */; };
+		7BD12DB91EE6C0E50017D6A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD12DB71EE6C0E50017D6A8 /* Main.storyboard */; };
+		7BD12DC11EE6C1370017D6A8 /* LayerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DC01EE6C1370017D6A8 /* LayerData.swift */; };
+		7BD12DC31EE6C1660017D6A8 /* TimeLineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DC21EE6C1660017D6A8 /* TimeLineObject.swift */; };
+		7BD12DCD1EE6C1DA0017D6A8 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DC91EE6C1DA0017D6A8 /* CoreAudio.framework */; };
+		7BD12DCE1EE6C1DA0017D6A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DCA1EE6C1DA0017D6A8 /* CoreGraphics.framework */; };
+		7BD12DCF1EE6C1DA0017D6A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DCB1EE6C1DA0017D6A8 /* CoreText.framework */; };
+		7BD12DD01EE6C1DA0017D6A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DCC1EE6C1DA0017D6A8 /* QuartzCore.framework */; };
+		7BD12DD31EE6C1E10017D6A8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */; };
+		7BD12DD41EE6C1E10017D6A8 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */; };
+		7BD12DD61EE6C45E0017D6A8 /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B54AEB51EA4DC3C004E19FE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
-		FB0AEE531E477160000307CE /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
-		FB4071BA1E21FF8E00FA7777 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB4071C11E21FF8E00FA7777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FB4071C41E21FF8E00FA7777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB4071C61E21FF8E00FA7777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB4071CD1E22005D00FA7777 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		FB4071CF1E22006100FA7777 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		FB4071D11E22006600FA7777 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FB4071D31E22008000FA7777 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
-		FB4071D51E22098400FA7777 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
-		FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsPanelViewController.swift; sourceTree = "<group>"; };
-		FB56855C1E7ED96900C838F4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FB5685601E7ED97800C838F4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocument.swift; sourceTree = "<group>"; };
-		FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
-		FB95DD871E85100C003AA682 /* NewProjectWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewProjectWindow.xib; sourceTree = "<group>"; };
-		FBC43A391E6D562C00579037 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
-		FBFBCFE01E28BB9E00ECF218 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
-		FBFBCFE21E28C05D00ECF218 /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerView.swift; sourceTree = "<group>"; };
-		FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
-		FBFBCFE61E28C68000ECF218 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BD12DB31EE6C0E50017D6A8 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		7BD12DB51EE6C0E50017D6A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7BD12DB81EE6C0E50017D6A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BD12DBA1EE6C0E50017D6A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BD12DC01EE6C1370017D6A8 /* LayerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerData.swift; sourceTree = "<group>"; };
+		7BD12DC21EE6C1660017D6A8 /* TimeLineObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineObject.swift; sourceTree = "<group>"; };
+		7BD12DC51EE6C1BD0017D6A8 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		7BD12DC61EE6C1BD0017D6A8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7BD12DC91EE6C1DA0017D6A8 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		7BD12DCA1EE6C1DA0017D6A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7BD12DCB1EE6C1DA0017D6A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		7BD12DCC1EE6C1DA0017D6A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FB4071B71E21FF8E00FA7777 /* Frameworks */ = {
+		7BD12DA91EE6C0E50017D6A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5685611E7ED97800C838F4 /* CoreAudio.framework in Frameworks */,
-				FB56855F1E7ED97100C838F4 /* CoreGraphics.framework in Frameworks */,
-				FB56855D1E7ED96900C838F4 /* CoreText.framework in Frameworks */,
-				FB4071D21E22006600FA7777 /* QuartzCore.framework in Frameworks */,
-				FB4071D01E22006100FA7777 /* AVFoundation.framework in Frameworks */,
-				FB4071CE1E22005D00FA7777 /* AVKit.framework in Frameworks */,
+				7BD12DD31EE6C1E10017D6A8 /* AVFoundation.framework in Frameworks */,
+				7BD12DD41EE6C1E10017D6A8 /* AVKit.framework in Frameworks */,
+				7BD12DCD1EE6C1DA0017D6A8 /* CoreAudio.framework in Frameworks */,
+				7BD12DCE1EE6C1DA0017D6A8 /* CoreGraphics.framework in Frameworks */,
+				7BD12DCF1EE6C1DA0017D6A8 /* CoreText.framework in Frameworks */,
+				7BD12DD01EE6C1DA0017D6A8 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FB05639E1E797DEB00B17D58 /* ViewControllers */ = {
+		7BD12DA31EE6C0E40017D6A8 = {
 			isa = PBXGroup;
 			children = (
-				FBFBCFE41E28C34E00ECF218 /* NewProjectViewController.swift */,
-				FBFBCFE61E28C68000ECF218 /* MainViewController.swift */,
-				FB0AEE531E477160000307CE /* PreferencesViewController.swift */,
-				FB2D3A7C1E3A444300344437 /* TimeLineViewController.swift */,
-				FB56855A1E7ECF8500C838F4 /* ComponentsPanelViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		FB05639F1E797E2E00B17D58 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				FBFBCFE01E28BB9E00ECF218 /* EditView.swift */,
-				FB4071D31E22008000FA7777 /* TimeLineView.swift */,
-				FBFBCFE21E28C05D00ECF218 /* LayerView.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		FB4071B11E21FF8E00FA7777 = {
-			isa = PBXGroup;
-			children = (
-				FB4071BC1E21FF8E00FA7777 /* MovUtl */,
-				FB4071BB1E21FF8E00FA7777 /* Products */,
-				FB4071CC1E22005C00FA7777 /* Frameworks */,
+				7BD12DAE1EE6C0E50017D6A8 /* MovUtl */,
+				7BD12DAD1EE6C0E50017D6A8 /* Products */,
+				7BD12DC41EE6C1BD0017D6A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		FB4071BB1E21FF8E00FA7777 /* Products */ = {
+		7BD12DAD1EE6C0E50017D6A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB4071BA1E21FF8E00FA7777 /* MovUtl.app */,
+				7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB4071BC1E21FF8E00FA7777 /* MovUtl */ = {
+		7BD12DAE1EE6C0E50017D6A8 /* MovUtl */ = {
 			isa = PBXGroup;
 			children = (
-				FB4071BD1E21FF8E00FA7777 /* AppDelegate.swift */,
-				FB56F4481E3B9A8100D4031F /* MovUtlDocument.swift */,
-				FB56F44A1E3B9C9500D4031F /* MovUtlDocumentController.swift */,
-				FB05639C1E79751700B17D58 /* PreferencesWindowController.swift */,
-				FB4071D51E22098400FA7777 /* TimeLineObject.swift */,
-				FB05639E1E797DEB00B17D58 /* ViewControllers */,
-				FB05639F1E797E2E00B17D58 /* Views */,
-				FB4071C11E21FF8E00FA7777 /* Assets.xcassets */,
-				FBC43A391E6D562C00579037 /* PreferencesWindow.xib */,
-				FB4071C31E21FF8E00FA7777 /* Main.storyboard */,
-				FB95DD871E85100C003AA682 /* NewProjectWindow.xib */,
-				FB4071C61E21FF8E00FA7777 /* Info.plist */,
+				7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */,
+				7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */,
+				7BD12DB31EE6C0E50017D6A8 /* Document.swift */,
+				7BD12DC01EE6C1370017D6A8 /* LayerData.swift */,
+				7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */,
+				7BD12DC21EE6C1660017D6A8 /* TimeLineObject.swift */,
+				7BD12DB51EE6C0E50017D6A8 /* Assets.xcassets */,
+				7BD12DB71EE6C0E50017D6A8 /* Main.storyboard */,
+				7BD12DBA1EE6C0E50017D6A8 /* Info.plist */,
 			);
 			path = MovUtl;
 			sourceTree = "<group>";
 		};
-		FB4071CC1E22005C00FA7777 /* Frameworks */ = {
+		7BD12DC41EE6C1BD0017D6A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB5685601E7ED97800C838F4 /* CoreAudio.framework */,
-				FB56855E1E7ED97100C838F4 /* CoreGraphics.framework */,
-				FB56855C1E7ED96900C838F4 /* CoreText.framework */,
-				FB4071D11E22006600FA7777 /* QuartzCore.framework */,
-				FB4071CF1E22006100FA7777 /* AVFoundation.framework */,
-				FB4071CD1E22005D00FA7777 /* AVKit.framework */,
+				7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */,
+				7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */,
+				7BD12DC91EE6C1DA0017D6A8 /* CoreAudio.framework */,
+				7BD12DCA1EE6C1DA0017D6A8 /* CoreGraphics.framework */,
+				7BD12DCB1EE6C1DA0017D6A8 /* CoreText.framework */,
+				7BD12DCC1EE6C1DA0017D6A8 /* QuartzCore.framework */,
+				7BD12DC51EE6C1BD0017D6A8 /* OpenAL.framework */,
+				7BD12DC61EE6C1BD0017D6A8 /* OpenGL.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,13 +112,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FB4071B91E21FF8E00FA7777 /* MovUtl */ = {
+		7BD12DAB1EE6C0E50017D6A8 /* MovUtl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB4071C91E21FF8E00FA7777 /* Build configuration list for PBXNativeTarget "MovUtl" */;
+			buildConfigurationList = 7BD12DBD1EE6C0E50017D6A8 /* Build configuration list for PBXNativeTarget "MovUtl" */;
 			buildPhases = (
-				FB4071B61E21FF8E00FA7777 /* Sources */,
-				FB4071B71E21FF8E00FA7777 /* Frameworks */,
-				FB4071B81E21FF8E00FA7777 /* Resources */,
+				7BD12DA81EE6C0E50017D6A8 /* Sources */,
+				7BD12DA91EE6C0E50017D6A8 /* Frameworks */,
+				7BD12DAA1EE6C0E50017D6A8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -166,27 +126,27 @@
 			);
 			name = MovUtl;
 			productName = MovUtl;
-			productReference = FB4071BA1E21FF8E00FA7777 /* MovUtl.app */;
+			productReference = 7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FB4071B21E21FF8E00FA7777 /* Project object */ = {
+		7BD12DA41EE6C0E40017D6A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "";
+				ORGANIZATIONNAME = "Kanda Ryosuke";
 				TargetAttributes = {
-					FB4071B91E21FF8E00FA7777 = {
-						CreatedOnToolsVersion = 8.0;
+					7BD12DAB1EE6C0E50017D6A8 = {
+						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 26V3M32637;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = FB4071B51E21FF8E00FA7777 /* Build configuration list for PBXProject "MovUtl" */;
+			buildConfigurationList = 7BD12DA71EE6C0E50017D6A8 /* Build configuration list for PBXProject "MovUtl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -194,59 +154,49 @@
 				en,
 				Base,
 			);
-			mainGroup = FB4071B11E21FF8E00FA7777;
-			productRefGroup = FB4071BB1E21FF8E00FA7777 /* Products */;
+			mainGroup = 7BD12DA31EE6C0E40017D6A8;
+			productRefGroup = 7BD12DAD1EE6C0E50017D6A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB4071B91E21FF8E00FA7777 /* MovUtl */,
+				7BD12DAB1EE6C0E50017D6A8 /* MovUtl */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FB4071B81E21FF8E00FA7777 /* Resources */ = {
+		7BD12DAA1EE6C0E50017D6A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB4071C21E21FF8E00FA7777 /* Assets.xcassets in Resources */,
-				FBC43A3A1E6D562C00579037 /* PreferencesWindow.xib in Resources */,
-				FB95DD881E85100C003AA682 /* NewProjectWindow.xib in Resources */,
-				FB4071C51E21FF8E00FA7777 /* Main.storyboard in Resources */,
+				7BD12DB61EE6C0E50017D6A8 /* Assets.xcassets in Resources */,
+				7BD12DB91EE6C0E50017D6A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FB4071B61E21FF8E00FA7777 /* Sources */ = {
+		7BD12DA81EE6C0E50017D6A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB95DD891E8515AE003AA682 /* ComponentsPanelViewController.swift in Sources */,
-				FBFBCFE31E28C05D00ECF218 /* LayerView.swift in Sources */,
-				FBFBCFE11E28BB9E00ECF218 /* EditView.swift in Sources */,
-				FBFBCFE51E28C34E00ECF218 /* NewProjectViewController.swift in Sources */,
-				FB4071D61E22098400FA7777 /* TimeLineObject.swift in Sources */,
-				FB56F4491E3B9A8100D4031F /* MovUtlDocument.swift in Sources */,
-				FB4071D41E22008000FA7777 /* TimeLineView.swift in Sources */,
-				FB05639D1E79751700B17D58 /* PreferencesWindowController.swift in Sources */,
-				FB4071BE1E21FF8E00FA7777 /* AppDelegate.swift in Sources */,
-				FB56F44B1E3B9C9500D4031F /* MovUtlDocumentController.swift in Sources */,
-				FBFBCFE71E28C68000ECF218 /* MainViewController.swift in Sources */,
-				FB2D3A7D1E3A444300344437 /* TimeLineViewController.swift in Sources */,
-				FB0AEE541E477160000307CE /* PreferencesViewController.swift in Sources */,
+				7BD12DC31EE6C1660017D6A8 /* TimeLineObject.swift in Sources */,
+				7BD12DD61EE6C45E0017D6A8 /* MovUtlDocumentController.swift in Sources */,
+				7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */,
+				7BD12DC11EE6C1370017D6A8 /* LayerData.swift in Sources */,
+				7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */,
+				7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FB4071C31E21FF8E00FA7777 /* Main.storyboard */ = {
+		7BD12DB71EE6C0E50017D6A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FB4071C41E21FF8E00FA7777 /* Base */,
-				7B54AEB51EA4DC3C004E19FE /* ja */,
+				7BD12DB81EE6C0E50017D6A8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -254,12 +204,12 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FB4071C71E21FF8E00FA7777 /* Debug */ = {
+		7BD12DBB1EE6C0E50017D6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -274,7 +224,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -305,12 +254,12 @@
 			};
 			name = Debug;
 		};
-		FB4071C81E21FF8E00FA7777 /* Release */ = {
+		7BD12DBC1EE6C0E50017D6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -325,7 +274,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -348,7 +296,7 @@
 			};
 			name = Release;
 		};
-		FB4071CA1E21FF8E00FA7777 /* Debug */ = {
+		7BD12DBE1EE6C0E50017D6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -357,14 +305,14 @@
 				DEVELOPMENT_TEAM = 26V3M32637;
 				INFOPLIST_FILE = MovUtl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = rkeclair.MovUtl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		FB4071CB1E21FF8E00FA7777 /* Release */ = {
+		7BD12DBF1EE6C0E50017D6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -373,7 +321,7 @@
 				DEVELOPMENT_TEAM = 26V3M32637;
 				INFOPLIST_FILE = MovUtl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = rkeclair.MovUtl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -383,25 +331,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FB4071B51E21FF8E00FA7777 /* Build configuration list for PBXProject "MovUtl" */ = {
+		7BD12DA71EE6C0E50017D6A8 /* Build configuration list for PBXProject "MovUtl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB4071C71E21FF8E00FA7777 /* Debug */,
-				FB4071C81E21FF8E00FA7777 /* Release */,
+				7BD12DBB1EE6C0E50017D6A8 /* Debug */,
+				7BD12DBC1EE6C0E50017D6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB4071C91E21FF8E00FA7777 /* Build configuration list for PBXNativeTarget "MovUtl" */ = {
+		7BD12DBD1EE6C0E50017D6A8 /* Build configuration list for PBXNativeTarget "MovUtl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB4071CA1E21FF8E00FA7777 /* Debug */,
-				FB4071CB1E21FF8E00FA7777 /* Release */,
+				7BD12DBE1EE6C0E50017D6A8 /* Debug */,
+				7BD12DBF1EE6C0E50017D6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FB4071B21E21FF8E00FA7777 /* Project object */;
+	rootObject = 7BD12DA41EE6C0E40017D6A8 /* Project object */;
 }

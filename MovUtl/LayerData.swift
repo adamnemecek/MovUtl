@@ -1,5 +1,5 @@
 import Cocoa
 
-class LayerView : NSView {
+class LayerData: NSObject {
     var objects : [TimeLineObject]?
 }

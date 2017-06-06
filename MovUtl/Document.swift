@@ -2,7 +2,7 @@ import Cocoa
 import AudioUnit
 import AVFoundation
 
-class MovUtlDocument: NSDocument {
+class Document: NSDocument {
     var mainWindow : NSWindowController!
     var timeLine : NSWindowController!
     var componentsPanel : NSWindowController!
@@ -11,7 +11,7 @@ class MovUtlDocument: NSDocument {
     var width : Int = 1024
     var height : Int = 768
     var context : CGContext?
-    var layerViews : [LayerView] = []
+    var layerViews : [LayerData] = []
     var selectingObject : TimeLineObject?
     var currentFrame : UInt64 = 0
     var totalFrame : UInt64 = 1800
@@ -94,10 +94,10 @@ class MovUtlDocument: NSDocument {
         
         var audioComponentDescription = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_HALOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
         if let audioComponent = AudioComponentFindNext(nil, &audioComponentDescription) {
-        
+            
             AudioComponentInstanceNew(audioComponent, &audioUnit)
             AudioUnitInitialize(audioUnit!)
-        
+            
             let audioFormat = AVAudioFormat(standardFormatWithSampleRate: audioSampleRate, channels: 2)
             var asbDescription = audioFormat.streamDescription.pointee
             AudioUnitSetProperty(audioUnit!, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbDescription, UInt32(MemoryLayout.size(ofValue: asbDescription)))
@@ -115,4 +115,10 @@ class MovUtlDocument: NSDocument {
         _=[mainWindow, timeLine, componentsPanel].map { addWindowController($0) }
         mainWindow.showWindow(nil)
     }
+    
+    
+    override class func autosavesInPlace() -> Bool {
+        return true
+    }
 }
+
