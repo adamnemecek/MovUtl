@@ -10,12 +10,11 @@ class Document: NSDocument {
     var isInputed : Bool = false
     var width : Int = 1024
     var height : Int = 768
-    var context : CGContext?
-    var layerViews : [LayerData] = []
-    var selectingObject : TimeLineObject?
+    var layers : [LayerData] = []
     var currentFrame : UInt64 = 0
     var totalFrame : UInt64 = 1800
     var fps : Double = 30.0
+    var scale : CGFloat = 1.0
     var audioUnit : AudioUnit?
     var audioSampleRate : Float64 = 44100.0
     
@@ -48,20 +47,20 @@ class Document: NSDocument {
                     object.objectType = ObjectType(rawValue: Int(textBuffer.components(separatedBy: ";")[i + 12].components(separatedBy: ":")[1])!)!
                     object.referencingFile = textBuffer.components(separatedBy: ";")[i + 13].components(separatedBy: ":")[1]
                     
-                    layerViews[depth].objects?.append(object)
+                    layers[depth].objects?.append(object)
                 }
             }
         } catch {
             Swift.print("Error to load the file.")
-            layerViews = []
+            layers = []
         }
     }
     
     override func write(to url: URL, ofType typeName: String) throws {
         do {
             
-            for i in 0..<layerViews.count {
-                let layer = layerViews[i]
+            for i in 0..<layers.count {
+                let layer = layers[i]
                 try "Layer:\(i);".write(to: url, atomically: true, encoding: .utf8)
                 for object in layer.objects ?? [] {
                     try "StartFrame:\(object.startFrame);".write(to: url, atomically: true, encoding: .utf8)
@@ -89,9 +88,6 @@ class Document: NSDocument {
     
     override init() {
         super.init()
-        let bitsPerComponent = Int(CGImageAlphaInfo.premultipliedLast.rawValue)
-        context = CGContext(data: nil, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: height*bitsPerComponent, space: CGColorSpace(name: CGColorSpace.sRGB)!, bitmapInfo: CGBitmapInfo.floatComponents.rawValue)
-        
         var audioComponentDescription = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_HALOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
         if let audioComponent = AudioComponentFindNext(nil, &audioComponentDescription) {
             
@@ -108,7 +104,6 @@ class Document: NSDocument {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         mainWindow = storyboard.instantiateController(withIdentifier: "Main Window") as! NSWindowController
         timeLine = storyboard.instantiateController(withIdentifier: "Time Line Window") as! NSWindowController
-        componentsPanel = storyboard.instantiateController(withIdentifier: "Components Panel") as! NSWindowController
         mainWindow.document = self
         timeLine.document = self
         componentsPanel.document = self

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B240BB61EE81582001F2500 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B240BB51EE81582001F2500 /* TimeLineView.swift */; };
+		7B240BB81EE82836001F2500 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B240BB71EE82836001F2500 /* EditView.swift */; };
 		7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */; };
 		7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */; };
 		7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB31EE6C0E50017D6A8 /* Document.swift */; };
@@ -21,9 +23,12 @@
 		7BD12DD31EE6C1E10017D6A8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */; };
 		7BD12DD41EE6C1E10017D6A8 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */; };
 		7BD12DD61EE6C45E0017D6A8 /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */; };
+		7BE4CB311EE85555003303B1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DC61EE6C1BD0017D6A8 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B240BB51EE81582001F2500 /* TimeLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
+		7B240BB71EE82836001F2500 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE4CB311EE85555003303B1 /* OpenGL.framework in Frameworks */,
 				7BD12DD31EE6C1E10017D6A8 /* AVFoundation.framework in Frameworks */,
 				7BD12DD41EE6C1E10017D6A8 /* AVKit.framework in Frameworks */,
 				7BD12DCD1EE6C1DA0017D6A8 /* CoreAudio.framework in Frameworks */,
@@ -84,6 +90,8 @@
 				7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */,
 				7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */,
 				7BD12DB31EE6C0E50017D6A8 /* Document.swift */,
+				7B240BB71EE82836001F2500 /* EditView.swift */,
+				7B240BB51EE81582001F2500 /* TimeLineView.swift */,
 				7BD12DC01EE6C1370017D6A8 /* LayerData.swift */,
 				7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */,
 				7BD12DC21EE6C1660017D6A8 /* TimeLineObject.swift */,
@@ -183,10 +191,12 @@
 			files = (
 				7BD12DC31EE6C1660017D6A8 /* TimeLineObject.swift in Sources */,
 				7BD12DD61EE6C45E0017D6A8 /* MovUtlDocumentController.swift in Sources */,
+				7B240BB81EE82836001F2500 /* EditView.swift in Sources */,
 				7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */,
 				7BD12DC11EE6C1370017D6A8 /* LayerData.swift in Sources */,
 				7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */,
 				7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */,
+				7B240BB61EE81582001F2500 /* TimeLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +357,7 @@
 				7BD12DBF1EE6C0E50017D6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

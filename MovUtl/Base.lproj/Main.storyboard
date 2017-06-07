@@ -736,10 +736,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="280"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3B-PO-aPH">
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rw-gg-EaJ">
                                 <rect key="frame" x="0.0" y="0.0" width="500" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
+                                <clipView key="contentView" ambiguous="YES" id="yZ8-wZ-Qgl">
+                                    <rect key="frame" x="1" y="1" width="483" height="263"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-44-YKZ" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="930" height="263"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="Tyw-vh-pyP">
+                                    <rect key="frame" x="1" y="264" width="483" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="7AN-dY-CrY">
+                                    <rect key="frame" x="484" y="1" width="15" height="263"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
                 </viewController>
@@ -755,7 +773,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="395"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="en5-09-O0v">
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="en5-09-O0v" customClass="EditView" customModule="MovUtl" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="35" width="480" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
