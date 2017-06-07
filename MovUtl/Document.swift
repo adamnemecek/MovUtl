@@ -4,8 +4,6 @@ import AVFoundation
 
 class Document: NSDocument {
     var mainWindow : NSWindowController!
-    var timeLine : NSWindowController!
-    var componentsPanel : NSWindowController!
     
     var isInputed : Bool = false
     var width : Int = 1024
@@ -103,11 +101,8 @@ class Document: NSDocument {
     override func makeWindowControllers() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         mainWindow = storyboard.instantiateController(withIdentifier: "Main Window") as! NSWindowController
-        timeLine = storyboard.instantiateController(withIdentifier: "Time Line Window") as! NSWindowController
         mainWindow.document = self
-        timeLine.document = self
-        componentsPanel.document = self
-        _=[mainWindow, timeLine, componentsPanel].map { addWindowController($0) }
+        addWindowController(mainWindow)
         mainWindow.showWindow(nil)
     }
     
