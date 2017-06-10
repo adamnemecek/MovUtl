@@ -10,7 +10,13 @@ class TimeLineViewController : NSViewController {
             layerScrollView.rulersVisible = true
         }
     }
+    @IBOutlet var layerScrollStackView: TimeLineView!
+    
     @IBOutlet var layerHeadScrollView: NSScrollView!
+    @IBOutlet var layerHeadStackView: NSStackView!
+    
+    var startPoint: NSPoint = NSPoint.zero
+    var shapeLayer: CAShapeLayer!
     
     override func awakeFromNib() {
         NSScrollView.setRulerViewClass(TimeLineRulerView.classForCoder())
@@ -20,4 +26,23 @@ class TimeLineViewController : NSViewController {
     func scrolled() {
         layerHeadScrollView.scroll(NSPoint(x: 0, y: layerScrollView.contentSize.height))
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
+    @IBAction func addScene(_ sender: NSMenuItem) {
+        let alert = NSAlert()
+        alert.messageText = "Scene Change is not implemented."
+        alert.runModal()
+        sceneMenu.selectItem(at: 0)
+    }
+    
+    @IBAction func changeTimeLineScale(_ sender: NSLevelIndicator) {
+        let document = view.window?.windowController?.document as! Document
+        document.scale = CGFloat(scaleLevel.doubleValue)
+    }
 }
+

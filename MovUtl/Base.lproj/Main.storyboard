@@ -761,7 +761,11 @@
                                     <menu key="menu" id="VkV-om-u55">
                                         <items>
                                             <menuItem title="Root" state="on" id="Lh1-jU-jqj"/>
-                                            <menuItem title="Add Scene..." id="khY-Rt-4JN"/>
+                                            <menuItem title="Add Scene..." id="khY-Rt-4JN">
+                                                <connections>
+                                                    <action selector="addScene:" target="h74-SY-o5I" id="dF7-KV-0gj"/>
+                                                </connections>
+                                            </menuItem>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -772,6 +776,9 @@
                                     <constraint firstAttribute="width" constant="80" id="y7n-AW-xoG"/>
                                 </constraints>
                                 <levelIndicatorCell key="cell" editable="YES" alignment="left" doubleValue="30" maxValue="60" levelIndicatorStyle="relevancy" id="FFx-4u-YUD"/>
+                                <connections>
+                                    <action selector="changeTimeLineScale:" target="h74-SY-o5I" id="09j-lb-PFB"/>
+                                </connections>
                             </levelIndicator>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-3A-vvQ">
                                 <rect key="frame" x="90" y="0.0" width="410" height="280"/>
@@ -784,7 +791,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </stackView>
                                             </subviews>
@@ -800,30 +807,30 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19A-8B-Q7g">
+                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19A-8B-Q7g">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="214"/>
                                 <clipView key="contentView" id="Oz4-at-JK0">
-                                    <rect key="frame" x="1" y="1" width="73" height="197"/>
+                                    <rect key="frame" x="1" y="1" width="73" height="212"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlK-9l-ZEB">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="198"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73" height="213"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NB-Zb-7AN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="198"/>
+                                                    <rect key="frame" x="0.0" y="-1" width="73" height="214"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 </stackView>
                                             </subviews>
                                         </view>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="MXO-uv-d1h">
-                                    <rect key="frame" x="1" y="198" width="73" height="15"/>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="MXO-uv-d1h">
+                                    <rect key="frame" x="-100" y="-100" width="73" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Rtw-yf-4Wf">
-                                    <rect key="frame" x="74" y="1" width="15" height="197"/>
+                                    <rect key="frame" x="74" y="1" width="15" height="212"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -847,6 +854,8 @@
                     </view>
                     <connections>
                         <outlet property="layerHeadScrollView" destination="19A-8B-Q7g" id="ZxZ-wR-ofu"/>
+                        <outlet property="layerHeadStackView" destination="8NB-Zb-7AN" id="MVg-hF-aCB"/>
+                        <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="siZ-ce-uOw"/>
                         <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="H4E-tc-D29"/>
                         <outlet property="scaleLevel" destination="DVU-qg-4hw" id="ojI-xe-Y5n"/>
                         <outlet property="sceneMenu" destination="bTS-bc-T3f" id="fB8-1O-JEo"/>

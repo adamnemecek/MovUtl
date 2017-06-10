@@ -7,7 +7,7 @@ class TimeLineObject: NSObject {
     var firstColor : CGColor = .black
     var secondColor : CGColor = .white
     var layer : CALayer?
-    var frame : CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+    var frame : CGRect = CGRect(x: 0, y: 0, width: 60, height: 30)
     var useCameraControll : Bool = false
     var useClipping : Bool = false
     var useMouseMoving : Bool = false

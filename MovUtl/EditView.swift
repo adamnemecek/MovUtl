@@ -5,7 +5,7 @@ import GLUT
 
 class EditView : NSOpenGLView {
     override func draw(_ dirtyRect: NSRect) {
-        glClearColor(0, 0, 0, 0)
+        glClearColor(0, 1, 0, 0)
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
         
         glColor3i(0, 1, 0)
