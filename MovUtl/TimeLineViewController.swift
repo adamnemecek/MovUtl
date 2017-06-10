@@ -13,7 +13,7 @@ class TimeLineViewController : NSViewController {
     @IBOutlet var layerScrollStackView: TimeLineView!
     
     @IBOutlet var layerHeadScrollView: NSScrollView!
-    @IBOutlet var layerHeadStackView: NSStackView!
+    @IBOutlet var layerHeadStackView: TimeLineHeadView!
     
     var startPoint: NSPoint = NSPoint.zero
     var shapeLayer: CAShapeLayer!
@@ -29,8 +29,11 @@ class TimeLineViewController : NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        let document = self.view.window?.windowController?.document as! Document
+        document.data.layers.append(LayerData())
+        document.data.layers[0].objects?.append(TimeLineObject())
+        document.data.layers[0].objects?[0].endFrame = 150
+        layerScrollStackView.addArrangedSubview(TimeLineLayerView(data: document.data.layers[0]))
     }
     
     @IBAction func addScene(_ sender: NSMenuItem) {
@@ -42,7 +45,7 @@ class TimeLineViewController : NSViewController {
     
     @IBAction func changeTimeLineScale(_ sender: NSLevelIndicator) {
         let document = view.window?.windowController?.document as! Document
-        document.scale = CGFloat(scaleLevel.doubleValue)
+        document.data.scale = CGFloat(scaleLevel.doubleValue)
     }
 }
 

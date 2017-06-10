@@ -3,19 +3,10 @@ import AudioUnit
 import AVFoundation
 
 class Document: NSDocument {
-    var mainWindow : NSWindowController!
+    var mainWindow : MainWindowController!
     
-    var isInputed : Bool = false
-    var width : Int = 1024
-    var height : Int = 768
-    var layers : [LayerData] = []
-    var currentFrame : UInt64 = 0
-    var totalFrame : UInt64 = 1800
-    var fps : Double = 30.0
-    var scale : CGFloat = 1.0
-    var audioUnit : AudioUnit?
-    var audioSampleRate : Float64 = 44100.0
-    
+    var data: ProjectData
+        
     override func read(from url: URL, ofType typeName: String) throws {
         do {
             let textBuffer = try String(contentsOf: url, encoding: .utf8)
@@ -45,20 +36,20 @@ class Document: NSDocument {
                     object.objectType = ObjectType(rawValue: Int(textBuffer.components(separatedBy: ";")[i + 12].components(separatedBy: ":")[1])!)!
                     object.referencingFile = textBuffer.components(separatedBy: ";")[i + 13].components(separatedBy: ":")[1]
                     
-                    layers[depth].objects?.append(object)
+                    data.layers[depth].objects?.append(object)
                 }
             }
         } catch {
             Swift.print("Error to load the file.")
-            layers = []
+            data.layers = []
         }
     }
     
     override func write(to url: URL, ofType typeName: String) throws {
         do {
             
-            for i in 0..<layers.count {
-                let layer = layers[i]
+            for i in 0..<data.layers.count {
+                let layer = data.layers[i]
                 try "Layer:\(i);".write(to: url, atomically: true, encoding: .utf8)
                 for object in layer.objects ?? [] {
                     try "StartFrame:\(object.startFrame);".write(to: url, atomically: true, encoding: .utf8)
@@ -85,22 +76,23 @@ class Document: NSDocument {
     }
     
     override init() {
-        super.init()
+        data = ProjectData()
         var audioComponentDescription = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_HALOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
         if let audioComponent = AudioComponentFindNext(nil, &audioComponentDescription) {
             
-            AudioComponentInstanceNew(audioComponent, &audioUnit)
-            AudioUnitInitialize(audioUnit!)
+            AudioComponentInstanceNew(audioComponent, &(data.audioUnit))
+            AudioUnitInitialize(data.audioUnit!)
             
-            let audioFormat = AVAudioFormat(standardFormatWithSampleRate: audioSampleRate, channels: 2)
+            let audioFormat = AVAudioFormat(standardFormatWithSampleRate: data.audioSampleRate, channels: 2)
             var asbDescription = audioFormat.streamDescription.pointee
-            AudioUnitSetProperty(audioUnit!, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbDescription, UInt32(MemoryLayout.size(ofValue: asbDescription)))
+            AudioUnitSetProperty(data.audioUnit!, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbDescription, UInt32(MemoryLayout.size(ofValue: asbDescription)))
         }
+        super.init()
     }
     
     override func makeWindowControllers() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        mainWindow = storyboard.instantiateController(withIdentifier: "Main Window") as! NSWindowController
+        mainWindow = storyboard.instantiateController(withIdentifier: "Main Window") as! MainWindowController
         mainWindow.document = self
         addWindowController(mainWindow)
         mainWindow.showWindow(nil)

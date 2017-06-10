@@ -1,19 +1,11 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func updateDocument(with doc: Document) {
+        
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+    @IBOutlet var editContainerView: NSView!
+    @IBOutlet var timeLineContainerView: NSView!
+    @IBOutlet var propertyContainerView: NSView!
 }
 

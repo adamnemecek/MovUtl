@@ -666,7 +666,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="Main Window" id="jGA-0Y-lOj" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Main Window" id="jGA-0Y-lOj" customClass="MainWindowController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -684,7 +684,7 @@
         <!--View Controller-->
         <scene sceneID="l5U-XQ-BJF">
             <objects>
-                <viewController id="9tK-tg-Vwi" sceneMemberID="viewController">
+                <viewController id="9tK-tg-Vwi" customClass="ViewController" customModule="MovUtl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="QUO-eW-zNr">
                         <rect key="frame" x="0.0" y="0.0" width="750" height="675"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -727,6 +727,11 @@
                             <constraint firstItem="aSg-lc-hxr" firstAttribute="top" secondItem="QUO-eW-zNr" secondAttribute="top" id="xsm-NL-nGf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editContainerView" destination="suV-lz-87z" id="6GG-WN-aDO"/>
+                        <outlet property="propertyContainerView" destination="aSg-lc-hxr" id="fdO-iJ-mkB"/>
+                        <outlet property="timeLineContainerView" destination="zuZ-Ne-obi" id="5sV-qk-D9m"/>
+                    </connections>
                 </viewController>
                 <customObject id="Ltg-Ky-Vcp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

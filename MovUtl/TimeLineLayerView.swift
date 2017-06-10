@@ -3,7 +3,7 @@ import Cocoa
 class TimeLineLayerView : NSView {
     let layerData: LayerData?
     
-    init(data layer:LayerData) {
+    init(data layer:LayerData?) {
         layerData = layer
         super.init(frame: NSRect(x: 0, y: 0, width: 800, height: 40))
     }
@@ -25,7 +25,7 @@ class TimeLineLayerView : NSView {
         for object in layerData?.objects ?? [] {
             // Render objects
             let document = window?.windowController?.document as! Document
-            let scale = document.scale
+            let scale = document.data.scale
             let pos = NSRect(x: dirtyRect.minX + CGFloat(object.startFrame) * scale, y: dirtyRect.maxY - CGFloat(object.startFrame) * scale, width: CGFloat(object.endFrame - object.startFrame) * scale, height: 30.0)
             let objectView = NSView(frame: object.frame)
             addSubview(objectView)
