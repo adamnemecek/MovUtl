@@ -699,6 +699,9 @@
                                             <font key="font" metaFont="system"/>
                                             <string key="keyEquivalent"></string>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="nextFrame:" target="9tK-tg-Vwi" id="jRt-KG-xGh"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-sq-N9P">
                                         <rect key="frame" x="414" y="7" width="19" height="21"/>
@@ -708,11 +711,17 @@
                                             <font key="font" metaFont="system"/>
                                             <string key="keyEquivalent"></string>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="backFrame:" target="9tK-tg-Vwi" id="sgf-OA-QT0"/>
+                                        </connections>
                                     </button>
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-CU-7Mw">
                                         <rect key="frame" x="18" y="8" width="390" height="19"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="sgy-9U-7wh"/>
+                                        <connections>
+                                            <action selector="seek:" target="9tK-tg-Vwi" id="Dh9-RC-dZW"/>
+                                        </connections>
                                     </slider>
                                     <openGLView fixedFrame="YES" colorSize="16bit_RGB_16bit_Alpha_float" depthSize="32bit" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" wantsBestResolutionOpenGLSurface="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V05-jc-UDH" customClass="EditView" customModule="MovUtl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="33" width="480" height="362"/>
@@ -734,7 +743,11 @@
                                             <menu key="menu" id="VkV-om-u55">
                                                 <items>
                                                     <menuItem title="Root" state="on" id="Lh1-jU-jqj"/>
-                                                    <menuItem title="Add Scene..." id="khY-Rt-4JN"/>
+                                                    <menuItem title="Add Scene..." id="khY-Rt-4JN">
+                                                        <connections>
+                                                            <action selector="addScene:" target="9tK-tg-Vwi" id="Dew-9R-bVw"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
@@ -745,6 +758,9 @@
                                             <constraint firstAttribute="width" constant="80" id="y7n-AW-xoG"/>
                                         </constraints>
                                         <levelIndicatorCell key="cell" editable="YES" alignment="left" doubleValue="30" maxValue="60" levelIndicatorStyle="relevancy" id="FFx-4u-YUD"/>
+                                        <connections>
+                                            <action selector="changeTimeLineScale:" target="9tK-tg-Vwi" id="rKv-Y5-FQn"/>
+                                        </connections>
                                     </levelIndicator>
                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-3A-vvQ">
                                         <rect key="frame" x="90" y="0.0" width="390" height="280"/>
@@ -756,8 +772,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="373" height="264"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineHeadView" customModule="MovUtl" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="264"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </stackView>
                                                     </subviews>
@@ -836,7 +852,14 @@
                     </view>
                     <connections>
                         <outlet property="editView" destination="ERx-hH-rdd" id="Jhm-XF-bfx"/>
+                        <outlet property="layerHeadScrollView" destination="19A-8B-Q7g" id="1fg-VK-kNE"/>
+                        <outlet property="layerHeadStackView" destination="8NB-Zb-7AN" id="lDB-dh-8ic"/>
+                        <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
+                        <outlet property="layerScrollView" destination="19A-8B-Q7g" id="Fsc-8b-IST"/>
                         <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
+                        <outlet property="scaleLevel" destination="DVU-qg-4hw" id="27n-jg-nxM"/>
+                        <outlet property="sceneMenu" destination="bTS-bc-T3f" id="eJ8-9O-06r"/>
+                        <outlet property="seekBar" destination="bDH-CU-7Mw" id="GdJ-ev-iEx"/>
                         <outlet property="timeLineView" destination="418-dW-4EB" id="ixD-ra-nfv"/>
                     </connections>
                 </viewController>
