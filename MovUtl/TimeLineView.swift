@@ -1,6 +1,6 @@
 import Cocoa
 
-class TimeLineView : NSView {
+class TimeLineView : NSStackView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
@@ -9,11 +9,9 @@ class TimeLineView : NSView {
         context?.shouldAntialias = false
         
         NSColor.black.set()
-        for i in 0..<Int(dirtyRect.height / 40) {
-            let fromPoint = CGPoint(x: 0.0, y: CGFloat(40 * i))
-            let toPoint = CGPoint(x: self.frame.size.width, y: CGFloat(i * 40))
-            NSBezierPath.strokeLine(from: fromPoint, to: toPoint)
-        }
+        let fromPoint = CGPoint(x: 0.0, y: 40)
+        let toPoint = CGPoint(x: self.frame.size.width, y: 40)
+        NSBezierPath.strokeLine(from: fromPoint, to: toPoint)
         
         let document = self.window?.windowController?.document as! Document
         
