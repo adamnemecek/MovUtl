@@ -540,9 +540,16 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </openGLView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="480" id="IRn-yC-kV0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="395" id="ea9-es-GnA"/>
+                                </constraints>
                             </view>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="N8m-Q1-atd">
                                 <rect key="frame" x="480" y="0.0" width="270" height="675"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="3pO-25-eyB"/>
+                                </constraints>
                             </view>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="418-dW-4EB">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="280"/>
@@ -592,6 +599,9 @@
                                                 </view>
                                             </subviews>
                                         </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="390" id="wr7-Zq-y4U"/>
+                                        </constraints>
                                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ohD-xD-GXB">
                                             <rect key="frame" x="1" y="264" width="373" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -619,6 +629,9 @@
                                                 </view>
                                             </subviews>
                                         </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="Wb9-pd-HYw"/>
+                                        </constraints>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="MXO-uv-d1h">
                                             <rect key="frame" x="-100" y="-100" width="73" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -667,7 +680,7 @@
                         <outlet property="layerHeadScrollView" destination="19A-8B-Q7g" id="1fg-VK-kNE"/>
                         <outlet property="layerHeadStackView" destination="8NB-Zb-7AN" id="lDB-dh-8ic"/>
                         <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
-                        <outlet property="layerScrollView" destination="19A-8B-Q7g" id="Fsc-8b-IST"/>
+                        <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="u8i-fO-88S"/>
                         <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
                         <outlet property="scaleLevel" destination="DVU-qg-4hw" id="27n-jg-nxM"/>
                         <outlet property="sceneMenu" destination="bTS-bc-T3f" id="eJ8-9O-06r"/>
