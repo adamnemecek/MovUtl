@@ -41,7 +41,7 @@ enum FilterType: Int {
     case mosaic = 4
     case luminescence = 5
     case diffusedLight = 6
-    case grow = 7
+    case glow = 7
     case radiationBlur = 8
     case directionBlur = 9
     case lensBlur = 10
