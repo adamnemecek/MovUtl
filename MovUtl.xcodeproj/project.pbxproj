@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0109241EEECC8C0058D3E1 /* MovieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0109231EEECC8C0058D3E1 /* MovieFactory.swift */; };
 		7B10B46C1EEBC7010014020A /* TimeLineRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B46B1EEBC7010014020A /* TimeLineRulerView.swift */; };
 		7B10B46E1EEBD56E0014020A /* TimeLineLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B46D1EEBD56E0014020A /* TimeLineLayerView.swift */; };
 		7B10B4751EEBEF6C0014020A /* TimeLineLayerHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B4741EEBEF6C0014020A /* TimeLineLayerHeadView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B0109231EEECC8C0058D3E1 /* MovieFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFactory.swift; sourceTree = "<group>"; };
 		7B10B46B1EEBC7010014020A /* TimeLineRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineRulerView.swift; sourceTree = "<group>"; };
 		7B10B46D1EEBD56E0014020A /* TimeLineLayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineLayerView.swift; sourceTree = "<group>"; };
 		7B10B4741EEBEF6C0014020A /* TimeLineLayerHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineLayerHeadView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				7BD12DC01EE6C1370017D6A8 /* LayerData.swift */,
 				7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */,
 				7BD12DC21EE6C1660017D6A8 /* TimeLineObject.swift */,
+				7B0109231EEECC8C0058D3E1 /* MovieFactory.swift */,
 				7BD12DB51EE6C0E50017D6A8 /* Assets.xcassets */,
 				7BD12DB71EE6C0E50017D6A8 /* Main.storyboard */,
 				7B10B46F1EEBEABF0014020A /* TimeLine Views */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B10B4751EEBEF6C0014020A /* TimeLineLayerHeadView.swift in Sources */,
+				7B0109241EEECC8C0058D3E1 /* MovieFactory.swift in Sources */,
 				7B10B46C1EEBC7010014020A /* TimeLineRulerView.swift in Sources */,
 				7BD12DC31EE6C1660017D6A8 /* TimeLineObject.swift in Sources */,
 				7B10B4771EEBEFAA0014020A /* TimeLineHeadView.swift in Sources */,

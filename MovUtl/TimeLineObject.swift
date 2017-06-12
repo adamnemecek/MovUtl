@@ -6,7 +6,7 @@ class TimeLineObject: NSObject {
     var name : NSString = ""
     var firstColor : CGColor = .black
     var secondColor : CGColor = .white
-    var layer : CALayer?
+    var layer : CGLayer?
     var frame : CGRect = CGRect(x: 0, y: 0, width: 60, height: 30)
     var useCameraControll : Bool = false
     var useClipping : Bool = false
@@ -19,6 +19,26 @@ class TimeLineObject: NSObject {
     var effectFilters: [FilterType] = []
     var blendMode: CGBlendMode?
     var alpha: CGFloat = 0.0
+    
+    func updateCGLayer() {
+        //TODO
+    }
+    
+    func render(at present:UInt64, buffer:CVPixelBuffer) -> CIImage {
+        CVPixelBufferLockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+        
+        let resultImage = CIImage()
+        let context = CGContext(data: CVPixelBufferGetBaseAddress(buffer), width: Int(frame.size.width), height: Int(frame.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(buffer), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
+        
+        if startFrame <= present && present <= endFrame {
+            context.draw(layer!, in: frame)
+        }
+        
+        CVPixelBufferUnlockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+        
+        context.draw(resultImage.cgImage!, in: frame)
+        return resultImage
+    }
 }
 
 enum ObjectType: Int {
@@ -31,6 +51,8 @@ enum ObjectType: Int {
     case shape = 6
     case text = 7
     case filter = 8
+    case frameBuffer = 9
+    case oneFrameBuffer = 10 // This effect is only on the layer of this object --> One frame buffer
 }
 
 enum FilterType: Int {

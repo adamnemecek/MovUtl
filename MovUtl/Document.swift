@@ -27,8 +27,6 @@ class Document: NSDocument {
                     let secondColorG = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 5].components(separatedBy: ":")[1])!)
                     let secondColorB = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 6].components(separatedBy: ":")[1])!)
                     object.secondColor = CGColor(red: secondColorR, green: secondColorG, blue: secondColorB, alpha: 0)
-                    object.layer = CALayer()
-                    object.layer?.zPosition = CGFloat(Double(textBuffer.components(separatedBy: ";")[i + 7].components(separatedBy: ":")[1])!)
                     object.useCameraControll = Bool(textBuffer.components(separatedBy: ";")[i + 8].components(separatedBy: ":")[1])!
                     object.useClipping = Bool(textBuffer.components(separatedBy: ";")[i + 9].components(separatedBy: ":")[1])!
                     object.useMouseMoving = Bool(textBuffer.components(separatedBy: ";")[i + 10].components(separatedBy: ":")[1])!
@@ -61,7 +59,6 @@ class Document: NSDocument {
                     try "SecondColorR:\(object.secondColor.components?[0] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
                     try "SecondColorG:\(object.secondColor.components?[1] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
                     try "SecondColorB:\(object.secondColor.components?[2] ?? 0);".write(to: url, atomically: true, encoding: .utf8)
-                    try "LayerDepth:\(object.layer?.zPosition ?? 0);".write(to: url, atomically: true, encoding: .utf8)
                     try "UseCameraControll:\(object.useCameraControll);".write(to: url, atomically: true, encoding: .utf8)
                     try "UseClipping:\(object.useClipping);".write(to: url, atomically: true, encoding: .utf8)
                     try "UseMouseMoving:\(object.useMouseMoving);".write(to: url, atomically: true, encoding: .utf8)
