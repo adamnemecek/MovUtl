@@ -1,4 +1,6 @@
 import Cocoa
+import CoreGraphics
+import AVFoundation
 
 protocol VisibleTimeLineProtocol {
     func updateCGLayer()
@@ -34,7 +36,7 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
         let resultImage = CIImage()
         let context = CGContext(data: CVPixelBufferGetBaseAddress(buffer), width: Int(frame.size.width), height: Int(frame.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(buffer), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
         
-        if startFrame <= present && present <= endFrame {
+        if startFrame <= present && present <= endFrame && layer != nil {
             context.draw(layer!, in: frame)
         }
         
@@ -46,8 +48,59 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
 }
 
 class MediaObject: TimeLineObject {
+    var objectType: MediaObjectType = .movie
+    
+    var samples: [CMSampleBuffer] = []
+    
     override func updateCGLayer() {
-        // TODO
+        switch objectType {
+        case .movie:
+            let asset = AVAsset(url: URL(fileURLWithPath: referencingFile))
+            var reader: AVAssetReader!
+            do {
+                reader = try AVAssetReader(asset: asset)
+            } catch {
+                Swift.print(error.localizedDescription)
+            }
+                
+            guard let videoTrack = asset.tracks(withMediaType: AVMediaTypeVideo).first else {
+                return
+            }
+                
+            let readerOutputSettings: [String: Any] = [kCVPixelBufferPixelFormatTypeKey as String : Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+            let readerOutput = AVAssetReaderTrackOutput(track: videoTrack, outputSettings: readerOutputSettings)
+            reader.add(readerOutput)
+            reader.startReading()
+            
+            while let sample = readerOutput.copyNextSampleBuffer() {
+                samples.append(sample)
+            }
+            
+        //case .scene:
+            // Implemented after beta
+            
+        case .picture:
+            guard let image = CIImage(contentsOf: URL(fileURLWithPath: referencingFile))?.cgImage else {
+                return
+            }
+            
+            layer?.context?.draw(image, in: frame)
+            
+            
+        default: break
+        }
+    }
+    
+    override func render(at present: UInt64, buffer: CVPixelBuffer) -> CIImage {
+        switch objectType {
+        case .movie:
+            let pos = present - startFrame
+            let imageBuf = CMSampleBufferGetImageBuffer(samples[Int(pos)])!
+            return CIImage(cvImageBuffer: imageBuf)
+        default: break
+        }
+        
+        return CIImage()
     }
 }
 
