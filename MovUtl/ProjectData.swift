@@ -5,7 +5,7 @@ import AudioUnit
 class ProjectData: NSObject {
     var width : Int = 1024
     var height : Int = 768
-    var layers : [LayerData] = []
+    var objects : [TimeLineObject] = []
     var currentFrame : UInt64 = 0
     var totalFrame : UInt64 = 1800
     var fps : Double = 30.0

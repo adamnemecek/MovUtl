@@ -1,8 +1,13 @@
 import Cocoa
 
-class TimeLineObject: NSObject {
+protocol VisibleTimeLineProtocol {
+    func updateCGLayer()
+}
+
+class TimeLineObject: NSObject, VisibleTimeLineProtocol {
     var endFrame: UInt64 = 0
     var startFrame: UInt64 = 0
+    var layerDepth: Int = 0
     var name : NSString = ""
     var firstColor : CGColor = .black
     var secondColor : CGColor = .white
@@ -12,7 +17,6 @@ class TimeLineObject: NSObject {
     var useClipping : Bool = false
     var useMouseMoving : Bool = false
     var isEnabled : Bool = true
-    var objectType : ObjectType = .movie
     var filterType : FilterType = .sceneChange
     var referencingFile: String = ""
     var properties : [Int] = []
@@ -21,7 +25,7 @@ class TimeLineObject: NSObject {
     var alpha: CGFloat = 0.0
     
     func updateCGLayer() {
-        //TODO
+        // TODO
     }
     
     func render(at present:UInt64, buffer:CVPixelBuffer) -> CIImage {
@@ -41,18 +45,38 @@ class TimeLineObject: NSObject {
     }
 }
 
-enum ObjectType: Int {
+class MediaObject: TimeLineObject {
+    override func updateCGLayer() {
+        // TODO
+    }
+}
+
+class AudioObject: TimeLineObject {
+    
+}
+
+class FilterObject: TimeLineObject {
+    override func updateCGLayer() {
+        // TODO
+    }
+}
+
+enum MediaObjectType: Int {
     case movie = 0
-    case audio = 1
+    case scene = 1 // Without sound
     case picture = 2
     case cameraControll = 3
     case oneFilter = 4 // This effect is only on the layer of this object --> One filter
     case audiowave = 5
     case shape = 6
     case text = 7
-    case filter = 8
-    case frameBuffer = 9
-    case oneFrameBuffer = 10 // This effect is only on the layer of this object --> One frame buffer
+    case frameBuffer = 8
+    case oneFrameBuffer = 9 // This effect is only on the layer of this object --> One frame buffer
+}
+
+enum AudioObjectType: Int {
+    case sound = 0
+    case sceneSound = 1
 }
 
 enum FilterType: Int {

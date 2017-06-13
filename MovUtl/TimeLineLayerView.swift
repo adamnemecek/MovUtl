@@ -1,9 +1,9 @@
 import Cocoa
 
 class TimeLineLayerView : NSView {
-    let layerData: LayerData?
+    let layerData: [TimeLineObject]
     
-    init(data layer:LayerData?) {
+    init(data layer:[TimeLineObject]) {
         layerData = layer
         super.init(frame: NSRect(x: 0, y: 0, width: 800, height: 40))
     }
@@ -22,7 +22,7 @@ class TimeLineLayerView : NSView {
         let toPoint = CGPoint(x: self.frame.size.width, y: 40)
         NSBezierPath.strokeLine(from: fromPoint, to: toPoint)
         
-        for object in layerData?.objects ?? [] {
+        for object in layerData {
             // Render objects
             let document = window?.windowController?.document as! Document
             let scale = document.data.scale
