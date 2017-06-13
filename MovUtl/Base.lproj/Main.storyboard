@@ -217,46 +217,88 @@
                                                 <items>
                                                     <menuItem title="Movie(No Sound)" id="udZ-Ua-6Fo">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="GXQ-SB-Z5P"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Picture" id="Vgb-cO-YfQ">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="Zn1-2m-3iu"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Sound" id="DVd-yR-koc">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addAudioObject:" target="Ady-hI-5gd" id="S4M-c0-CdF"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Text" id="sAh-9J-rN3">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="XHq-oT-JEs"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Shape" id="OIj-KE-GCG">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="C9m-gn-uGJ"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Frame Buffer" id="Vb5-KX-tNT">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="YMP-io-LpJ"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Sound Wave Shape" id="Jqu-H8-Xcg">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="r8J-Yd-0HX"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Scene(No Sound)" id="fjm-j2-IiZ">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="Lq6-wm-qR8"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Scene(Sound Only)" id="VzI-aO-tMM">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addAudioObject:" target="Ady-hI-5gd" id="sBA-pM-Z3H"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="One Frame Buffer" id="zAD-X2-WAC">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="cRL-9M-7Ec"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Particle" id="wbs-yc-wix">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="Ec9-Ld-6vr"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Custom Object" id="rV8-NY-o9g">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="ylh-I4-sQE"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem isSeparatorItem="YES" id="yy7-FU-XIn"/>
                                                     <menuItem title="Time Controll" id="nxa-OU-8ND">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="DdY-IQ-zP9"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Group Controll" id="Q1V-lM-sP2">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addMediaObject:" target="Ady-hI-5gd" id="fhI-OT-Qno"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Camera Controll" id="1Q4-uv-VYe">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
@@ -264,12 +306,21 @@
                                                             <items>
                                                                 <menuItem title="Camera" id="knw-qq-Pk4">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="addMediaObject:" target="Ady-hI-5gd" id="sS3-kd-gYX"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                                 <menuItem title="Shadow(Camera Controll)" id="XM9-cR-sRg">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="addMediaObject:" target="Ady-hI-5gd" id="7E8-bW-WEG"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                                 <menuItem title="Script(Camera Controll)" id="3ul-lC-nRi">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="addMediaObject:" target="Ady-hI-5gd" id="rL6-Y9-NGb"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                             </items>
                                                         </menu>
@@ -283,75 +334,147 @@
                                                 <items>
                                                     <menuItem title="Scene Change" id="3ik-dI-jyT">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="p9B-n6-psD"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Color Tone Change" id="mgX-qd-uKt">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="1bf-Yz-Mus"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Blur" id="NpY-dP-6Ks">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="Nhr-Z5-qmV"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Mosaic" id="H23-I7-PJ4">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="kGw-lP-pQM"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Luminescence" id="iq9-vp-7Tb">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="kmY-XJ-0KV"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Diffused Light" id="nXu-gf-6h2">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="Q0L-Zt-K2r"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Glow" id="2lX-NL-SLD">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="0I1-hJ-XuO"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Radiation Blur" id="RZp-FA-Hgh">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="qoe-mZ-Uxi"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Direction Blur" id="gfo-ai-AM9">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="sNw-9S-twA"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Lens Blur" id="Nu3-ds-F1I">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="RXi-O4-H7O"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Motion Blur" id="h9Y-Xe-TpB">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="Rg0-Qa-0d3"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Vibration" id="aiN-Jc-pHK">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="0aK-tp-NLT"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Flip" id="kfu-Ym-hfb">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="hAZ-yH-E5S"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Ruster" id="JCf-Lp-IFN">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="AXE-aB-Wp3"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Image Loop" id="cyk-CB-uYV">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="pJT-h1-wEF"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Color Shift" id="Jy7-Qh-QUD">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="uQy-cP-6Hc"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Monochromatization" id="0AM-8N-XzU">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="E7j-kJ-sWU"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Color Setting" id="K5g-0g-Iia">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="16j-fs-dTO"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Partial Filter" id="T9q-jI-XSq">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="64O-DJ-wbK"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Sound Delay" id="A4b-ED-ZvL">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="NaB-5A-fI1"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Noise Reduction" id="uh1-FM-Jxl">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="8Vm-yH-ICP"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Clip &amp; Resize" id="d3p-m8-Kqa">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="TLr-mp-zSR"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Edge Fill" id="nbz-en-B3R">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="bDZ-EF-OGw"/>
+                                                        </connections>
                                                     </menuItem>
                                                     <menuItem title="Volume Controll" id="uum-z9-b80">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <connections>
+                                                            <action selector="addFilterObject:" target="Ady-hI-5gd" id="iPi-c7-DOt"/>
+                                                        </connections>
                                                     </menuItem>
                                                 </items>
                                             </menu>

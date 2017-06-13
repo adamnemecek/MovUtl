@@ -6,6 +6,18 @@ class Document: NSDocument {
     var mainWindow : MainWindowController!
     
     var data: ProjectData
+    
+    @IBAction func addMediaObject(_ sender:NSMenuItem) {
+        
+    }
+    
+    @IBAction func addFilterObject(_ sender:NSMenuItem) {
+        
+    }
+    
+    @IBAction func addAudioObject(_ sender:NSMenuItem) {
+        
+    }
         
     override func read(from url: URL, ofType typeName: String) throws {
         do {
