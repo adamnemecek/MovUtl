@@ -49,11 +49,21 @@ class MovieFactory: NSObject {
             
             writerInput.requestMediaDataWhenReady(on: mediaQueue, using: { 
                 while writerInput.isReadyForMoreMediaData && frameCount < data.totalFrame {
-                    let lastFrameTime = CMTimeMake(Int64(frameCount), Int32(data.fps))
-                    let presentationTime = (frameCount == 0 ? lastFrameTime : CMTimeAdd(lastFrameTime, frameDuration))
                     
+                    var frame: CVPixelBuffer?
+                    CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pixelBufferAdaptor.pixelBufferPool!, &frame)
+                    CVPixelBufferLockBaseAddress(frame!, CVPixelBufferLockFlags(rawValue: 0))
+                    
+                    if frame == nil {
+                        print("Error to create a pixel buffer.")
+                        return
+                    }
                     // Write a frame
-                    // TODO
+                    for object in data.objects {
+                        
+                    }
+                    
+                    CVPixelBufferUnlockBaseAddress(frame!, CVPixelBufferLockFlags(rawValue: 0))
                     
                     frameCount += 1
                 }

@@ -4,6 +4,7 @@ import AVFoundation
 
 protocol VisibleTimeLineProtocol {
     func updateCGLayer()
+    func render(at present:UInt64) -> CGImage?
 }
 
 class TimeLineObject: NSObject, VisibleTimeLineProtocol {
@@ -30,20 +31,11 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
         // TODO
     }
     
-    func render(at present:UInt64, buffer:CVPixelBuffer) -> CIImage {
-        CVPixelBufferLockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
+    func render(at present:UInt64) -> CGImage? {
+        let buffer: CVPixelBuffer? = nil
         
-        let resultImage = CIImage()
-        let context = CGContext(data: CVPixelBufferGetBaseAddress(buffer), width: Int(frame.size.width), height: Int(frame.size.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(buffer), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)!
         
-        if startFrame <= present && present <= endFrame && layer != nil {
-            context.draw(layer!, in: frame)
-        }
-        
-        CVPixelBufferUnlockBaseAddress(buffer, CVPixelBufferLockFlags(rawValue: CVOptionFlags(0)))
-        
-        context.draw(resultImage.cgImage!, in: frame)
-        return resultImage
+        return nil
     }
 }
 
@@ -91,16 +83,16 @@ class MediaObject: TimeLineObject {
         }
     }
     
-    override func render(at present: UInt64, buffer: CVPixelBuffer) -> CIImage {
+    override func render(at present: UInt64) -> CGImage? {
         switch objectType {
         case .movie:
             let pos = present - startFrame
             let imageBuf = CMSampleBufferGetImageBuffer(samples[Int(pos)])!
-            return CIImage(cvImageBuffer: imageBuf)
+            return CIImage(cvImageBuffer: imageBuf).cgImage!
         default: break
         }
         
-        return CIImage()
+        return nil
     }
 }
 
@@ -111,6 +103,12 @@ class AudioObject: TimeLineObject {
 class FilterObject: TimeLineObject {
     override func updateCGLayer() {
         // TODO
+    }
+    
+    override func render(at present: UInt64) -> CGImage? {
+        // TODO
+        
+        return nil
     }
 }
 
