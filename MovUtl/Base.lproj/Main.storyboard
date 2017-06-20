@@ -678,7 +678,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="280"/>
                                 <subviews>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bTS-bc-T3f">
-                                        <rect key="frame" x="-2" y="256" width="85" height="26"/>
+                                        <rect key="frame" x="-2" y="256" width="114" height="26"/>
                                         <popUpButtonCell key="cell" type="push" title="Root" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Lh1-jU-jqj" id="SYu-e8-sX9">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
@@ -694,114 +694,86 @@
                                             </menu>
                                         </popUpButtonCell>
                                     </popUpButton>
-                                    <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DVU-qg-4hw">
-                                        <rect key="frame" x="0.0" y="227" width="80" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="y7n-AW-xoG"/>
-                                        </constraints>
-                                        <levelIndicatorCell key="cell" editable="YES" alignment="left" doubleValue="30" maxValue="60" levelIndicatorStyle="relevancy" id="FFx-4u-YUD"/>
-                                        <connections>
-                                            <action selector="changeTimeLineScale:" target="9tK-tg-Vwi" id="rKv-Y5-FQn"/>
-                                        </connections>
-                                    </levelIndicator>
                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-3A-vvQ">
-                                        <rect key="frame" x="90" y="0.0" width="390" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="251"/>
                                         <clipView key="contentView" id="XeJ-1Q-KLZ">
-                                            <rect key="frame" x="1" y="1" width="373" height="263"/>
+                                            <rect key="frame" x="1" y="1" width="463" height="234"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="234"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="264"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="240"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </stackView>
                                                     </subviews>
                                                 </view>
                                             </subviews>
                                         </clipView>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="390" id="wr7-Zq-y4U"/>
-                                        </constraints>
                                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ohD-xD-GXB">
-                                            <rect key="frame" x="1" y="264" width="373" height="15"/>
+                                            <rect key="frame" x="1" y="235" width="463" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jdl-U7-aKf">
-                                            <rect key="frame" x="374" y="1" width="15" height="263"/>
+                                            <rect key="frame" x="464" y="1" width="15" height="234"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19A-8B-Q7g">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="214"/>
-                                        <clipView key="contentView" id="Oz4-at-JK0">
-                                            <rect key="frame" x="1" y="1" width="73" height="212"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlK-9l-ZEB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="213"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NB-Zb-7AN" customClass="TimeLineHeadView" customModule="MovUtl" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="-1" width="73" height="214"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        </stackView>
-                                                    </subviews>
-                                                </view>
-                                            </subviews>
-                                        </clipView>
+                                    <levelIndicator verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DVU-qg-4hw">
+                                        <rect key="frame" x="119" y="264" width="80" height="12"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Wb9-pd-HYw"/>
+                                            <constraint firstAttribute="width" constant="80" id="CEB-uY-VCF"/>
                                         </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="MXO-uv-d1h">
-                                            <rect key="frame" x="-100" y="-100" width="73" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Rtw-yf-4Wf">
-                                            <rect key="frame" x="74" y="1" width="15" height="212"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
+                                        <levelIndicatorCell key="cell" editable="YES" alignment="left" doubleValue="30" maxValue="60" levelIndicatorStyle="relevancy" id="FFx-4u-YUD"/>
+                                        <connections>
+                                            <action selector="changeTimeLineScale:" target="9tK-tg-Vwi" id="rKv-Y5-FQn"/>
+                                        </connections>
+                                    </levelIndicator>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szn-dF-5Kt">
+                                        <rect key="frame" x="186" y="258" width="21" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSExitFullScreenTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="c0X-S6-HaL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="moveMovieEndToLastObjectEnd:" target="9tK-tg-Vwi" id="x1N-70-GvL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="leading" secondItem="bTS-bc-T3f" secondAttribute="leading" id="Etl-i3-NC2"/>
-                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="top" secondItem="418-dW-4EB" secondAttribute="top" id="KPT-fh-8kJ"/>
-                                    <constraint firstItem="19A-8B-Q7g" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="leading" id="L4g-JB-yWR"/>
-                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="top" secondItem="bTS-bc-T3f" secondAttribute="bottom" constant="20" id="PGm-Pp-Ogq"/>
-                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="leading" secondItem="19A-8B-Q7g" secondAttribute="trailing" id="Zta-BZ-mdD"/>
-                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="top" secondItem="418-dW-4EB" secondAttribute="top" constant="41" id="a2B-NP-jY6"/>
-                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="leading" secondItem="19A-8B-Q7g" secondAttribute="leading" id="b7T-vD-Wdy"/>
-                                    <constraint firstAttribute="bottom" secondItem="19A-8B-Q7g" secondAttribute="bottom" id="caq-De-h5Q"/>
-                                    <constraint firstAttribute="trailing" secondItem="jCL-3A-vvQ" secondAttribute="trailing" id="duq-xf-DLg"/>
-                                    <constraint firstItem="19A-8B-Q7g" firstAttribute="top" secondItem="DVU-qg-4hw" secondAttribute="bottom" constant="13" id="hhs-sQ-I86"/>
-                                    <constraint firstAttribute="bottom" secondItem="jCL-3A-vvQ" secondAttribute="bottom" id="kCd-2o-3Sg"/>
-                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="trailing" secondItem="bTS-bc-T3f" secondAttribute="trailing" id="pyi-zd-qsn"/>
-                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="leading" secondItem="19A-8B-Q7g" secondAttribute="trailing" id="t2L-bg-vAF"/>
-                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="leading" secondItem="DVU-qg-4hw" secondAttribute="trailing" constant="10" id="w2m-Tp-TwZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="jCL-3A-vvQ" secondAttribute="trailing" id="5dM-05-8HS"/>
+                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="top" secondItem="bTS-bc-T3f" secondAttribute="bottom" constant="8" id="7QN-8V-6qG"/>
+                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="leading" secondItem="bTS-bc-T3f" secondAttribute="trailing" constant="10" id="7Sx-My-muE"/>
+                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="top" secondItem="bTS-bc-T3f" secondAttribute="bottom" constant="8" id="D7x-fm-jbb"/>
+                                    <constraint firstItem="bTS-bc-T3f" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="leading" id="HnK-mv-OvD"/>
+                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="top" secondItem="DVU-qg-4hw" secondAttribute="bottom" constant="13" id="OSv-aM-bVC"/>
+                                    <constraint firstItem="bTS-bc-T3f" firstAttribute="top" secondItem="418-dW-4EB" secondAttribute="top" id="Uhp-F4-hYH"/>
+                                    <constraint firstItem="jCL-3A-vvQ" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="leading" id="Z5C-Ve-Tfj"/>
+                                    <constraint firstAttribute="bottom" secondItem="jCL-3A-vvQ" secondAttribute="bottom" id="fNF-8M-vi1"/>
+                                    <constraint firstItem="DVU-qg-4hw" firstAttribute="top" secondItem="418-dW-4EB" secondAttribute="top" constant="4" id="mlQ-vR-TlX"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="trailing" secondItem="ERx-hH-rdd" secondAttribute="trailing" id="6wD-q8-4Tu"/>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="leading" secondItem="QUO-eW-zNr" secondAttribute="leading" id="7GG-rE-3ZM"/>
-                            <constraint firstAttribute="trailing" secondItem="N8m-Q1-atd" secondAttribute="trailing" id="FAl-7Z-QKY"/>
-                            <constraint firstItem="N8m-Q1-atd" firstAttribute="top" secondItem="QUO-eW-zNr" secondAttribute="top" id="Lpc-KJ-MhH"/>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="bottom" id="Oge-7k-UGK"/>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="VPX-zi-RXW"/>
-                            <constraint firstItem="N8m-Q1-atd" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="cw5-P1-lMT"/>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="top" secondItem="QUO-eW-zNr" secondAttribute="top" constant="395" id="fL8-rL-VEP"/>
-                            <constraint firstAttribute="trailing" secondItem="418-dW-4EB" secondAttribute="trailing" constant="270" id="h3m-YE-OnU"/>
-                            <constraint firstItem="418-dW-4EB" firstAttribute="bottom" secondItem="N8m-Q1-atd" secondAttribute="bottom" id="iuK-cc-tHx"/>
-                            <constraint firstItem="N8m-Q1-atd" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="trailing" id="k7h-xB-wZM"/>
-                            <constraint firstAttribute="bottom" secondItem="418-dW-4EB" secondAttribute="bottom" id="rne-w0-hp9"/>
+                            <constraint firstItem="N8m-Q1-atd" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="trailing" id="0uJ-lk-kBE"/>
+                            <constraint firstItem="ERx-hH-rdd" firstAttribute="leading" secondItem="418-dW-4EB" secondAttribute="leading" id="ABC-j0-yan"/>
+                            <constraint firstAttribute="trailing" secondItem="N8m-Q1-atd" secondAttribute="trailing" id="AgY-h4-cSF"/>
+                            <constraint firstItem="418-dW-4EB" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="bottom" id="Ans-ha-YfX"/>
+                            <constraint firstItem="ERx-hH-rdd" firstAttribute="trailing" secondItem="418-dW-4EB" secondAttribute="trailing" id="EJq-rQ-GMy"/>
+                            <constraint firstItem="N8m-Q1-atd" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Rpu-jB-ONp"/>
+                            <constraint firstItem="N8m-Q1-atd" firstAttribute="leading" secondItem="QUO-eW-zNr" secondAttribute="leading" constant="480" id="dAs-Ne-wQT"/>
+                            <constraint firstAttribute="bottom" secondItem="ERx-hH-rdd" secondAttribute="bottom" constant="280" id="fDD-pu-9uA"/>
+                            <constraint firstAttribute="bottom" secondItem="N8m-Q1-atd" secondAttribute="bottom" id="fgZ-ko-7QT"/>
+                            <constraint firstItem="N8m-Q1-atd" firstAttribute="top" secondItem="QUO-eW-zNr" secondAttribute="top" id="hM9-Kq-67J"/>
+                            <constraint firstItem="ERx-hH-rdd" firstAttribute="leading" secondItem="QUO-eW-zNr" secondAttribute="leading" id="nmL-4Z-Pr9"/>
+                            <constraint firstItem="N8m-Q1-atd" firstAttribute="bottom" secondItem="418-dW-4EB" secondAttribute="bottom" id="rBH-Gn-ooO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="editView" destination="ERx-hH-rdd" id="Jhm-XF-bfx"/>
-                        <outlet property="layerHeadScrollView" destination="19A-8B-Q7g" id="1fg-VK-kNE"/>
-                        <outlet property="layerHeadStackView" destination="8NB-Zb-7AN" id="lDB-dh-8ic"/>
                         <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
                         <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="u8i-fO-88S"/>
                         <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
@@ -817,6 +789,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NSExitFullScreenTemplate" width="15" height="15"/>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
     </resources>
