@@ -1,6 +1,6 @@
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate {
     @IBOutlet var editView: NSView!
     @IBOutlet var timeLineView: NSView!
     @IBOutlet var propertyView: NSView!
@@ -12,9 +12,12 @@ class ViewController: NSViewController {
         didSet {
             layerScrollView.hasHorizontalRuler = true
             layerScrollView.rulersVisible = true
+            layerScrollView.horizontalRulerView?.originOffset = 120.0
+            rulerView = layerScrollView.horizontalRulerView
         }
     }
     @IBOutlet var layerScrollStackView: NSStackView!
+    var rulerView: NSRulerView?
     
     var document: Document?
     var selected: [TimeLineObject] = []
@@ -34,6 +37,7 @@ class ViewController: NSViewController {
         
     }
     
+    // TimeLineLayerLineHeaderView's delegate methods
     func insertLayer(_ sender: Any) {
         
     }
@@ -47,6 +51,27 @@ class ViewController: NSViewController {
     }
     
     func exchangeLayerDown(_ sender: Any) {
+        
+    }
+    
+    // TimeLineLayerObjectView's delegate methods
+    func moveObjectTo(_ sender:Any) {
+        
+    }
+    
+    func changeLength(_ sender:Any) {
+        
+    }
+    
+    func deleteObject(_ sender:Any) {
+        
+    }
+    
+    func addCentralPoint(_ sender:Any) {
+        
+    }
+    
+    func changeToGroupObject(_ sender:Any) {
         
     }
     

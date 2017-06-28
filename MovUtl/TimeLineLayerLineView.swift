@@ -19,8 +19,17 @@ class TimeLineLayerLineView: NSView {
     }
 }
 
+@objc protocol TimeLineLayerLineHeaderViewDelegate {
+    func insertLayer(_:Any)
+    func deleteLayer(_:Any)
+    func exchangeLayerBelow(_:Any)
+    func exchangeLayerDown(_:Any)
+}
+
 class TimeLineLayerLineHeaderView: NSView {
     var header: NSTextField
+    
+    weak var delegate: TimeLineLayerLineHeaderViewDelegate?
     
     override init(frame frameRect: NSRect) {
         header = NSTextField(frame: frameRect)
@@ -34,18 +43,28 @@ class TimeLineLayerLineHeaderView: NSView {
     override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
-        menu.addItem(withTitle: "Insert A Layer Below", action: #selector(ViewController.insertLayer(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Delete This Layer \(header.stringValue)", action: #selector(ViewController.deleteLayer(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Exchange Below", action: #selector(ViewController.exchangeLayerBelow(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Exchange Down", action: #selector(ViewController.exchangeLayerDown(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Insert A Layer Below", action: #selector(delegate?.insertLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete This Layer \(header.stringValue)", action: #selector(delegate?.deleteLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Exchange Below", action: #selector(delegate?.exchangeLayerBelow(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Exchange Down", action: #selector(delegate?.exchangeLayerDown(_:)), keyEquivalent: "")
         
         return menu
     }
 }
 
+@objc protocol TimeLineLayerObjectViewDelegate {
+    func moveObjectTo(_ sender:Any)
+    func changeLength(_ sender:Any)
+    func deleteObject(_ sender:Any)
+    func addCentralPoint(_ sender:Any)
+    func changeToGroupObject(_ sender:Any)
+}
+
 class TimeLineLayerObjectView: NSView {
     var startPos: NSPoint = NSPoint.zero
     var object: TimeLineObject!
+    
+    weak var delegate: TimeLineLayerObjectViewDelegate?
     
     init(referencingObject: TimeLineObject, frameRect: NSRect) {
         object = referencingObject
@@ -104,11 +123,11 @@ class TimeLineLayerObjectView: NSView {
     override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
-        menu.addItem(withTitle: "Move To...", action: nil, keyEquivalent: "")
-        menu.addItem(withTitle: "Change Length...", action: nil, keyEquivalent: "")
-        menu.addItem(withTitle: "Delete", action: nil, keyEquivalent: "")
-        menu.addItem(withTitle: "Add A Central Point", action: nil, keyEquivalent: "")
-        menu.addItem(withTitle: "Change To Group Object", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Move To...", action: #selector(delegate?.moveObjectTo(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Change Length...", action: #selector(delegate?.changeLength(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete", action: #selector(delegate?.deleteObject(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Add A Central Point", action: #selector(delegate?.addCentralPoint(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Change To Group Object", action: #selector(delegate?.changeToGroupObject(_:)), keyEquivalent: "")
         
         return menu
     }
