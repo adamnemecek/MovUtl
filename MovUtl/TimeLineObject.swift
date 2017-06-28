@@ -7,7 +7,7 @@ protocol VisibleTimeLineProtocol {
     func render(at present:UInt64) -> CGImage?
 }
 
-class TimeLineObject: NSObject, VisibleTimeLineProtocol {
+class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
     var endFrame: UInt64 = 0
     var startFrame: UInt64 = 0
     var layerDepth: Int = 0
@@ -20,7 +20,6 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
     var useClipping : Bool = false
     var useMouseMoving : Bool = false
     var isEnabled : Bool = true
-    var filterType : FilterType = .sceneChange
     var referencingFile: String = ""
     var properties : [Int] = []
     var effectFilters: [FilterType] = []
@@ -36,6 +35,44 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
         
         
         return nil
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(layerDepth, forKey: "Layer")
+        aCoder.encode(startFrame, forKey: "StartFrame")
+        aCoder.encode(endFrame, forKey: "EndFrame")
+        aCoder.encode(name, forKey: "Name")
+        aCoder.encode(firstColor, forKey: "FirstColor")
+        aCoder.encode(secondColor, forKey: "SecondColor")
+        aCoder.encode(frame, forKey: "Frame")
+        aCoder.encode(useCameraControll, forKey: "CameraControll")
+        aCoder.encode(useClipping, forKey: "Clipping")
+        aCoder.encode(useMouseMoving, forKey: "MouseMoving")
+        aCoder.encode(isEnabled, forKey: "Enabled")
+        aCoder.encode(referencingFile, forKey: "ReferencingFile")
+        aCoder.encode(alpha, forKey: "Alpha")
+        aCoder.encode(blendMode, forKey: "BlendMode")
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    required init?(coder decoder:NSCoder) {
+        layerDepth = decoder.decodeInteger(forKey: "Layer")
+        startFrame = UInt64(decoder.decodeInt64(forKey: "StartFrame"))
+        endFrame = UInt64(decoder.decodeInt64(forKey: "EndFrame"))
+        name = decoder.decodeObject(forKey: "Name") as! NSString
+        firstColor = decoder.decodeObject(forKey: "FirstColor") as! CGColor
+        secondColor = decoder.decodeObject(forKey: "SecondColor") as! CGColor
+        frame = decoder.decodeRect(forKey: "Frame")
+        useCameraControll = decoder.decodeBool(forKey: "CameraControll")
+        useClipping = decoder.decodeBool(forKey: "Clipping")
+        useMouseMoving = decoder.decodeBool(forKey: "MouseMoving")
+        isEnabled = decoder.decodeBool(forKey: "Enabled")
+        referencingFile = decoder.decodeObject(forKey: "ReferencingFile") as! String
+        alpha = CGFloat(decoder.decodeDouble(forKey: "Alpha"))
+        blendMode = CGBlendMode(rawValue: decoder.decodeInt32(forKey: "BlendMode"))!
     }
 }
 
