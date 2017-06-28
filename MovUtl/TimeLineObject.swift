@@ -24,7 +24,7 @@ class TimeLineObject: NSObject, VisibleTimeLineProtocol {
     var referencingFile: String = ""
     var properties : [Int] = []
     var effectFilters: [FilterType] = []
-    var blendMode: CGBlendMode?
+    var blendMode: CGBlendMode = .normal
     var alpha: CGFloat = 0.0
     
     func updateCGLayer() {

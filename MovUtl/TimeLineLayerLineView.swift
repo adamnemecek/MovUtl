@@ -1,8 +1,17 @@
 import Cocoa
 
 class TimeLineLayerLineView: NSView {
+    var contentsView: NSView
+    
     init(id: UInt, frame frameRect: NSRect) {
+        let header = TimeLineLayerLineHeaderView(frame: NSRect(origin: frameRect.origin, size: CGSize(width: 120, height: frameRect.size.height)))
+        header.header.stringValue = "\(id)"
+        contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + header.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
+        
         super.init(frame: frameRect)
+        
+        addSubview(header)
+        addSubview(contentsView)
     }
     
     required init?(coder: NSCoder) {
@@ -22,15 +31,15 @@ class TimeLineLayerLineHeaderView: NSView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func rightMouseDown(with event: NSEvent) {
+    override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
-        menu.addItem(NSMenuItem(title: "Insert A Layer Below", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Delete This Layer \(header.stringValue)", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Exchange Below", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Exchange Down", action: nil, keyEquivalent: ""))
+        menu.addItem(withTitle: "Insert A Layer Below", action: #selector(ViewController.insertLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete This Layer \(header.stringValue)", action: #selector(ViewController.deleteLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Exchange Below", action: #selector(ViewController.exchangeLayerBelow(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Exchange Down", action: #selector(ViewController.exchangeLayerDown(_:)), keyEquivalent: "")
         
-        menu.popUp(positioning: nil, at: event.locationInWindow, in: self)
+        return menu
     }
 }
 
@@ -92,15 +101,15 @@ class TimeLineLayerObjectView: NSView {
         }
     }
     
-    override func rightMouseDown(with event: NSEvent) {
+    override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
-        menu.addItem(NSMenuItem(title: "Move To...", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Change Length...", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Delete", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Add A Central Point", action: nil, keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Change To Group Object", action: nil, keyEquivalent: ""))
+        menu.addItem(withTitle: "Move To...", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Change Length...", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Delete", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Add A Central Point", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Change To Group Object", action: nil, keyEquivalent: "")
         
-        menu.popUp(positioning: nil, at: event.locationInWindow, in: self)
+        return menu
     }
 }

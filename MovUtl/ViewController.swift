@@ -21,6 +21,9 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: layerScrollStackView.frame.minX, y: layerScrollStackView.frame.minY, width: 400, height: 40))
+        layerScrollStackView.addArrangedSubview(newLayerView)
     }
     
     func updateDocument(with doc: Document) {
@@ -28,6 +31,22 @@ class ViewController: NSViewController {
         seekBar.minValue = 0.0
         seekBar.maxValue = Double((document?.data.totalFrame)!)
         document?.data.scale = CGFloat(scaleLevel.doubleValue)
+        
+    }
+    
+    func insertLayer(_ sender: Any) {
+        
+    }
+    
+    func deleteLayer(_ sender: Any) {
+        
+    }
+    
+    func exchangeLayerBelow(_ sender: Any) {
+        
+    }
+    
+    func exchangeLayerDown(_ sender: Any) {
         
     }
     
