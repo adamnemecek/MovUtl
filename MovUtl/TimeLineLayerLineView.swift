@@ -1,17 +1,17 @@
 import Cocoa
 
 class TimeLineLayerLineView: NSView {
-    var contentsView: NSView
+    @IBOutlet var headerView: TimeLineLayerLineHeaderView?
+    @IBOutlet var contentsView: NSView?
     
-    init(id: UInt, frame frameRect: NSRect) {
+    override init(frame frameRect: NSRect) {
         let header = TimeLineLayerLineHeaderView(frame: NSRect(origin: frameRect.origin, size: CGSize(width: 120, height: frameRect.size.height)))
-        header.header.stringValue = "\(id)"
         contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + header.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
         
         super.init(frame: frameRect)
         
         addSubview(header)
-        addSubview(contentsView)
+        addSubview(contentsView!)
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +27,7 @@ class TimeLineLayerLineView: NSView {
 }
 
 class TimeLineLayerLineHeaderView: NSView {
-    var header: NSTextField
+    @IBOutlet var header: NSTextField?
     
     weak var delegate: TimeLineLayerLineHeaderViewDelegate?
     
@@ -44,7 +44,7 @@ class TimeLineLayerLineHeaderView: NSView {
         let menu = NSMenu(title: "")
         
         menu.addItem(withTitle: "Insert A Layer Below", action: #selector(delegate?.insertLayer(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Delete This Layer \(header.stringValue)", action: #selector(delegate?.deleteLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete This Layer \(header?.stringValue)", action: #selector(delegate?.deleteLayer(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Exchange Below", action: #selector(delegate?.exchangeLayerBelow(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Exchange Down", action: #selector(delegate?.exchangeLayerDown(_:)), keyEquivalent: "")
         
@@ -73,6 +73,11 @@ class TimeLineLayerObjectView: NSView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        let gradient = NSGradient(colors: [.blue, .black])
+        gradient?.draw(in: dirtyRect, angle: 0)
     }
     
     override func mouseDown(with event: NSEvent) {

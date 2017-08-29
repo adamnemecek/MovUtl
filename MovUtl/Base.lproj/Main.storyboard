@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
@@ -670,6 +670,30 @@
                             </view>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="N8m-Q1-atd">
                                 <rect key="frame" x="480" y="0.0" width="270" height="675"/>
+                                <subviews>
+                                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk4-Et-mKj">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="675"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <clipView key="contentView" ambiguous="YES" id="KHF-Ka-LcW">
+                                            <rect key="frame" x="1" y="1" width="253" height="658"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-dJ-muI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="238" height="643"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </view>
+                                            </subviews>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="tEN-rn-3pa">
+                                            <rect key="frame" x="1" y="659" width="253" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VBS-dO-hpu">
+                                            <rect key="frame" x="254" y="1" width="15" height="658"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="3pO-25-eyB"/>
                                 </constraints>
@@ -704,8 +728,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="550" height="234"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineView" customModule="MovUtl" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="240"/>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="550" height="240"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </stackView>
                                                     </subviews>
@@ -776,6 +800,7 @@
                         <outlet property="editView" destination="ERx-hH-rdd" id="Jhm-XF-bfx"/>
                         <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
                         <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="u8i-fO-88S"/>
+                        <outlet property="propertyScrollView" destination="mk4-Et-mKj" id="obT-Zr-EpS"/>
                         <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
                         <outlet property="scaleLevel" destination="DVU-qg-4hw" id="27n-jg-nxM"/>
                         <outlet property="sceneMenu" destination="bTS-bc-T3f" id="eJ8-9O-06r"/>

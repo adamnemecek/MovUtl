@@ -1,6 +1,6 @@
 import Cocoa
 
-class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate {
+class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, TimeLineLayerObjectViewDelegate {
     @IBOutlet var editView: NSView!
     @IBOutlet var timeLineView: NSView!
     @IBOutlet var propertyView: NSView!
@@ -12,6 +12,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate {
         didSet {
             layerScrollView.hasHorizontalRuler = true
             layerScrollView.rulersVisible = true
+            layerScrollView.autohidesScrollers = true
             layerScrollView.horizontalRulerView?.originOffset = 120.0
             rulerView = layerScrollView.horizontalRulerView
         }
@@ -19,14 +20,26 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate {
     @IBOutlet var layerScrollStackView: NSStackView!
     var rulerView: NSRulerView?
     
+    @IBOutlet var propertyScrollView: NSScrollView! {
+        didSet {
+            propertyScrollView.autohidesScrollers = true
+        }
+    }
+    
     var document: Document?
     var selected: [TimeLineObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: layerScrollStackView.frame.minX, y: layerScrollStackView.frame.minY, width: 400, height: 40))
+        let newLayerView = TimeLineLayerLineView(frame: NSRect(x: layerScrollStackView.frame.minX, y: layerScrollStackView.frame.minY, width: 400, height: 40))
+        newLayerView.headerView?.delegate = self
+        //newLayerView.headerView.stringValue = "Layer 0"
         layerScrollStackView.addArrangedSubview(newLayerView)
+        
+        let newObject = TimeLineLayerObjectView(referencingObject: TimeLineObject(), frameRect: NSRect(x: newLayerView.frame.minX + 80, y: newLayerView.frame.maxY - 40, width: 100, height: 30))
+        newObject.delegate = self
+        newLayerView.contentsView?.addSubview(newObject)
     }
     
     func updateDocument(with doc: Document) {
