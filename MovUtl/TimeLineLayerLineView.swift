@@ -1,14 +1,19 @@
 import Cocoa
 
 class TimeLineLayerLineView: NSView {
-    @IBOutlet var headerView: TimeLineLayerLineHeaderView?
-    @IBOutlet var contentsView: NSView?
+    @IBOutlet weak var headerView: TimeLineLayerLineHeaderView?
+    @IBOutlet weak var contentsView: NSView?
     
     override init(frame frameRect: NSRect) {
         let header = TimeLineLayerLineHeaderView(frame: NSRect(origin: frameRect.origin, size: CGSize(width: 120, height: frameRect.size.height)))
         contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + header.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
         
         super.init(frame: frameRect)
+        
+        if let nib = NSNib(nibNamed: "TimeLineLayerLineView", bundle: Bundle(for: self.classForCoder)) {
+            nib.instantiate(withOwner: self, topLevelObjects: nil)
+            
+        }
         
         addSubview(header)
         addSubview(contentsView!)
@@ -27,17 +32,25 @@ class TimeLineLayerLineView: NSView {
 }
 
 class TimeLineLayerLineHeaderView: NSView {
-    @IBOutlet var header: NSTextField?
+    @IBOutlet weak var header: NSTextField?
     
     weak var delegate: TimeLineLayerLineHeaderViewDelegate?
     
     override init(frame frameRect: NSRect) {
         header = NSTextField(frame: frameRect)
         super.init(frame: frameRect)
+        if let nib = NSNib(nibNamed: "TimeLineLayerLineHeaderView", bundle: Bundle(for: self.classForCoder)) {
+            nib.instantiate(withOwner: self, topLevelObjects: nil)
+            
+        }
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        if let nib = NSNib(nibNamed: "TimeLineLayerLineHeaderView", bundle: Bundle(for: self.classForCoder)) {
+            nib.instantiate(withOwner: self, topLevelObjects: nil)
+            
+        }
     }
     
     override func menu(for event: NSEvent) -> NSMenu? {
@@ -56,19 +69,26 @@ class TimeLineLayerLineHeaderView: NSView {
     func moveObjectTo(_ sender:Any)
     func changeLength(_ sender:Any)
     func deleteObject(_ sender:Any)
-    func addCentralPoint(_ sender:Any)
     func changeToGroupObject(_ sender:Any)
 }
 
 class TimeLineLayerObjectView: NSView {
+    @IBOutlet weak var nameLabel: NSTextField?
     var startPos: NSPoint = NSPoint.zero
-    var object: TimeLineObject!
+    var object: TimeLineObject?
     
     weak var delegate: TimeLineLayerObjectViewDelegate?
     
     init(referencingObject: TimeLineObject, frameRect: NSRect) {
         object = referencingObject
         super.init(frame: frameRect)
+        
+        if let nib = NSNib(nibNamed: "TimeLineLayerObjectView", bundle: Bundle(for: self.classForCoder)) {
+            nib.instantiate(withOwner: self, topLevelObjects: nil)
+            
+        }
+        
+        nameLabel?.stringValue = object?.name ?? ""
     }
     
     required init?(coder: NSCoder) {
@@ -90,27 +110,27 @@ class TimeLineLayerObjectView: NSView {
         if event.modifierFlags.contains(.shift) {
             vc.selected = []
         }
-        vc.selected.append(object)
+        //vc.selected.append(object)
     }
     
     override func mouseDragged(with event: NSEvent) {
-        if event.locationInWindow.x > startPos.x && object.startFrame <= 0 {
+        if event.locationInWindow.x > startPos.x && object?.startFrame ?? 0 <= 0 {
             // if dragged to right
-            object.startFrame -= 1
-            object.endFrame -= 1
+            //object.startFrame -= 1
+            //object.endFrame -= 1
         }
         if event.locationInWindow.x < startPos.x {
             // if dragged to left
-            object.startFrame += 1
-            object.endFrame += 1
+            //object.startFrame += 1
+            //object.endFrame += 1
         }
-        if event.locationInWindow.y > startPos.y && object.layerDepth <= 0 {
+        if event.locationInWindow.y > startPos.y && object?.layerDepth ?? 0 <= 0 {
             // if dragged to up
-            object.layerDepth -= 1
+            //object.layerDepth -= 1
         }
         if event.locationInWindow.y < startPos.y {
             // if dragged to down
-            object.layerDepth += 1
+            //object.layerDepth += 1
         }
     }
     
@@ -120,9 +140,9 @@ class TimeLineLayerObjectView: NSView {
         }
         
         // Update movie end
-        if doc.data.totalFrame < object.endFrame {
-            doc.data.totalFrame = object.endFrame
-        }
+        //if doc.data.totalFrame < object.endFrame {
+        //    doc.data.totalFrame = object.endFrame
+        //}
     }
     
     override func menu(for event: NSEvent) -> NSMenu? {
@@ -131,7 +151,6 @@ class TimeLineLayerObjectView: NSView {
         menu.addItem(withTitle: "Move To...", action: #selector(delegate?.moveObjectTo(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Change Length...", action: #selector(delegate?.changeLength(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Delete", action: #selector(delegate?.deleteObject(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Add A Central Point", action: #selector(delegate?.addCentralPoint(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Change To Group Object", action: #selector(delegate?.changeToGroupObject(_:)), keyEquivalent: "")
         
         return menu

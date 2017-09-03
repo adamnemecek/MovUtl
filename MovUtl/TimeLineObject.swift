@@ -11,7 +11,7 @@ class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
     var endFrame: UInt64 = 0
     var startFrame: UInt64 = 0
     var layerDepth: Int = 0
-    var name : NSString = ""
+    var name : String = ""
     var firstColor : CGColor = .black
     var secondColor : CGColor = .white
     var layer : CGLayer?
@@ -62,7 +62,7 @@ class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
         layerDepth = decoder.decodeInteger(forKey: "Layer")
         startFrame = UInt64(decoder.decodeInt64(forKey: "StartFrame"))
         endFrame = UInt64(decoder.decodeInt64(forKey: "EndFrame"))
-        name = decoder.decodeObject(forKey: "Name") as! NSString
+        name = decoder.decodeObject(forKey: "Name") as! String
         firstColor = decoder.decodeObject(forKey: "FirstColor") as! CGColor
         secondColor = decoder.decodeObject(forKey: "SecondColor") as! CGColor
         frame = decoder.decodeRect(forKey: "Frame")

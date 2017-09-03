@@ -34,10 +34,12 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         
         let newLayerView = TimeLineLayerLineView(frame: NSRect(x: layerScrollStackView.frame.minX, y: layerScrollStackView.frame.minY, width: 400, height: 40))
         newLayerView.headerView?.delegate = self
-        //newLayerView.headerView.stringValue = "Layer 0"
+        newLayerView.headerView?.header?.stringValue = "Layer 0"
         layerScrollStackView.addArrangedSubview(newLayerView)
         
-        let newObject = TimeLineLayerObjectView(referencingObject: TimeLineObject(), frameRect: NSRect(x: newLayerView.frame.minX + 80, y: newLayerView.frame.maxY - 40, width: 100, height: 30))
+        let newData = TimeLineObject()
+        newData.name = "Test Object"
+        let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX + 80, y: newLayerView.frame.maxY - 40, width: 100, height: 30))
         newObject.delegate = self
         newLayerView.contentsView?.addSubview(newObject)
     }
@@ -77,10 +79,6 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     
     func deleteObject(_ sender:Any) {
-        
-    }
-    
-    func addCentralPoint(_ sender:Any) {
         
     }
     
