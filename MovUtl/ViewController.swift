@@ -25,14 +25,13 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             propertyScrollView.autohidesScrollers = true
         }
     }
-    
     var document: Document?
     var selected: [TimeLineObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newLayerView = TimeLineLayerLineView(frame: NSRect(x: layerScrollStackView.frame.minX, y: layerScrollStackView.frame.minY, width: 400, height: 40))
+        let newLayerView = TimeLineLayerLineView(frame: NSRect(x: 0, y: 0, width: 600, height: 40))
         newLayerView.headerView?.delegate = self
         newLayerView.headerView?.header?.stringValue = "Layer 0"
         layerScrollStackView.addArrangedSubview(newLayerView)

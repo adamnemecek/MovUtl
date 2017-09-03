@@ -13,12 +13,11 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3LJ-tq-rX9" customClass="TimeLineLayerLineHeaderView" customModule="MovUtl" customModuleProvider="target">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3LJ-tq-rX9" customClass="TimeLineLayerLineHeaderView" customModule="MovUtl" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0M8-0G-b2S">
-                            <rect key="frame" x="-2" y="11" width="84" height="17"/>
+                            <rect key="frame" x="0.0" y="11" width="80" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Layer 0" id="YlG-B4-L5k">
                                 <font key="font" metaFont="system"/>
@@ -27,15 +26,31 @@
                             </textFieldCell>
                         </textField>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="WVY-uM-1QX"/>
+                        <constraint firstAttribute="height" constant="40" id="YwP-Kl-sPF"/>
+                    </constraints>
                     <connections>
                         <outlet property="header" destination="0M8-0G-b2S" id="1dy-j6-fmG"/>
                     </connections>
                 </customView>
-                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIB-CN-wQs">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="MIB-CN-wQs">
                     <rect key="frame" x="80" y="0.0" width="320" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Kbw-pl-UlM"/>
+                    </constraints>
                 </customView>
             </subviews>
+            <constraints>
+                <constraint firstItem="MIB-CN-wQs" firstAttribute="leading" secondItem="3LJ-tq-rX9" secondAttribute="trailing" id="BK0-Jm-kNy"/>
+                <constraint firstAttribute="trailing" secondItem="MIB-CN-wQs" secondAttribute="trailing" id="S0p-6Z-rSx"/>
+                <constraint firstAttribute="bottom" secondItem="3LJ-tq-rX9" secondAttribute="bottom" id="VVy-bU-TIj"/>
+                <constraint firstItem="MIB-CN-wQs" firstAttribute="leading" secondItem="3LJ-tq-rX9" secondAttribute="trailing" id="b9g-HZ-zzs"/>
+                <constraint firstAttribute="bottom" secondItem="MIB-CN-wQs" secondAttribute="bottom" id="iuK-Gl-Ref"/>
+                <constraint firstItem="3LJ-tq-rX9" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="lHY-r1-gzl"/>
+                <constraint firstItem="MIB-CN-wQs" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="q20-ET-Fae"/>
+                <constraint firstItem="3LJ-tq-rX9" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="xzc-Jn-Fez"/>
+            </constraints>
             <connections>
                 <outlet property="contentsView" destination="MIB-CN-wQs" id="dnl-UH-YB4"/>
                 <outlet property="headerView" destination="3LJ-tq-rX9" id="5jR-zs-cTk"/>

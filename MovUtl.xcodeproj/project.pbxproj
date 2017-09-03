@@ -21,6 +21,7 @@
 		7BB993AF1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */; };
 		7BB993B11F5BB9400086C0A6 /* PropertyTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993B01F5BB9400086C0A6 /* PropertyTextFieldView.xib */; };
 		7BB993B31F5BB9D30086C0A6 /* PropertyBezeirValueControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993B21F5BB9D30086C0A6 /* PropertyBezeirValueControllerWindow.xib */; };
+		7BB993B51F5BBB1A0086C0A6 /* TimeLineStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB993B41F5BBB1A0086C0A6 /* TimeLineStackView.swift */; };
 		7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */; };
 		7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */; };
 		7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB31EE6C0E50017D6A8 /* Document.swift */; };
@@ -53,6 +54,7 @@
 		7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyFileReferenceView.xib; sourceTree = "<group>"; };
 		7BB993B01F5BB9400086C0A6 /* PropertyTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyTextFieldView.xib; sourceTree = "<group>"; };
 		7BB993B21F5BB9D30086C0A6 /* PropertyBezeirValueControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyBezeirValueControllerWindow.xib; sourceTree = "<group>"; };
+		7BB993B41F5BBB1A0086C0A6 /* TimeLineStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineStackView.swift; sourceTree = "<group>"; };
 		7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				7BE7A6A01EF1808800AEBE30 /* TimeLineLayerLineView.swift */,
 				7B8D159E1F5805B5006E0BB9 /* TimeLineLayerObjectView.xib */,
 				7B649B2C1F55B33400F16912 /* TimeLineLayerLineView.xib */,
+				7BB993B41F5BBB1A0086C0A6 /* TimeLineStackView.swift */,
 			);
 			name = "TimeLine Views";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB993B51F5BBB1A0086C0A6 /* TimeLineStackView.swift in Sources */,
 				7B0109241EEECC8C0058D3E1 /* MovieFactory.swift in Sources */,
 				7B10B46C1EEBC7010014020A /* TimeLineRulerView.swift in Sources */,
 				7BD12DC31EE6C1660017D6A8 /* TimeLineObject.swift in Sources */,

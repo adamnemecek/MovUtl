@@ -725,11 +725,11 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot">
-                                                    <rect key="frame" x="0.0" y="0.0" width="550" height="234"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="550" height="240"/>
+                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ" customClass="TimeLineStackView" customModule="MovUtl" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </stackView>
                                                     </subviews>

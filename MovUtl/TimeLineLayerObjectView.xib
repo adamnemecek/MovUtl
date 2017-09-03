@@ -29,7 +29,7 @@
                 <constraint firstItem="bQe-Ay-8ku" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="7" id="dSS-gX-Cl3"/>
             </constraints>
             <connections>
-                <outlet property="nameLabel" destination="bQe-Ay-8ku" id="vyo-QQ-QuC"/>
+                <outlet property="nameLabel" destination="bQe-Ay-8ku" id="f2G-xV-PcS"/>
             </connections>
         </customView>
     </objects>
