@@ -1,8 +1,8 @@
 import Cocoa
 
 class TimeLineLayerLineView: NSView {
-    @IBOutlet var headerView: TimeLineLayerLineHeaderView!
-    @IBOutlet var contentsView: NSView!
+    var headerView: TimeLineLayerLineHeaderView!
+    var contentsView: NSView!
     
     override init(frame frameRect: NSRect) {
         headerView = TimeLineLayerLineHeaderView(frame: NSRect(origin: frameRect.origin, size: CGSize(width: 80, height: frameRect.size.height)))
@@ -27,7 +27,7 @@ class TimeLineLayerLineView: NSView {
 }
 
 class TimeLineLayerLineHeaderView: NSView {
-    @IBOutlet var header: NSTextField!
+    var header: NSTextField!
     
     weak var delegate: TimeLineLayerLineHeaderViewDelegate?
     
@@ -69,7 +69,7 @@ class TimeLineLayerObjectView: NSView {
     
     weak var delegate: TimeLineLayerObjectViewDelegate?
     
-    @IBOutlet var nameLabel: NSTextField! {
+    var nameLabel: NSTextField! {
         didSet {
             nameLabel.stringValue = object.name
         }
