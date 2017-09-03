@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-32-O5b">
+                    <rect key="frame" x="185" y="3" width="81" height="32"/>
+                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UCi-lj-ehT">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-7x-TWD">
+                    <rect key="frame" x="8" y="11" width="133" height="19"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="uF6-yk-woA"/>
+                </slider>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-AN-Vs7">
+                    <rect key="frame" x="144" y="10" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="k5p-1t-NqQ"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fSu-pP-mJF">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="8CD-oz-WD4"/>
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ylG-7x-TWD" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="12" id="3tz-A8-HlK"/>
+                <constraint firstItem="zRJ-32-O5b" firstAttribute="leading" secondItem="SgU-AN-Vs7" secondAttribute="trailing" constant="5" id="5BM-vu-1hg"/>
+                <constraint firstItem="zRJ-32-O5b" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="8ey-yF-8XQ"/>
+                <constraint firstAttribute="bottom" secondItem="zRJ-32-O5b" secondAttribute="bottom" constant="10" id="C1E-X3-g9v"/>
+                <constraint firstAttribute="trailing" secondItem="zRJ-32-O5b" secondAttribute="trailing" constant="10" id="Ety-67-V9a"/>
+                <constraint firstItem="SgU-AN-Vs7" firstAttribute="leading" secondItem="ylG-7x-TWD" secondAttribute="trailing" constant="5" id="PcZ-n4-i7O"/>
+                <constraint firstItem="ylG-7x-TWD" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="gTt-hQ-Cja"/>
+                <constraint firstAttribute="bottom" secondItem="SgU-AN-Vs7" secondAttribute="bottom" constant="10" id="iYu-eI-S7d"/>
+                <constraint firstAttribute="bottom" secondItem="ylG-7x-TWD" secondAttribute="bottom" constant="13" id="s4H-AT-WrE"/>
+                <constraint firstItem="SgU-AN-Vs7" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="zxa-4U-ZZO"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

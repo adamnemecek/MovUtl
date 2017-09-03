@@ -14,6 +14,12 @@
 		7B240BB81EE82836001F2500 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B240BB71EE82836001F2500 /* EditView.swift */; };
 		7B649B2D1F55B33400F16912 /* TimeLineLayerLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B649B2C1F55B33400F16912 /* TimeLineLayerLineView.xib */; };
 		7B8D159F1F5805B5006E0BB9 /* TimeLineLayerObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8D159E1F5805B5006E0BB9 /* TimeLineLayerObjectView.xib */; };
+		7BB993A71F5BB4AC0086C0A6 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */; };
+		7BB993A91F5BB51E0086C0A6 /* PropertyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */; };
+		7BB993AB1F5BB6D40086C0A6 /* PropertyValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */; };
+		7BB993AD1F5BB7880086C0A6 /* PropertyColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */; };
+		7BB993AF1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */; };
+		7BB993B11F5BB9400086C0A6 /* PropertyTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993B01F5BB9400086C0A6 /* PropertyTextFieldView.xib */; };
 		7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */; };
 		7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */; };
 		7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DB31EE6C0E50017D6A8 /* Document.swift */; };
@@ -39,6 +45,12 @@
 		7B240BB71EE82836001F2500 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7B649B2C1F55B33400F16912 /* TimeLineLayerLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineLayerLineView.xib; sourceTree = "<group>"; };
 		7B8D159E1F5805B5006E0BB9 /* TimeLineLayerObjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineLayerObjectView.xib; sourceTree = "<group>"; };
+		7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyHeadView.xib; sourceTree = "<group>"; };
+		7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyValueView.xib; sourceTree = "<group>"; };
+		7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyColorView.xib; sourceTree = "<group>"; };
+		7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyFileReferenceView.xib; sourceTree = "<group>"; };
+		7BB993B01F5BB9400086C0A6 /* PropertyTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyTextFieldView.xib; sourceTree = "<group>"; };
 		7BD12DAC1EE6C0E50017D6A8 /* MovUtl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovUtl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +103,12 @@
 		7BB993A51F5BB42B0086C0A6 /* Property Views */ = {
 			isa = PBXGroup;
 			children = (
+				7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */,
+				7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */,
+				7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */,
+				7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */,
+				7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */,
+				7BB993B01F5BB9400086C0A6 /* PropertyTextFieldView.xib */,
 			);
 			name = "Property Views";
 			sourceTree = "<group>";
@@ -212,6 +230,11 @@
 				7BD12DB91EE6C0E50017D6A8 /* Main.storyboard in Resources */,
 				7B8D159F1F5805B5006E0BB9 /* TimeLineLayerObjectView.xib in Resources */,
 				7B649B2D1F55B33400F16912 /* TimeLineLayerLineView.xib in Resources */,
+				7BB993AD1F5BB7880086C0A6 /* PropertyColorView.xib in Resources */,
+				7BB993AF1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib in Resources */,
+				7BB993B11F5BB9400086C0A6 /* PropertyTextFieldView.xib in Resources */,
+				7BB993A91F5BB51E0086C0A6 /* PropertyHeadView.xib in Resources */,
+				7BB993AB1F5BB6D40086C0A6 /* PropertyValueView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +254,7 @@
 				7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */,
 				7BE7A6A11EF1808800AEBE30 /* TimeLineLayerLineView.swift in Sources */,
 				7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */,
+				7BB993A71F5BB4AC0086C0A6 /* PropertyView.swift in Sources */,
 				7B10B4791EEC246F0014020A /* ProjectData.swift in Sources */,
 				7B10B47B1EEC34B10014020A /* MainWindowController.swift in Sources */,
 			);
