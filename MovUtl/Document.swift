@@ -7,18 +7,12 @@ class Document: NSDocument {
     
     var data: ProjectData
     
-    func updateDocument() {
-        mainWindow.document = self
-        mainWindow.updateDocument()
-    }
-    
     @IBAction func addMediaObject(_ sender:NSMenuItem) {
         let newObj = MediaObject()
         newObj.startFrame = data.currentFrame
         newObj.endFrame = data.currentFrame + 180
         
         data.objects.append(newObj)
-        updateDocument()
     }
     
     @IBAction func addFilterObject(_ sender:NSMenuItem) {

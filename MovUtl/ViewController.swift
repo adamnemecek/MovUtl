@@ -19,7 +19,9 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     @IBOutlet var layerScrollStackView: NSStackView!
     var rulerView: NSRulerView?
-    var document: Document?
+    var document: Document? {
+        return view.window?.windowController?.document as? Document
+    }
     var selected: [TimeLineObject] = []
     
     override func viewDidLoad() {
@@ -31,18 +33,10 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         layerScrollStackView.addArrangedSubview(newLayerView)
         
         let newData = TimeLineObject()
-        newData.name = "Test Object"
+        document?.data.objects.append(newData)
         let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX + 80, y: newLayerView.frame.maxY - 40, width: 100, height: 30))
         newObject.delegate = self
         newLayerView.contentsView?.addSubview(newObject)
-    }
-    
-    func updateDocument(with doc: Document) {
-        document = doc
-        seekBar.minValue = 0.0
-        seekBar.maxValue = Double((document?.data.totalFrame)!)
-        document?.data.scale = CGFloat(scaleLevel.doubleValue)
-        
     }
     
     // TimeLineLayerLineHeaderView's delegate methods
@@ -63,19 +57,53 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     
     // TimeLineLayerObjectView's delegate methods
-    func moveObjectTo(_ sender:Any) {
+    func moveObjectBack(_ object:TimeLineObject) {
+        if object.startFrame != 0 {
+            object.startFrame -= 1
+            object.endFrame -= 1
+        }
+    }
+    
+    func moveObjectNext(_ object:TimeLineObject) {
+        object.startFrame += 1
+        object.endFrame += 1
+    }
+    
+    func objectLayerBack(_ object:TimeLineObject) {
+        if object.layerDepth != 0 {
+            object.layerDepth -= 1
+        }
+    }
+    
+    func objectLayerNext(_ object:TimeLineObject) {
+        if object.layerDepth != 99/* Maybe Max Layer Depth */ {
+            object.layerDepth += 1
+        }
+    }
+    
+    func selectObject(_ object:TimeLineObject) {
+        selected.append(object)
+    }
+    
+    func deselctObject(_ object:TimeLineObject) {
+        selected = []
+    }
+    
+    func updateMovieEnd(_ object:TimeLineObject) {
+        if object.endFrame > (document?.data.totalFrame)! {
+            document?.data.totalFrame = object.endFrame
+        }
+    }
+    
+    func moveObjectTo(_ object:TimeLineObject) {
         
     }
     
-    func changeLength(_ sender:Any) {
+    func changeLength(_ object:TimeLineObject) {
         
     }
     
-    func deleteObject(_ sender:Any) {
-        
-    }
-    
-    func changeToGroupObject(_ sender:Any) {
+    func deleteObject(_ object:TimeLineObject) {
         
     }
     

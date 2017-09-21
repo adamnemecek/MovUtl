@@ -6,8 +6,10 @@ class TimeLineLayerLineView: NSView {
     
     init(id: Int, frame frameRect: NSRect) {
         headerView = TimeLineLayerLineHeaderView(id: id, frame: NSRect(origin: frameRect.origin, size: CGSize(width: 80, height: frameRect.size.height)))
+        headerView.wantsLayer = true
         headerView.layer?.borderWidth = 1.0
         headerView.layer?.borderColor = CGColor.black
+        headerView.layer?.backgroundColor = CGColor.init(gray: 0.8, alpha: 1.0)
         contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + headerView.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
         
         super.init(frame: frameRect)
@@ -61,23 +63,25 @@ class TimeLineLayerLineHeaderView: NSView {
 }
 
 @objc protocol TimeLineLayerObjectViewDelegate {
-    func moveObjectTo(_ sender:Any)
-    func changeLength(_ sender:Any)
-    func deleteObject(_ sender:Any)
-    func changeToGroupObject(_ sender:Any)
+    func moveObjectBack(_:TimeLineObject)
+    func moveObjectNext(_:TimeLineObject)
+    func objectLayerBack(_:TimeLineObject)
+    func objectLayerNext(_:TimeLineObject)
+    func selectObject(_:TimeLineObject)
+    func deselctObject(_:TimeLineObject)
+    func updateMovieEnd(_:TimeLineObject)
+    func moveObjectTo(_:TimeLineObject)
+    func changeLength(_:TimeLineObject)
+    func deleteObject(_:TimeLineObject)
 }
 
 class TimeLineLayerObjectView: NSView {
     var startPos: NSPoint = NSPoint.zero
-    var object: TimeLineObject!
+    var object: TimeLineObject
     
     weak var delegate: TimeLineLayerObjectViewDelegate?
     
-    var nameLabel: NSTextField! {
-        didSet {
-            nameLabel.stringValue = object.name
-        }
-    }
+    var nameLabel: NSTextField?
     
     init(referencingObject: TimeLineObject, frameRect: NSRect) {
         object = referencingObject
@@ -96,46 +100,33 @@ class TimeLineLayerObjectView: NSView {
     override func mouseDown(with event: NSEvent) {
         startPos = event.locationInWindow
         
-        guard let vc = (window?.windowController?.contentViewController as! ViewController?) else {
-            return
-        }
-        
         if event.modifierFlags.contains(.shift) {
-            vc.selected = []
+            delegate?.deselctObject(object)
         }
-        vc.selected.append(object)
+        delegate?.selectObject(object)
     }
     
     override func mouseDragged(with event: NSEvent) {
-        if event.locationInWindow.x > startPos.x && object.startFrame <= 0 {
+        if event.locationInWindow.x > startPos.x {
             // if dragged to right
-            object.startFrame -= 1
-            object.endFrame -= 1
+            delegate?.moveObjectNext(object)
         }
         if event.locationInWindow.x < startPos.x {
             // if dragged to left
-            object.startFrame += 1
-            object.endFrame += 1
+            delegate?.moveObjectBack(object)
         }
-        if event.locationInWindow.y > startPos.y && object.layerDepth <= 0 {
+        if event.locationInWindow.y > startPos.y {
             // if dragged to up
-            object.layerDepth -= 1
+            delegate?.objectLayerBack(object)
         }
         if event.locationInWindow.y < startPos.y {
             // if dragged to down
-            object.layerDepth += 1
+            delegate?.objectLayerNext(object)
         }
     }
     
     override func mouseUp(with event: NSEvent) {
-        guard let doc = window?.windowController?.document as! Document? else {
-            return
-        }
-        
-        // Update movie end
-        if doc.data.totalFrame < object.endFrame {
-            doc.data.totalFrame = object.endFrame
-        }
+        delegate?.updateMovieEnd(object)
     }
     
     override func menu(for event: NSEvent) -> NSMenu? {
@@ -143,8 +134,7 @@ class TimeLineLayerObjectView: NSView {
         
         menu.addItem(withTitle: "Move To...", action: #selector(delegate?.moveObjectTo(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Change Length...", action: #selector(delegate?.changeLength(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Delete", action: #selector(delegate?.deleteObject(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Change To Group Object", action: #selector(delegate?.changeToGroupObject(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete", action: #selector(delegate?.deleteObject(_:)), keyEquivalent: String.init(format: "%c", 0x7f))
         
         return menu
     }
