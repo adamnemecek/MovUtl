@@ -57,30 +57,6 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     
     // TimeLineLayerObjectView's delegate methods
-    func moveObjectBack(_ object:TimeLineObject) {
-        if object.startFrame != 0 {
-            object.startFrame -= 1
-            object.endFrame -= 1
-        }
-    }
-    
-    func moveObjectNext(_ object:TimeLineObject) {
-        object.startFrame += 1
-        object.endFrame += 1
-    }
-    
-    func objectLayerBack(_ object:TimeLineObject) {
-        if object.layerDepth != 0 {
-            object.layerDepth -= 1
-        }
-    }
-    
-    func objectLayerNext(_ object:TimeLineObject) {
-        if object.layerDepth != 99/* Maybe Max Layer Depth */ {
-            object.layerDepth += 1
-        }
-    }
-    
     func selectObject(_ object:TimeLineObject) {
         selected.append(object)
     }
@@ -89,22 +65,21 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         selected = []
     }
     
-    func updateMovieEnd(_ object:TimeLineObject) {
-        if object.endFrame > (document?.data.totalFrame)! {
-            document?.data.totalFrame = object.endFrame
-        }
-    }
-    
-    func moveObjectTo(_ object:TimeLineObject) {
-        
-    }
-    
     func changeLength(_ object:TimeLineObject) {
         
     }
     
     func deleteObject(_ object:TimeLineObject) {
         
+    }
+    
+    func updateTLLayerObject(view: NSView, object: TimeLineObject) {
+        let ratio = scaleLevel.doubleValue
+        let newValue = Double(view.frame.minX - 80) * ratio
+        Swift.print(newValue)
+        let diff = object.endFrame - object.startFrame
+        object.startFrame = UInt64(newValue)
+        object.endFrame = UInt64(newValue) + diff
     }
     
     @IBAction func backFrame(_ sender: NSButton) {

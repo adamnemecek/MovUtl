@@ -63,16 +63,12 @@ class TimeLineLayerLineHeaderView: NSView {
 }
 
 @objc protocol TimeLineLayerObjectViewDelegate {
-    func moveObjectBack(_:TimeLineObject)
-    func moveObjectNext(_:TimeLineObject)
-    func objectLayerBack(_:TimeLineObject)
-    func objectLayerNext(_:TimeLineObject)
     func selectObject(_:TimeLineObject)
     func deselctObject(_:TimeLineObject)
-    func updateMovieEnd(_:TimeLineObject)
-    func moveObjectTo(_:TimeLineObject)
     func changeLength(_:TimeLineObject)
     func deleteObject(_:TimeLineObject)
+    
+    func updateTLLayerObject(view:NSView, object:TimeLineObject)
 }
 
 class TimeLineLayerObjectView: NSView {
@@ -109,31 +105,45 @@ class TimeLineLayerObjectView: NSView {
     override func mouseDragged(with event: NSEvent) {
         if event.locationInWindow.x > startPos.x {
             // if dragged to right
-            delegate?.moveObjectNext(object)
+            let diff = event.locationInWindow.x - startPos.x
+            if self.frame.maxX == self.superview?.frame.width {
+                self.superview?.frame.size.width += diff
+            }
+            self.frame.origin.x = diff + 80
         }
         if event.locationInWindow.x < startPos.x {
             // if dragged to left
-            delegate?.moveObjectBack(object)
+            let diff = startPos.x - event.locationInWindow.x
+            if self.frame.minX > 80 {
+                self.frame.origin.x = diff
+            } else {
+                self.frame.origin.x = 80
+            }
         }
         if event.locationInWindow.y > startPos.y {
             // if dragged to up
-            delegate?.objectLayerBack(object)
+            
         }
         if event.locationInWindow.y < startPos.y {
             // if dragged to down
-            delegate?.objectLayerNext(object)
+            
         }
+        
+        self.needsDisplay = true
     }
     
     override func mouseUp(with event: NSEvent) {
-        delegate?.updateMovieEnd(object)
+        let diff = event.locationInWindow.x - startPos.x
+        if diff > 0 && self.frame.maxX == self.superview?.frame.width {
+            self.superview?.frame.size.width += diff
+        }
+        
+        delegate?.updateTLLayerObject(view: self, object: object)
     }
     
     override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
-        menu.addItem(withTitle: "Move To...", action: #selector(delegate?.moveObjectTo(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Change Length...", action: #selector(delegate?.changeLength(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Delete", action: #selector(delegate?.deleteObject(_:)), keyEquivalent: String.init(format: "%c", 0x7f))
         
         return menu
