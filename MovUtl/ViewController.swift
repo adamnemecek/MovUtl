@@ -13,25 +13,19 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             layerScrollView.hasHorizontalRuler = true
             layerScrollView.rulersVisible = true
             layerScrollView.autohidesScrollers = true
-            layerScrollView.horizontalRulerView?.originOffset = 120.0
+            layerScrollView.horizontalRulerView?.originOffset = 80.0
             rulerView = layerScrollView.horizontalRulerView
         }
     }
     @IBOutlet var layerScrollStackView: NSStackView!
     var rulerView: NSRulerView?
-    
-    @IBOutlet var propertyScrollView: NSScrollView! {
-        didSet {
-            propertyScrollView.autohidesScrollers = true
-        }
-    }
     var document: Document?
     var selected: [TimeLineObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newLayerView = TimeLineLayerLineView(frame: NSRect(x: 0, y: 0, width: 600, height: 40))
+        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: 0, y: 0, width: 600, height: 40))
         newLayerView.headerView?.delegate = self
         newLayerView.headerView?.header?.stringValue = "Layer 0"
         layerScrollStackView.addArrangedSubview(newLayerView)

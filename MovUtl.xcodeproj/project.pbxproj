@@ -13,7 +13,6 @@
 		7B10B47B1EEC34B10014020A /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B10B47A1EEC34B10014020A /* MainWindowController.swift */; };
 		7B240BB81EE82836001F2500 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B240BB71EE82836001F2500 /* EditView.swift */; };
 		7BB993A71F5BB4AC0086C0A6 /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */; };
-		7BB993A91F5BB51E0086C0A6 /* PropertyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */; };
 		7BB993AB1F5BB6D40086C0A6 /* PropertyValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */; };
 		7BB993AD1F5BB7880086C0A6 /* PropertyColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */; };
 		7BB993AF1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */; };
@@ -44,7 +43,6 @@
 		7B10B47A1EEC34B10014020A /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		7B240BB71EE82836001F2500 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
-		7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyHeadView.xib; sourceTree = "<group>"; };
 		7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyValueView.xib; sourceTree = "<group>"; };
 		7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyColorView.xib; sourceTree = "<group>"; };
 		7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyFileReferenceView.xib; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				7BB993A61F5BB4AC0086C0A6 /* PropertyView.swift */,
-				7BB993A81F5BB51E0086C0A6 /* PropertyHeadView.xib */,
 				7BB993AA1F5BB6D40086C0A6 /* PropertyValueView.xib */,
 				7BB993AC1F5BB7880086C0A6 /* PropertyColorView.xib */,
 				7BB993AE1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib */,
@@ -232,7 +229,6 @@
 				7BB993AD1F5BB7880086C0A6 /* PropertyColorView.xib in Resources */,
 				7BB993AF1F5BB8CA0086C0A6 /* PropertyFileReferenceView.xib in Resources */,
 				7BB993B11F5BB9400086C0A6 /* PropertyTextFieldView.xib in Resources */,
-				7BB993A91F5BB51E0086C0A6 /* PropertyHeadView.xib in Resources */,
 				7BB993AB1F5BB6D40086C0A6 /* PropertyValueView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

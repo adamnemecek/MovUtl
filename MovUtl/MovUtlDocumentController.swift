@@ -12,4 +12,8 @@ class MovUtlDocumentController : NSDocumentController {
     override func closeAllDocuments(withDelegate delegate: Any?, didCloseAllSelector: Selector?, contextInfo: UnsafeMutableRawPointer?) {
         
     }
+    
+    override func saveAllDocuments(_ sender: Any?) {
+        
+    }
 }

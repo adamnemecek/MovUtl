@@ -4,8 +4,10 @@ class TimeLineLayerLineView: NSView {
     var headerView: TimeLineLayerLineHeaderView!
     var contentsView: NSView!
     
-    override init(frame frameRect: NSRect) {
-        headerView = TimeLineLayerLineHeaderView(frame: NSRect(origin: frameRect.origin, size: CGSize(width: 80, height: frameRect.size.height)))
+    init(id: Int, frame frameRect: NSRect) {
+        headerView = TimeLineLayerLineHeaderView(id: id, frame: NSRect(origin: frameRect.origin, size: CGSize(width: 80, height: frameRect.size.height)))
+        headerView.layer?.borderWidth = 1.0
+        headerView.layer?.borderColor = CGColor.black
         contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + headerView.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
         
         super.init(frame: frameRect)
@@ -31,8 +33,10 @@ class TimeLineLayerLineHeaderView: NSView {
     
     weak var delegate: TimeLineLayerLineHeaderViewDelegate?
     
-    override init(frame frameRect: NSRect) {
-        header = NSTextField(frame: NSRect(x: 0, y: 10, width: 80, height: 20))
+    init(id: Int, frame frameRect: NSRect) {
+        header = NSTextField(labelWithString: "Layer \(id)")
+        header.frame = NSRect(x: 0, y: 10, width: 80, height: 20)
+        header.alignment = .center
         header.isEditable = false
         
         super.init(frame: frameRect)
@@ -48,7 +52,7 @@ class TimeLineLayerLineHeaderView: NSView {
         let menu = NSMenu(title: "")
         
         menu.addItem(withTitle: "Insert A Layer Below", action: #selector(delegate?.insertLayer(_:)), keyEquivalent: "")
-        menu.addItem(withTitle: "Delete This Layer \(header.stringValue)", action: #selector(delegate?.deleteLayer(_:)), keyEquivalent: "")
+        menu.addItem(withTitle: "Delete This \(header.stringValue)", action: #selector(delegate?.deleteLayer(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Exchange Below", action: #selector(delegate?.exchangeLayerBelow(_:)), keyEquivalent: "")
         menu.addItem(withTitle: "Exchange Down", action: #selector(delegate?.exchangeLayerDown(_:)), keyEquivalent: "")
         
