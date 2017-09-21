@@ -6,6 +6,8 @@ import Cocoa
     func pushedReset(_:Any)
     func pushedModeChange(_:Any)
     
+    func editStartFrame(_:Any)
+    func editEndFrame(_:Any)
 }
 
 class PropertyView : NSView {
@@ -27,6 +29,23 @@ class PropertyView : NSView {
     }
 }
 
+@objc protocol PropertyComponentsViewDelegate {
+    func viewBezeirValueContoroller(_:Any)
+    func editValue(_:Any)
+    func addComponent(_:Any)
+    func removeComponent(_:Any)
+    func exchangeComponentBelow(_:Any)
+    func exchangeComponentDown(_:Any)
+}
+
 class PropertyComponentsView : NSView {
+    weak var delegate : PropertyComponentsViewDelegate?
     
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+    }
+    
+    func addComponentView(type:FilterType) {
+        
+    }
 }
