@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
+        <customView id="c22-O7-iKe" customClass="PropertyFileReferenceView" customModule="MovUtl" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -20,7 +20,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05R-nI-6Jf">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="05R-nI-6Jf">
                     <rect key="frame" x="144" y="12" width="37" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="WHD-QK-k1P">
                         <font key="font" metaFont="system"/>
@@ -38,6 +38,10 @@
                 <constraint firstAttribute="bottom" secondItem="05R-nI-6Jf" secondAttribute="bottom" constant="12" id="c9u-Cm-DqP"/>
                 <constraint firstItem="DPS-Ys-5eA" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="gjP-ER-nzV"/>
             </constraints>
+            <connections>
+                <outlet property="fileName" destination="05R-nI-6Jf" id="Klc-QD-h7z"/>
+                <outlet property="openButton" destination="DPS-Ys-5eA" id="LGy-M6-DBr"/>
+            </connections>
         </customView>
     </objects>
 </document>

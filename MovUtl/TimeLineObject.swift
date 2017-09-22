@@ -21,8 +21,7 @@ class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
     var useMouseMoving : Bool = false
     var isEnabled : Bool = true
     var referencingFile: String = ""
-    var properties : [Int] = []
-    var effectFilters: [FilterType] = []
+    var filters : [Filter] = []
     var blendMode: CGBlendMode = .normal
     var alpha: CGFloat = 0.0
     
@@ -147,6 +146,26 @@ class FilterObject: TimeLineObject {
         
         return nil
     }
+}
+
+class Filter {
+    var componentProperties : [Component] = []
+    
+    init(type:FilterType) {
+        
+    }
+    
+    func render(at present:UInt64, buffer:CVPixelBuffer?) {
+        
+    }
+}
+
+class Component {
+    var type : FilterType = .sceneChange
+    var minValue : Any = 0
+    var maxValue : Any = 0
+    var initValue : Any = 0
+    var currentValue : Any = 0
 }
 
 enum MediaObjectType: Int {

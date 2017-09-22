@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
+        <customObject id="-3" userLabel="Application" customClass="NSSlider"/>
+        <customView id="c22-O7-iKe" customClass="PropertyValueView" customModule="MovUtl" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -23,8 +23,11 @@
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-7x-TWD">
                     <rect key="frame" x="8" y="11" width="133" height="19"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="uF6-yk-woA"/>
+                    <connections>
+                        <action selector="slide:" target="c22-O7-iKe" id="erU-h3-cKH"/>
+                    </connections>
                 </slider>
-                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-AN-Vs7">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-AN-Vs7">
                     <rect key="frame" x="144" y="10" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="k5p-1t-NqQ"/>
@@ -49,6 +52,11 @@
                 <constraint firstAttribute="bottom" secondItem="ylG-7x-TWD" secondAttribute="bottom" constant="13" id="s4H-AT-WrE"/>
                 <constraint firstItem="SgU-AN-Vs7" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="zxa-4U-ZZO"/>
             </constraints>
+            <connections>
+                <outlet property="bvcButton" destination="zRJ-32-O5b" id="O7n-tJ-74l"/>
+                <outlet property="edittableValue" destination="SgU-AN-Vs7" id="x5B-ba-p8D"/>
+                <outlet property="slider" destination="ylG-7x-TWD" id="7ff-e2-k73"/>
+            </connections>
         </customView>
     </objects>
 </document>

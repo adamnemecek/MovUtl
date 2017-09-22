@@ -45,7 +45,64 @@ class PropertyComponentsView : NSView {
         super.draw(dirtyRect)
     }
     
-    func addComponentView(type:FilterType) {
+    func addComponentView(type:Component) {
         
     }
+}
+
+class PropertyBaseView : NSView {
+    var component : Component
+    
+    
+    init(reference:Component, rect frameRect:NSRect) {
+        component = reference
+        
+        super.init(frame: frameRect)
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class PropertyValueView : PropertyBaseView {
+    @IBOutlet var slider: NSSlider!
+    @IBOutlet var edittableValue: NSTextField!
+    @IBOutlet var bvcButton: NSButton!
+    
+    @IBAction func slide(_ sender:Any) {
+        
+    }
+}
+
+class PropertyColorView : PropertyBaseView {
+    @IBOutlet var colorWell: NSColorWell!
+    
+}
+
+class PropertyFileReferenceView : PropertyBaseView {
+    @IBOutlet var openButton: NSButton!
+    @IBOutlet var fileName: NSTextField!
+    
+}
+
+class PropertyTextFieldView : PropertyBaseView {
+    @IBOutlet var textField: NSScrollView!
+    
+}
+
+class PropertyCheckboxView: PropertyBaseView {
+    @IBOutlet var checkbox: NSButton!
+    
+}
+
+class PropertyBezeirValueControllerWindow : NSWindow {
+    @IBOutlet var lastValueField: NSTextField!
+    @IBOutlet var startValueView: NSTextField!
+    @IBOutlet weak var bvc: BVCView!
+    
+}
+
+class BVCView : NSView {
+    
 }
