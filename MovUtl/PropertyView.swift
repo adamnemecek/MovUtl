@@ -1,5 +1,13 @@
 import Cocoa
 
+class FlippedView : NSView {
+    override var isFlipped: Bool {
+        get {
+            return true
+        }
+    }
+}
+
 @objc protocol PropertyViewDelegate {
     func pushedEnable(_:Any)
     func pushedIn3D(_:Any)
@@ -41,15 +49,28 @@ class PropertyView : NSView {
 class PropertyComponentsView : NSView {
     weak var delegate : PropertyComponentsViewDelegate?
     
+    override var isFlipped: Bool {
+        get {
+            return true
+        }
+    }
+    
     func updateComponentsView(objects:[TimeLineObject])  {
         for object in objects {
             for filter in object.filters {
-                let filterView = NSView(frame: NSRect(x: 0, y: 0, width: 270, height: 280))
+                let filterView = FlippedView(frame: NSRect(x: 0, y: 0, width: 270, height: 280))
                 filterView.wantsLayer = true
                 filterView.layer?.borderColor = .black
                 filterView.layer?.borderWidth = 0.2
-                    
+                
+                let filterTitle = NSTextField(string: "TODO")
+                filterTitle.frame = NSRect(x: 0, y: 260, width: 80, height: 20)
+                filterTitle.isEditable = false
+                filterView.addSubview(filterTitle)
+                
+                var pCount = 0
                 for property in filter.componentProperties {
+                    
                     if let bProperty = property as? BoolComponent {
                         
                     } else if let cProperty = property as? ColorComponent {
@@ -75,9 +96,14 @@ class PropertyComponentsView : NSView {
                                 
                                 propertyView.edittableValue.doubleValue = vProperty.initValue
                                 
+                                propertyView.bvcButton.title = vProperty.name
+                                
                                 propertyView.component = vProperty
                                 
+                                propertyView.frame = NSRect(x: 0, y: pCount, width: 270, height: 40)
+                                
                                 filterView.addSubview(propertyView)
+                                pCount += 40
                             }
                         }
                     }
@@ -152,6 +178,7 @@ class PropertyBezierValueControllerWindow : NSWindow {
         didSet {
             startValueView.doubleValue = (component?.currentValue)!
             lastValueField.doubleValue = (component?.bvcEndValue)!
+            self.title = (component?.name)!
             bvc.component = self.component
         }
     }

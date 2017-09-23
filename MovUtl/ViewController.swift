@@ -41,7 +41,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         layerScrollStackView.addArrangedSubview(newLayerView)
         
         let newData = TimeLineObject()
-        newData.filters.append(Filter(type:.test))
+        newData.filters.append(Filter(type:.test, object: newData))
         document?.data.objects.append(newData)
         let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX, y: 0, width: 100, height: 30))
         newObject.delegate = self

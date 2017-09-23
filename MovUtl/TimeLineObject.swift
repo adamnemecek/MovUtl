@@ -150,12 +150,20 @@ class FilterObject: TimeLineObject {
 
 class Filter {
     var componentProperties : [Component] = []
+    var parentObject : TimeLineObject?
     
-    init(type:FilterType) {
+    init(type:FilterType, object:TimeLineObject) {
         let testV = ValueComponent()
         testV.maxValue = 10.0
         testV.initValue = 5.0
+        testV.name = "X"
         componentProperties.append(testV)
+        
+        let testV2 = ValueComponent()
+        testV2.maxValue = 100.0
+        testV2.initValue = 20.0
+        testV2.name = "Y"
+        componentProperties.append(testV2)
     }
     
     func render(at present:UInt64, buffer:CVPixelBuffer?) {
@@ -192,19 +200,39 @@ class ValueComponent : Component {
 }
 
 class BoolComponent : Component {
-    
+    var initValue : Bool = false {
+        didSet {
+            currentValue = initValue
+        }
+    }
+    var currentValue : Bool = false
 }
 
 class ColorComponent : Component {
-    
+    var initColor : NSColor = .white {
+        didSet {
+            currentColor = initColor
+        }
+    }
+    var currentColor : NSColor = .white
 }
 
 class FileComponent : Component {
-    
+    var initBundle : Bundle? {
+        didSet {
+            currentBundle = initBundle
+        }
+    }
+    var currentBundle : Bundle?
 }
 
 class TextComponent : Component {
-    
+    var initString : String = "" {
+        didSet {
+            currentString = initString
+        }
+    }
+    var currentString : String = ""
 }
 
 enum MediaObjectType: Int {
