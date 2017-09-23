@@ -9,7 +9,7 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="PropertyBezierValueControllerWindow">
+        <window identifier="PropertyBezierValueControllerWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g" customClass="PropertyBezierValueControllerWindow" customModule="MovUtl">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="240" height="200"/>
@@ -44,9 +44,9 @@
                 </subviews>
             </view>
             <connections>
-                <outlet property="bvc" destination="Vsn-CQ-rTW" id="07r-Z4-blt"/>
-                <outlet property="lastValueField" destination="ote-87-oRj" id="ncl-9W-exM"/>
-                <outlet property="startValueView" destination="qPw-uX-SEJ" id="voA-m2-nN1"/>
+                <outlet property="bvc" destination="Vsn-CQ-rTW" id="EZD-Oi-UWP"/>
+                <outlet property="lastValueField" destination="ote-87-oRj" id="FA3-ob-wn5"/>
+                <outlet property="startValueView" destination="qPw-uX-SEJ" id="xfZ-3Y-0AT"/>
             </connections>
         </window>
     </objects>

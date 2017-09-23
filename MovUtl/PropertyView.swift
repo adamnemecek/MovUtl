@@ -73,6 +73,8 @@ class PropertyComponentsView : NSView {
                                 propertyView.slider.maxValue = property.maxValue as! Double
                                 propertyView.slider.doubleValue = property.initValue as! Double
                                 
+                                propertyView.edittableValue.doubleValue = property.initValue as! Double
+                                
                                 filterView.addSubview(propertyView)
                             }
                         }
@@ -89,6 +91,8 @@ class PropertyValueView : NSView {
     @IBOutlet var edittableValue: NSTextField!
     @IBOutlet var bvcButton: NSButton!
     
+    var wc : NSWindowController?
+    
     @IBAction func slide(_ sender:Any) {
         edittableValue.doubleValue = slider.doubleValue
     }
@@ -98,8 +102,15 @@ class PropertyValueView : NSView {
     }
     
     @IBAction func pushBVCButton(_ sender: NSButton) {
-        let bvcWindowController = NSWindowController(windowNibName: "PropertyBezierValueControllerWindow")
-        bvcWindowController.showWindow(sender)
+        var array = NSArray()
+        Bundle.main.loadNibNamed("PropertyBezierValueControllerWindow", owner: self.window?.contentViewController, topLevelObjects: &array)
+        for window in array {
+            if window is PropertyBezierValueControllerWindow {
+                wc = NSWindowController(window: window as? NSWindow)
+                wc?.showWindow(sender)
+                
+            }
+        }
     }
 }
 
@@ -128,12 +139,11 @@ class PropertyBezierValueControllerWindow : NSWindow {
     @IBOutlet var lastValueField: NSTextField!
     @IBOutlet var startValueView: NSTextField!
     @IBOutlet weak var bvc: BVCView!
-    
 }
 
 class BVCView : NSView {
-    var controllP1 : NSPoint = .zero
-    var controllP2 : NSPoint = .zero
+    var controlP1 : NSPoint = NSPoint(x: 100, y: 0)
+    var controlP2 : NSPoint = NSPoint(x: 100, y: 200)
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -149,10 +159,50 @@ class BVCView : NSView {
         }
         
         //Render bezeir curve
+        NSColor.red.setStroke()
+        let path = NSBezierPath()
+        path.move(to: NSPoint(x: 0, y: 0))
+        path.curve(to: NSPoint(x: 200, y: 200), controlPoint1: controlP1, controlPoint2: controlP2)
+        path.stroke()
         
+        //Render control point
+        NSColor.green.setFill()
         
-        //Render controll point
+        let cp1Dot = NSBezierPath()
+        cp1Dot.appendOval(in: NSRect(x: controlP1.x - 5.0, y: controlP1.y - 5.0, width: 10, height: 10))
+        cp1Dot.fill()
+        NSBezierPath.strokeLine(from: .zero, to: controlP1)
         
+        let cp2Dot = NSBezierPath()
+        cp2Dot.appendOval(in: NSRect(x: controlP2.x - 5.0, y: controlP2.y - 5.0, width: 10, height: 10))
+        cp2Dot.fill()
+        NSBezierPath.strokeLine(from: NSPoint(x: 200, y: 200), to: controlP2)
         
+    }
+    
+    var isControlPointMoving = 0
+    
+    override func mouseDown(with event: NSEvent) {
+        let mousePos = NSPoint(x: event.locationInWindow.x - 40, y: event.locationInWindow.y)
+        if NSPointInRect(mousePos, NSRect(x: controlP1.x - 5.0, y: controlP1.y - 5.0, width: 10, height: 10)) {
+            isControlPointMoving = 1
+        } else if NSPointInRect(mousePos, NSRect(x: controlP2.x - 5.0, y: controlP2.y - 5.0, width: 10, height: 10)) {
+            isControlPointMoving = 2
+        } else {
+            isControlPointMoving = 0
+        }
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        let mousePos = NSPoint(x: event.locationInWindow.x - 40, y: event.locationInWindow.y)
+        switch isControlPointMoving {
+        case 1:
+            controlP1 = mousePos
+            needsDisplay = true
+        case 2:
+            controlP2 = mousePos
+            needsDisplay = true
+        default: break
+        }
     }
 }

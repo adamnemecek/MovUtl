@@ -153,8 +153,8 @@ class Filter {
     
     init(type:FilterType) {
         let testV = Component()
-        testV.maxValue = 10
-        testV.initValue = 5
+        testV.maxValue = 10.0
+        testV.initValue = 5.0
         componentProperties.append(testV)
     }
     
@@ -164,14 +164,14 @@ class Filter {
 }
 
 class Component {
-    var minValue : Any = 0
-    var maxValue : Any = 0
-    var initValue : Any = 0 {
+    var minValue : Any = 0.0
+    var maxValue : Any = 0.0
+    var initValue : Any = 0.0 {
         didSet {
             currentValue = initValue
         }
     }
-    var currentValue : Any = 0
+    var currentValue : Any = 0.0
 }
 
 enum MediaObjectType: Int {
