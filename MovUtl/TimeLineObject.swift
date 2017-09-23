@@ -91,7 +91,7 @@ class MediaObject: TimeLineObject {
                 Swift.print(error.localizedDescription)
             }
                 
-            guard let videoTrack = asset.tracks(withMediaType: AVMediaTypeVideo).first else {
+            guard let videoTrack = asset.tracks(withMediaType: AVMediaType.video).first else {
                 return
             }
                 

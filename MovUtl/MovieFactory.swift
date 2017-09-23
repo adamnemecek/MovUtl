@@ -8,7 +8,7 @@ class MovieFactory: NSObject {
         let url = URL(fileURLWithPath: path)
         var assetWriter: AVAssetWriter?
         do {
-            assetWriter = try AVAssetWriter(url: url, fileType: AVFileTypeQuickTimeMovie)
+            assetWriter = try AVAssetWriter(url: url, fileType: AVFileType.mov)
             
             let videoSettings: [String : AnyObject] = [
                 AVVideoCodecKey  : AVVideoCodecH264 as AnyObject,
@@ -16,7 +16,7 @@ class MovieFactory: NSObject {
                 AVVideoHeightKey : data.height as AnyObject,
                 ]
             
-            let assetWriterVideoInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
+            let assetWriterVideoInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: videoSettings)
             assetWriter?.add(assetWriterVideoInput)
             
             // Return writer
@@ -27,7 +27,7 @@ class MovieFactory: NSObject {
         
         if let assetWriter = assetWriter {
             // Make pixel buffer adaptor
-            let writerInput = assetWriter.inputs.filter{ $0.mediaType == AVMediaTypeVideo }.first!
+            let writerInput = assetWriter.inputs.filter{ $0.mediaType == AVMediaType.video }.first!
             let sourceBufferAttributes : [String : AnyObject] = [
                 kCVPixelBufferPixelFormatTypeKey as String : Int(kCVPixelFormatType_32ARGB) as AnyObject,
                 kCVPixelBufferWidthKey as String : data.width as AnyObject,

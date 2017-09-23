@@ -40,23 +40,18 @@ class Document: NSDocument {
             AudioUnitInitialize(data.audioUnit!)
             
             let audioFormat = AVAudioFormat(standardFormatWithSampleRate: data.audioSampleRate, channels: 2)
-            var asbDescription = audioFormat.streamDescription.pointee
+            var asbDescription = audioFormat?.streamDescription.pointee
             AudioUnitSetProperty(data.audioUnit!, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbDescription, UInt32(MemoryLayout.size(ofValue: asbDescription)))
         }
         super.init()
     }
     
     override func makeWindowControllers() {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        mainWindow = storyboard.instantiateController(withIdentifier: "Main Window") as! MainWindowController
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        mainWindow = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Main Window")) as! MainWindowController
         mainWindow.document = self
         addWindowController(mainWindow)
         mainWindow.showWindow(nil)
-    }
-    
-    
-    override class func autosavesInPlace() -> Bool {
-        return true
     }
 }
 

@@ -196,6 +196,7 @@
 					7BD12DAB1EE6C0E50017D6A8 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 26V3M32637;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -386,7 +387,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rkeclair.MovUtl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -402,7 +404,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rkeclair.MovUtl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -19,10 +19,10 @@ class PropertyView : NSView {
     weak var delegate : PropertyViewDelegate?
     
     @IBAction func pushEnable(_ sender: NSButton) {
-        if enableButton?.image?.name() == NSImageNameStatusAvailable {
-            enableButton?.image = NSImage(named: NSImageNameStatusUnavailable)
+        if enableButton?.image?.name() == NSImage.Name.statusAvailable {
+            enableButton?.image = NSImage(named: NSImage.Name.statusUnavailable)
         } else {
-            enableButton?.image = NSImage(named: NSImageNameStatusAvailable)
+            enableButton?.image = NSImage(named: NSImage.Name.statusAvailable)
         }
         
         delegate?.pushedEnable(sender)
@@ -59,9 +59,9 @@ class PropertyComponentsView : NSView {
                     } else if property.initValue is Bundle {
                         
                     } else {
-                        var viewArray = NSArray()
-                        Bundle.main.loadNibNamed("PropertyValueView", owner: self, topLevelObjects: &viewArray)
-                        for view in viewArray {
+                        var viewArray : NSArray? = NSArray()
+                        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyValueView"), owner: self, topLevelObjects: &viewArray)
+                        for view in viewArray! {
                             if view is PropertyValueView {
                                 let propertyView = view as! PropertyValueView
                                 propertyView.wantsLayer = true
@@ -102,9 +102,9 @@ class PropertyValueView : NSView {
     }
     
     @IBAction func pushBVCButton(_ sender: NSButton) {
-        var array = NSArray()
-        Bundle.main.loadNibNamed("PropertyBezierValueControllerWindow", owner: self.window?.contentViewController, topLevelObjects: &array)
-        for window in array {
+        var array : NSArray? = NSArray()
+        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyBezierValueControllerWindow"), owner: self.window?.contentViewController, topLevelObjects: &array)
+        for window in array! {
             if window is PropertyBezierValueControllerWindow {
                 wc = NSWindowController(window: window as? NSWindow)
                 wc?.showWindow(sender)
