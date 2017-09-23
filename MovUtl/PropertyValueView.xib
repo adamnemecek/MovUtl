@@ -19,6 +19,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="pushBVCButton:" target="c22-O7-iKe" id="LlF-fX-ERN"/>
+                    </connections>
                 </button>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-7x-TWD">
                     <rect key="frame" x="8" y="11" width="133" height="19"/>
@@ -38,6 +41,9 @@
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <action selector="setText:" target="c22-O7-iKe" id="z5e-YK-Zej"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
@@ -58,5 +64,6 @@
                 <outlet property="slider" destination="ylG-7x-TWD" id="7ff-e2-k73"/>
             </connections>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="FOH-R1-nE0"/>
     </objects>
 </document>

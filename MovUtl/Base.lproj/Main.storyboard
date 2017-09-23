@@ -907,6 +907,8 @@
                         <outlet property="editView" destination="ERx-hH-rdd" id="Jhm-XF-bfx"/>
                         <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
                         <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="u8i-fO-88S"/>
+                        <outlet property="propertyComponentsContentsView" destination="Hi3-dJ-muI" id="wvh-Da-pKz"/>
+                        <outlet property="propertyScrollView" destination="mk4-Et-mKj" id="RRa-Su-Vpz"/>
                         <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
                         <outlet property="scaleLevel" destination="DVU-qg-4hw" id="27n-jg-nxM"/>
                         <outlet property="sceneMenu" destination="bTS-bc-T3f" id="eJ8-9O-06r"/>

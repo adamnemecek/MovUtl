@@ -93,15 +93,13 @@ class TimeLineLayerObjectView: NSView {
         gradient?.draw(in: dirtyRect, angle: 0)
     }
     
-    override func rightMouseDown(with event: NSEvent) {
+    override func mouseDown(with event: NSEvent) {
+        startPos = event.locationInWindow
+        
         if event.modifierFlags.contains(.shift) {
             delegate?.deselctObject(object)
         }
         delegate?.selectObject(object)
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        startPos = event.locationInWindow
     }
     
     override func mouseDragged(with event: NSEvent) {

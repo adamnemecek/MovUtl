@@ -3,7 +3,7 @@ import Cocoa
 class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, TimeLineLayerObjectViewDelegate {
     @IBOutlet var editView: NSView!
     @IBOutlet var timeLineView: NSView!
-    @IBOutlet var propertyView: NSView!
+    @IBOutlet var propertyView: PropertyView!
     
     @IBOutlet var seekBar: NSSlider!
     @IBOutlet var sceneMenu: NSPopUpButton!
@@ -17,7 +17,14 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             rulerView = layerScrollView.horizontalRulerView
         }
     }
+    @IBOutlet var propertyScrollView: NSScrollView! {
+        didSet {
+            propertyScrollView.hasHorizontalRuler = false
+            propertyScrollView.autohidesScrollers = true
+        }
+    }
     @IBOutlet var layerScrollStackView: NSStackView!
+    @IBOutlet var propertyComponentsContentsView: PropertyComponentsView!
     var rulerView: NSRulerView?
     var document: Document? {
         return view.window?.windowController?.document as? Document
@@ -30,6 +37,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: 0, y: layerScrollStackView.frame.maxY - 71, width: 600, height: 40))
         newLayerView.headerView?.delegate = self
         newLayerView.headerView?.header?.stringValue = "Layer 0"
+        //layerScrollView.addFloatingSubview(newLayerView.headerView, for: .horizontal)
         layerScrollStackView.addArrangedSubview(newLayerView)
         
         let newData = TimeLineObject()
@@ -60,6 +68,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     // TimeLineLayerObjectView's delegate methods
     func selectObject(_ object:TimeLineObject) {
         selected.append(object)
+        propertyComponentsContentsView.updateComponentsView(objects: selected)
     }
     
     func deselctObject(_ object:TimeLineObject) {

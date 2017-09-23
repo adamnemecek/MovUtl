@@ -41,7 +41,7 @@ class ProjectData: NSObject, NSCoding {
         scale = CGFloat(aDecoder.decodeDouble(forKey: "Scale"))
         audioSampleRate = aDecoder.decodeDouble(forKey: "AudioSampleRate")
         
-        for i in 0..<aDecoder.decodeInteger(forKey: "ObjectsCount") {
+        for _ in 0..<aDecoder.decodeInteger(forKey: "ObjectsCount") {
             objects.append(TimeLineObject(coder: aDecoder)!)
         }
     }

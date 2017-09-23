@@ -41,12 +41,13 @@ class PropertyView : NSView {
 class PropertyComponentsView : NSView {
     weak var delegate : PropertyComponentsViewDelegate?
     
-    init(frame frameRect:NSRect, objects:[TimeLineObject])  {
-        super.init(frame: frameRect)
-        
+    func updateComponentsView(objects:[TimeLineObject])  {
         for object in objects {
             for filter in object.filters {
-                let filterView = NSView(frame: NSRect(x: 480, y: 0, width: 270, height: 280))
+                let filterView = NSView(frame: NSRect(x: 0, y: 0, width: 270, height: 280))
+                filterView.wantsLayer = true
+                filterView.layer?.borderColor = .black
+                filterView.layer?.borderWidth = 0.2
                     
                 for property in filter.componentProperties {
                     if property.initValue is Bool {
@@ -58,27 +59,28 @@ class PropertyComponentsView : NSView {
                     } else if property.initValue is Bundle {
                         
                     } else {
-                        let propertyView = PropertyValueView(frame: NSRect(x: 480, y: 0, width: 270, height: 40))
-                        propertyView.wantsLayer = true
-                        propertyView.layer?.borderWidth = 0.2
-                        propertyView.layer?.borderColor = CGColor(gray: 0.5, alpha: 1.0)
-                        
-                        filterView.addSubview(propertyView)
+                        var viewArray = NSArray()
+                        Bundle.main.loadNibNamed("PropertyValueView", owner: self, topLevelObjects: &viewArray)
+                        for view in viewArray {
+                            if view is PropertyValueView {
+                                let propertyView = view as! PropertyValueView
+                                propertyView.wantsLayer = true
+                                propertyView.layer?.borderWidth = 0.1
+                                propertyView.layer?.borderColor = .black
+                                propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
+                                
+                                propertyView.slider.minValue = Double(property.minValue)
+                                propertyView.slider.maxValue = Double(property.maxValue)
+                                propertyView.slider.doubleValue = Double(property.initValue)
+                                
+                                filterView.addSubview(propertyView)
+                            }
+                        }
                     }
                 }
                 addSubview(filterView)
             }
         }
-    }
-    
-    required init?(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-    }
-    
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-        
     }
 }
 
@@ -88,7 +90,16 @@ class PropertyValueView : NSView {
     @IBOutlet var bvcButton: NSButton!
     
     @IBAction func slide(_ sender:Any) {
-        
+        edittableValue.doubleValue = slider.doubleValue
+    }
+    
+    @IBAction func setText(_ sender: Any) {
+        slider.doubleValue = edittableValue.doubleValue
+    }
+    
+    @IBAction func pushBVCButton(_ sender: NSButton) {
+        let bvcWindowController = NSWindowController(windowNibName: "PropertyBezierValueControllerWindow")
+        bvcWindowController.showWindow(sender)
     }
 }
 
@@ -113,7 +124,7 @@ class PropertyCheckboxView: NSView {
     
 }
 
-class PropertyBezeirValueControllerWindow : NSWindow {
+class PropertyBezierValueControllerWindow : NSWindow {
     @IBOutlet var lastValueField: NSTextField!
     @IBOutlet var startValueView: NSTextField!
     @IBOutlet weak var bvc: BVCView!
@@ -128,7 +139,14 @@ class BVCView : NSView {
         super.draw(dirtyRect)
         
         //Render background
+        NSColor.gray.setStroke()
+        for i in 0..<10 {
+            NSBezierPath.strokeLine(from: NSPoint(x: i * 20, y: 0), to: NSPoint(x: i * 20, y: 200))
+        }
         
+        for j in 0..<10 {
+            NSBezierPath.strokeLine(from: NSPoint(x: 0, y: j * 20), to: NSPoint(x: 200, y: j * 20))
+        }
         
         //Render bezeir curve
         
