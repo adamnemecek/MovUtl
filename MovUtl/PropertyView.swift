@@ -69,9 +69,9 @@ class PropertyComponentsView : NSView {
                                 propertyView.layer?.borderColor = .black
                                 propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
                                 
-                                propertyView.slider.minValue = Double(property.minValue)
-                                propertyView.slider.maxValue = Double(property.maxValue)
-                                propertyView.slider.doubleValue = Double(property.initValue)
+                                propertyView.slider.minValue = property.minValue as! Double
+                                propertyView.slider.maxValue = property.maxValue as! Double
+                                propertyView.slider.doubleValue = property.initValue as! Double
                                 
                                 filterView.addSubview(propertyView)
                             }

@@ -164,14 +164,14 @@ class Filter {
 }
 
 class Component {
-    var minValue : Double = 0
-    var maxValue : Double = 0
-    var initValue : Double = 0 {
+    var minValue : Any = 0
+    var maxValue : Any = 0
+    var initValue : Any = 0 {
         didSet {
             currentValue = initValue
         }
     }
-    var currentValue : Double = 0
+    var currentValue : Any = 0
 }
 
 enum MediaObjectType: Int {
