@@ -14,6 +14,7 @@ class TimeLineLayerLineView: NSView {
         
         super.init(frame: frameRect)
         
+        addSubview(headerView)
         addSubview(contentsView)
     }
     

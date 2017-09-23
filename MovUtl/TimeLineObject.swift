@@ -152,7 +152,7 @@ class Filter {
     var componentProperties : [Component] = []
     
     init(type:FilterType) {
-        let testV = Component()
+        let testV = ValueComponent()
         testV.maxValue = 10.0
         testV.initValue = 5.0
         componentProperties.append(testV)
@@ -164,14 +164,47 @@ class Filter {
 }
 
 class Component {
-    var minValue : Any = 0.0
-    var maxValue : Any = 0.0
-    var initValue : Any = 0.0 {
+    
+}
+
+class ValueComponent : Component {
+    var minValue : Double = 0.0
+    var maxValue : Double = 0.0
+    var initValue : Double = 0.0 {
         didSet {
             currentValue = initValue
         }
     }
-    var currentValue : Any = 0.0
+    var currentValue : Double = 0.0
+    var name : String = ""
+    
+    var bvcControlPoint1 : NSPoint = .zero
+    var bvcControlPoint2 : NSPoint = NSPoint(x: 200, y: 200)
+    var bvcEndValue : Double = 0.0
+    
+    func valueOfBezier(ratio: Double) -> Double {
+        let minusAmountRatio = 1 - ratio
+        let b1 = 3*minusAmountRatio*minusAmountRatio*Double(bvcControlPoint1.y / 200)
+        let b2 = 3*minusAmountRatio*ratio*ratio*Double(bvcControlPoint2.y / 200)
+        let b3 = ratio*ratio*ratio*bvcEndValue
+        return b1 + b2 + b3
+    }
+}
+
+class BoolComponent : Component {
+    
+}
+
+class ColorComponent : Component {
+    
+}
+
+class FileComponent : Component {
+    
+}
+
+class TextComponent : Component {
+    
 }
 
 enum MediaObjectType: Int {

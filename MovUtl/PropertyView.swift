@@ -50,15 +50,15 @@ class PropertyComponentsView : NSView {
                 filterView.layer?.borderWidth = 0.2
                     
                 for property in filter.componentProperties {
-                    if property.initValue is Bool {
+                    if let bProperty = property as? BoolComponent {
                         
-                    } else if property.initValue is NSColor {
+                    } else if let cProperty = property as? ColorComponent {
                         
-                    } else if property.initValue is String {
+                    } else if let tProperty = property as? TextComponent {
                         
-                    } else if property.initValue is Bundle {
+                    } else if let fProperty = property as? FileComponent {
                         
-                    } else {
+                    } else if let vProperty = property as? ValueComponent {
                         var viewArray : NSArray? = NSArray()
                         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyValueView"), owner: self, topLevelObjects: &viewArray)
                         for view in viewArray! {
@@ -69,11 +69,13 @@ class PropertyComponentsView : NSView {
                                 propertyView.layer?.borderColor = .black
                                 propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
                                 
-                                propertyView.slider.minValue = property.minValue as! Double
-                                propertyView.slider.maxValue = property.maxValue as! Double
-                                propertyView.slider.doubleValue = property.initValue as! Double
+                                propertyView.slider.minValue = vProperty.minValue
+                                propertyView.slider.maxValue = vProperty.maxValue
+                                propertyView.slider.doubleValue = vProperty.initValue
                                 
-                                propertyView.edittableValue.doubleValue = property.initValue as! Double
+                                propertyView.edittableValue.doubleValue = vProperty.initValue
+                                
+                                propertyView.component = vProperty
                                 
                                 filterView.addSubview(propertyView)
                             }
@@ -92,23 +94,29 @@ class PropertyValueView : NSView {
     @IBOutlet var bvcButton: NSButton!
     
     var wc : NSWindowController?
+    var bvc : PropertyBezierValueControllerWindow?
+    
+    var component : ValueComponent?
     
     @IBAction func slide(_ sender:Any) {
         edittableValue.doubleValue = slider.doubleValue
+        bvc?.startValueView.doubleValue = slider.doubleValue
     }
     
     @IBAction func setText(_ sender: Any) {
         slider.doubleValue = edittableValue.doubleValue
+        bvc?.startValueView.doubleValue = edittableValue.doubleValue
     }
     
     @IBAction func pushBVCButton(_ sender: NSButton) {
         var array : NSArray? = NSArray()
         Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyBezierValueControllerWindow"), owner: self.window?.contentViewController, topLevelObjects: &array)
         for window in array! {
-            if window is PropertyBezierValueControllerWindow {
-                wc = NSWindowController(window: window as? NSWindow)
+            if let bvcW = window as? PropertyBezierValueControllerWindow {
+                bvc = bvcW
+                bvc?.component = component
+                wc = NSWindowController(window: bvc)
                 wc?.showWindow(sender)
-                
             }
         }
     }
@@ -139,11 +147,25 @@ class PropertyBezierValueControllerWindow : NSWindow {
     @IBOutlet var lastValueField: NSTextField!
     @IBOutlet var startValueView: NSTextField!
     @IBOutlet weak var bvc: BVCView!
+    
+    var component : ValueComponent? {
+        didSet {
+            startValueView.doubleValue = (component?.currentValue)!
+            lastValueField.doubleValue = (component?.bvcEndValue)!
+            bvc.component = self.component
+        }
+    }
+    
+    @IBAction func editLastValue(_ sender: Any) {
+        component?.bvcEndValue = lastValueField.doubleValue
+    }
 }
 
 class BVCView : NSView {
     var controlP1 : NSPoint = NSPoint(x: 100, y: 0)
     var controlP2 : NSPoint = NSPoint(x: 100, y: 200)
+    
+    var component : ValueComponent?
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -197,9 +219,11 @@ class BVCView : NSView {
         let mousePos = NSPoint(x: event.locationInWindow.x - 40, y: event.locationInWindow.y)
         switch isControlPointMoving {
         case 1:
+            component?.bvcControlPoint1 = mousePos
             controlP1 = mousePos
             needsDisplay = true
         case 2:
+            component?.bvcControlPoint2 = mousePos
             controlP2 = mousePos
             needsDisplay = true
         default: break
