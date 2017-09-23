@@ -27,14 +27,15 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: 0, y: 0, width: 600, height: 40))
+        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: 0, y: layerScrollStackView.frame.maxY - 71, width: 600, height: 40))
         newLayerView.headerView?.delegate = self
         newLayerView.headerView?.header?.stringValue = "Layer 0"
         layerScrollStackView.addArrangedSubview(newLayerView)
         
         let newData = TimeLineObject()
+        newData.filters.append(Filter(type:.test))
         document?.data.objects.append(newData)
-        let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX + 80, y: newLayerView.frame.maxY - 40, width: 100, height: 30))
+        let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX, y: 0, width: 100, height: 30))
         newObject.delegate = self
         newLayerView.contentsView?.addSubview(newObject)
     }
@@ -75,7 +76,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     
     func updateTLLayerObject(view: NSView, object: TimeLineObject) {
         let ratio = scaleLevel.doubleValue
-        let newValue = Double(view.frame.minX - 80) * ratio
+        let newValue = Double(view.frame.minX) * ratio
         Swift.print(newValue)
         let diff = object.endFrame - object.startFrame
         object.startFrame = UInt64(newValue)

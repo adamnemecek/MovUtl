@@ -93,13 +93,15 @@ class TimeLineLayerObjectView: NSView {
         gradient?.draw(in: dirtyRect, angle: 0)
     }
     
-    override func mouseDown(with event: NSEvent) {
-        startPos = event.locationInWindow
-        
+    override func rightMouseDown(with event: NSEvent) {
         if event.modifierFlags.contains(.shift) {
             delegate?.deselctObject(object)
         }
         delegate?.selectObject(object)
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        startPos = event.locationInWindow
     }
     
     override func mouseDragged(with event: NSEvent) {
@@ -107,17 +109,18 @@ class TimeLineLayerObjectView: NSView {
             // if dragged to right
             let diff = event.locationInWindow.x - startPos.x
             if self.frame.maxX == self.superview?.frame.width {
-                self.superview?.frame.size.width += diff
+                // Auto scroll
+                
             }
-            self.frame.origin.x = diff + 80
+            self.frame.origin.x = diff
         }
         if event.locationInWindow.x < startPos.x {
             // if dragged to left
             let diff = startPos.x - event.locationInWindow.x
-            if self.frame.minX > 80 {
+            if self.frame.minX > 0 && object.startFrame > 0 && diff > 0 {
                 self.frame.origin.x = diff
             } else {
-                self.frame.origin.x = 80
+                self.frame.origin.x = 0
             }
         }
         if event.locationInWindow.y > startPos.y {

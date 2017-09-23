@@ -152,7 +152,10 @@ class Filter {
     var componentProperties : [Component] = []
     
     init(type:FilterType) {
-        
+        let testV = Component()
+        testV.maxValue = 10
+        testV.initValue = 5
+        componentProperties.append(testV)
     }
     
     func render(at present:UInt64, buffer:CVPixelBuffer?) {
@@ -161,10 +164,13 @@ class Filter {
 }
 
 class Component {
-    var type : FilterType = .sceneChange
     var minValue : Any = 0
     var maxValue : Any = 0
-    var initValue : Any = 0
+    var initValue : Any = 0 {
+        didSet {
+            currentValue = initValue
+        }
+    }
     var currentValue : Any = 0
 }
 
@@ -187,6 +193,7 @@ enum AudioObjectType: Int {
 }
 
 enum FilterType: Int {
+    case test = -1
     case sceneChange = 0
     case colorToneCollection = 1
     case extendedColorToneCollection = 2
