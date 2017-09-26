@@ -4,7 +4,6 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -638,7 +637,7 @@
                                             <string key="keyEquivalent"></string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="nextFrame:" target="9tK-tg-Vwi" id="jRt-KG-xGh"/>
+                                            <action selector="nextFrame:" target="9tK-tg-Vwi" id="gHZ-Ea-HEh"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TD0-sq-N9P">
@@ -650,7 +649,7 @@
                                             <string key="keyEquivalent"></string>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="backFrame:" target="9tK-tg-Vwi" id="sgf-OA-QT0"/>
+                                            <action selector="backFrame:" target="9tK-tg-Vwi" id="6ie-R8-F2p"/>
                                         </connections>
                                     </button>
                                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-CU-7Mw">
@@ -658,7 +657,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="sgy-9U-7wh"/>
                                         <connections>
-                                            <action selector="seek:" target="9tK-tg-Vwi" id="Dh9-RC-dZW"/>
+                                            <action selector="seek:" target="9tK-tg-Vwi" id="eWo-Nu-gC4"/>
                                         </connections>
                                     </slider>
                                     <openGLView fixedFrame="YES" colorSize="16bit_RGB_16bit_Alpha_float" depthSize="32bit" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" wantsBestResolutionOpenGLSurface="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V05-jc-UDH" customClass="EditView" customModule="MovUtl" customModuleProvider="target">
@@ -680,11 +679,16 @@
                                             <rect key="frame" x="1" y="1" width="253" height="618"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-dJ-muI" customClass="PropertyComponentsView" customModule="MovUtl" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="238" height="603"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <view translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-dJ-muI" customClass="PropertyComponentsView" customModule="MovUtl" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="253" height="618"/>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hi3-dJ-muI" firstAttribute="top" secondItem="KHF-Ka-LcW" secondAttribute="top" id="Pms-xJ-oEX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hi3-dJ-muI" secondAttribute="bottom" id="TXR-xo-TzW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hi3-dJ-muI" secondAttribute="trailing" id="Tt7-hJ-061"/>
+                                                <constraint firstItem="Hi3-dJ-muI" firstAttribute="leading" secondItem="KHF-Ka-LcW" secondAttribute="leading" id="aGN-Ae-uVm"/>
+                                            </constraints>
                                         </clipView>
                                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="tEN-rn-3pa">
                                             <rect key="frame" x="1" y="619" width="253" height="15"/>
@@ -832,7 +836,7 @@
                                                     <menuItem title="Root" state="on" id="Lh1-jU-jqj"/>
                                                     <menuItem title="Add Scene..." id="khY-Rt-4JN">
                                                         <connections>
-                                                            <action selector="addScene:" target="9tK-tg-Vwi" id="Dew-9R-bVw"/>
+                                                            <action selector="addScene:" target="9tK-tg-Vwi" id="qhn-1a-eW0"/>
                                                         </connections>
                                                     </menuItem>
                                                 </items>
@@ -845,17 +849,16 @@
                                             <rect key="frame" x="1" y="1" width="463" height="234"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot">
+                                                <view translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot" customClass="FlippedView" customModule="MovUtl" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-l5-5aQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </stackView>
-                                                    </subviews>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jgw-gv-3Ot" firstAttribute="top" secondItem="XeJ-1Q-KLZ" secondAttribute="top" id="5of-tp-ICU"/>
+                                                <constraint firstAttribute="trailing" secondItem="jgw-gv-3Ot" secondAttribute="trailing" constant="-137" id="6Xp-uY-qZg"/>
+                                                <constraint firstItem="jgw-gv-3Ot" firstAttribute="leading" secondItem="XeJ-1Q-KLZ" secondAttribute="leading" id="OXZ-k7-SFE"/>
+                                                <constraint firstAttribute="bottom" secondItem="jgw-gv-3Ot" secondAttribute="bottom" id="QDm-hx-5Wj"/>
+                                            </constraints>
                                         </clipView>
                                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ohD-xD-GXB">
                                             <rect key="frame" x="1" y="235" width="463" height="15"/>
@@ -873,7 +876,7 @@
                                         </constraints>
                                         <levelIndicatorCell key="cell" editable="YES" alignment="left" doubleValue="1" maxValue="5" levelIndicatorStyle="relevancy" id="FFx-4u-YUD"/>
                                         <connections>
-                                            <action selector="changeTimeLineScale:" target="9tK-tg-Vwi" id="rKv-Y5-FQn"/>
+                                            <action selector="changeTimeLineScale:" target="9tK-tg-Vwi" id="bCf-K8-1WK"/>
                                         </connections>
                                     </levelIndicator>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szn-dF-5Kt">
@@ -884,7 +887,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="moveMovieEndToLastObjectEnd:" target="9tK-tg-Vwi" id="x1N-70-GvL"/>
+                                            <action selector="moveMovieEndToLastObjectEnd:" target="9tK-tg-Vwi" id="8nd-8w-ud6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -918,16 +921,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editView" destination="ERx-hH-rdd" id="Jhm-XF-bfx"/>
-                        <outlet property="layerScrollStackView" destination="GqO-l5-5aQ" id="acP-1E-uSS"/>
-                        <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="u8i-fO-88S"/>
-                        <outlet property="propertyComponentsContentsView" destination="Hi3-dJ-muI" id="wvh-Da-pKz"/>
-                        <outlet property="propertyScrollView" destination="mk4-Et-mKj" id="RRa-Su-Vpz"/>
-                        <outlet property="propertyView" destination="N8m-Q1-atd" id="C4v-yl-I9r"/>
-                        <outlet property="scaleLevel" destination="DVU-qg-4hw" id="27n-jg-nxM"/>
-                        <outlet property="sceneMenu" destination="bTS-bc-T3f" id="eJ8-9O-06r"/>
-                        <outlet property="seekBar" destination="bDH-CU-7Mw" id="GdJ-ev-iEx"/>
-                        <outlet property="timeLineView" destination="418-dW-4EB" id="ixD-ra-nfv"/>
+                        <outlet property="editView" destination="V05-jc-UDH" id="IGB-7s-RHj"/>
+                        <outlet property="layerScrollContentsView" destination="jgw-gv-3Ot" id="atV-uf-G8a"/>
+                        <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="4xY-fz-rUr"/>
+                        <outlet property="propertyComponentsContentsView" destination="Hi3-dJ-muI" id="xNA-k9-irk"/>
+                        <outlet property="propertyScrollView" destination="mk4-Et-mKj" id="gnh-QO-yuL"/>
+                        <outlet property="propertyView" destination="N8m-Q1-atd" id="8Mn-q1-ruO"/>
+                        <outlet property="scaleLevel" destination="DVU-qg-4hw" id="Gao-Rr-GMs"/>
+                        <outlet property="sceneMenu" destination="bTS-bc-T3f" id="ONY-H3-41U"/>
+                        <outlet property="seekBar" destination="bDH-CU-7Mw" id="cNy-01-vRm"/>
+                        <outlet property="timeLineView" destination="418-dW-4EB" id="Kov-Bk-L3R"/>
                     </connections>
                 </viewController>
                 <customObject id="Ltg-Ky-Vcp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -1,7 +1,7 @@
 import Cocoa
 
 class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, TimeLineLayerObjectViewDelegate {
-    @IBOutlet var editView: NSView!
+    @IBOutlet var editView: EditView!
     @IBOutlet var timeLineView: NSView!
     @IBOutlet var propertyView: PropertyView!
     
@@ -15,6 +15,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             layerScrollView.autohidesScrollers = true
             layerScrollView.horizontalRulerView?.originOffset = 80.0
             rulerView = layerScrollView.horizontalRulerView
+            layerScrollView.autoresizesSubviews = true
+            layerScrollView.autoresizingMask = .width
         }
     }
     @IBOutlet var propertyScrollView: NSScrollView! {
@@ -23,9 +25,11 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             propertyScrollView.autohidesScrollers = true
         }
     }
-    @IBOutlet var layerScrollStackView: NSStackView!
+    @IBOutlet var layerScrollContentsView: FlippedView!
     @IBOutlet var propertyComponentsContentsView: PropertyComponentsView!
+    
     var rulerView: NSRulerView?
+    var headerView: TimeLineLayerLineHeaderView?
     var document: Document? {
         return view.window?.windowController?.document as? Document
     }
@@ -34,11 +38,12 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newLayerView = TimeLineLayerLineView(id: 0, frame: NSRect(x: 0, y: layerScrollStackView.frame.maxY - 71, width: 600, height: 40))
-        newLayerView.headerView?.delegate = self
-        newLayerView.headerView?.header?.stringValue = "Layer 0"
-        //layerScrollView.addFloatingSubview(newLayerView.headerView, for: .horizontal)
-        layerScrollStackView.addArrangedSubview(newLayerView)
+        headerView = TimeLineLayerLineHeaderView(id: 0, frame: NSRect(origin: .zero, size: CGSize(width: 80, height: 40)))
+        headerView?.delegate = self
+        layerScrollView.addFloatingSubview(headerView!, for: .horizontal)
+        
+        let newLayerView = TimeLineLayerLineView(id: 0)
+        layerScrollContentsView.addSubview(newLayerView)
         
         let newData = TimeLineObject()
         newData.filters.append(Filter(type:.test, object: newData))
@@ -69,6 +74,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     func selectObject(_ object:TimeLineObject) {
         selected.append(object)
         propertyComponentsContentsView.updateComponentsView(objects: selected)
+        propertyView.startFrameNumField?.intValue = Int32(object.startFrame)
+        propertyView.endFrameNumField?.intValue = Int32(object.endFrame)
     }
     
     func deselctObject(_ object:TimeLineObject) {
@@ -90,6 +97,9 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         let diff = object.endFrame - object.startFrame
         object.startFrame = UInt64(newValue)
         object.endFrame = UInt64(newValue) + diff
+        
+        propertyView.startFrameNumField?.intValue = Int32(object.startFrame)
+        propertyView.endFrameNumField?.intValue = Int32(object.endFrame)
     }
     
     @IBAction func backFrame(_ sender: NSButton) {

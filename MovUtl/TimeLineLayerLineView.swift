@@ -1,20 +1,13 @@
 import Cocoa
 
 class TimeLineLayerLineView: NSView {
-    var headerView: TimeLineLayerLineHeaderView!
     var contentsView: NSView!
     
-    init(id: Int, frame frameRect: NSRect) {
-        headerView = TimeLineLayerLineHeaderView(id: id, frame: NSRect(origin: frameRect.origin, size: CGSize(width: 80, height: frameRect.size.height)))
-        headerView.wantsLayer = true
-        headerView.layer?.borderWidth = 1.0
-        headerView.layer?.borderColor = CGColor.black
-        headerView.layer?.backgroundColor = CGColor.init(gray: 0.8, alpha: 1.0)
-        contentsView = NSView(frame: NSRect(origin: NSPoint(x: frameRect.origin.x + headerView.frame.size.width, y: frameRect.origin.y), size: frameRect.size))
+    init(id: Int) {
+        super.init(frame: NSRect(x: 0, y: id * 40, width: 600, height: 40))
         
-        super.init(frame: frameRect)
+        contentsView = NSView(frame: NSRect(origin: NSPoint(x: 80, y: 0), size: frame.size))
         
-        addSubview(headerView)
         addSubview(contentsView)
     }
     
@@ -50,6 +43,22 @@ class TimeLineLayerLineHeaderView: NSView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func draw(_ dirtyRect: NSRect) {
+        NSColor.lightGray.setFill()
+        NSBezierPath.fill(dirtyRect)
+        
+        NSColor.black.setStroke()
+        let framePath = NSBezierPath()
+        framePath.lineWidth = 0.4
+        framePath.move(to: .zero)
+        framePath.line(to: NSPoint(x: frame.maxX, y: 0))
+        framePath.line(to: NSPoint(x: frame.maxX, y: frame.maxY))
+        framePath.line(to: NSPoint(x: 0, y: frame.maxY))
+        framePath.close()
+        
+        super.draw(dirtyRect)
+    }
+    
     override func menu(for event: NSEvent) -> NSMenu? {
         let menu = NSMenu(title: "")
         
@@ -73,7 +82,11 @@ class TimeLineLayerLineHeaderView: NSView {
 
 class TimeLineLayerObjectView: NSView {
     var startPos: NSPoint = NSPoint.zero
-    var object: TimeLineObject
+    var object: TimeLineObject {
+        didSet {
+            self.frame.size.width = CGFloat(object.endFrame - object.startFrame)
+        }
+    }
     
     weak var delegate: TimeLineLayerObjectViewDelegate?
     
@@ -103,22 +116,17 @@ class TimeLineLayerObjectView: NSView {
     }
     
     override func mouseDragged(with event: NSEvent) {
-        if event.locationInWindow.x > startPos.x {
+        let diffX = event.locationInWindow.x - 80 - startPos.x
+        if diffX > 0 {
             // if dragged to right
-            let diff = event.locationInWindow.x - startPos.x
-            if self.frame.maxX == self.superview?.frame.width {
-                // Auto scroll
-                
-            }
-            self.frame.origin.x = diff
+            self.frame.origin.x = event.locationInWindow.x - 80
         }
-        if event.locationInWindow.x < startPos.x {
+        if diffX <= 0 {
             // if dragged to left
-            let diff = startPos.x - event.locationInWindow.x
-            if self.frame.minX > 0 && object.startFrame > 0 && diff > 0 {
-                self.frame.origin.x = diff
-            } else {
+            if self.frame.minX <= 0 {
                 self.frame.origin.x = 0
+            } else {
+                self.frame.origin.x = event.locationInWindow.x - 80
             }
         }
         if event.locationInWindow.y > startPos.y {
