@@ -149,6 +149,7 @@ class FilterObject: TimeLineObject {
 }
 
 class Filter {
+    var name : String = "Test"
     var componentProperties : [Component] = []
     var parentObject : TimeLineObject?
     

@@ -82,11 +82,7 @@ class TimeLineLayerLineHeaderView: NSView {
 
 class TimeLineLayerObjectView: NSView {
     var startPos: NSPoint = NSPoint.zero
-    var object: TimeLineObject {
-        didSet {
-            self.frame.size.width = CGFloat(object.endFrame - object.startFrame)
-        }
-    }
+    var object: TimeLineObject
     
     weak var delegate: TimeLineLayerObjectViewDelegate?
     
@@ -94,16 +90,28 @@ class TimeLineLayerObjectView: NSView {
     
     init(referencingObject: TimeLineObject, frameRect: NSRect) {
         object = referencingObject
+        nameLabel = NSTextField(labelWithString: object.name)
+        nameLabel?.frame = NSRect(origin: .zero, size: frameRect.size)
+        nameLabel?.isEditable = false
         super.init(frame: frameRect)
+        updateSize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateSize() {
+        self.setFrameSize(NSSize(width: CGFloat(object.endFrame - object.startFrame), height: 30))
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
+        updateSize()
+        
         let gradient = NSGradient(colors: [.blue, .black])
         gradient?.draw(in: dirtyRect, angle: 0)
+        
+        super.draw(dirtyRect)
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -123,7 +131,7 @@ class TimeLineLayerObjectView: NSView {
         }
         if diffX <= 0 {
             // if dragged to left
-            if self.frame.minX <= 0 {
+            if self.frame.origin.x + diffX <= 0 {
                 self.frame.origin.x = 0
             } else {
                 self.frame.origin.x = event.locationInWindow.x - 80

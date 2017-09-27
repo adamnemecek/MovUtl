@@ -14,15 +14,15 @@ class FlippedView : NSView {
     func pushedReset(_:Any)
     func pushedModeChange(_:Any)
     
-    func editStartFrame(_:Any)
-    func editEndFrame(_:Any)
+    func editStartFrame(_:UInt64)
+    func editEndFrame(_:UInt64)
 }
 
 class PropertyView : NSView {
     @IBOutlet weak var enableButton : NSButton?
     @IBOutlet weak var startFrameNumField : NSTextField?
     @IBOutlet weak var endFrameNumField : NSTextField?
-    @IBOutlet weak var ratioBarView : NSView?
+    @IBOutlet weak var ratioBarView : PropertyRatioView?
     
     weak var delegate : PropertyViewDelegate?
     
@@ -34,6 +34,31 @@ class PropertyView : NSView {
         }
         
         delegate?.pushedEnable(sender)
+    }
+    
+    @IBAction func editStartFrameField(_ sender: Any) {
+        if let value = startFrameNumField?.intValue {
+            if value > 0 {
+                delegate?.editStartFrame(UInt64(bitPattern: Int64(value)))
+            }
+        }
+    }
+    
+    @IBAction func editEndFrameField(_ sender: Any) {
+        if let value = endFrameNumField?.intValue {
+            if value > 0 {
+                delegate?.editEndFrame(UInt64(bitPattern: Int64(value)))
+            }
+        }
+    }
+}
+
+class PropertyRatioView : NSView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        
+        NSGradient(starting: .blue, ending: .black)?.draw(in: dirtyRect, angle: 0)
+        
     }
 }
 
@@ -58,59 +83,68 @@ class PropertyComponentsView : NSView {
     func updateComponentsView(objects:[TimeLineObject])  {
         for object in objects {
             for filter in object.filters {
-                let filterView = FlippedView(frame: NSRect(x: 0, y: 0, width: 270, height: 280))
-                filterView.wantsLayer = true
-                filterView.layer?.borderColor = .black
-                filterView.layer?.borderWidth = 0.2
-                
-                let filterTitle = NSTextField(string: "TODO")
-                filterTitle.frame = NSRect(x: 0, y: 260, width: 80, height: 20)
-                filterTitle.isEditable = false
-                filterView.addSubview(filterTitle)
-                
-                var pCount = 0
-                for property in filter.componentProperties {
-                    
-                    if let bProperty = property as? BoolComponent {
+                var viewArray : NSArray? = NSArray()
+                Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyContainerView"), owner: self, topLevelObjects: &viewArray)
+                for container in viewArray! {
+                    if let filterView = container as? PropertyContainerView {
                         
-                    } else if let cProperty = property as? ColorComponent {
+                        filterView.filterLabel.stringValue = filter.name
                         
-                    } else if let tProperty = property as? TextComponent {
-                        
-                    } else if let fProperty = property as? FileComponent {
-                        
-                    } else if let vProperty = property as? ValueComponent {
-                        var viewArray : NSArray? = NSArray()
-                        Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyValueView"), owner: self, topLevelObjects: &viewArray)
-                        for view in viewArray! {
-                            if view is PropertyValueView {
-                                let propertyView = view as! PropertyValueView
-                                propertyView.wantsLayer = true
-                                propertyView.layer?.borderWidth = 0.1
-                                propertyView.layer?.borderColor = .black
-                                propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
+                        var pCount = 0
+                        for property in filter.componentProperties {
+                            
+                            if let bProperty = property as? BoolComponent {
                                 
-                                propertyView.slider.minValue = vProperty.minValue
-                                propertyView.slider.maxValue = vProperty.maxValue
-                                propertyView.slider.doubleValue = vProperty.initValue
+                            } else if let cProperty = property as? ColorComponent {
                                 
-                                propertyView.edittableValue.doubleValue = vProperty.initValue
+                            } else if let tProperty = property as? TextComponent {
                                 
-                                propertyView.bvcButton.title = vProperty.name
+                            } else if let fProperty = property as? FileComponent {
                                 
-                                propertyView.component = vProperty
-                                
-                                propertyView.frame = NSRect(x: 0, y: pCount, width: 270, height: 40)
-                                
-                                filterView.addSubview(propertyView)
-                                pCount += 40
+                            } else if let vProperty = property as? ValueComponent {
+                                var viewArray : NSArray? = NSArray()
+                                Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyValueView"), owner: self, topLevelObjects: &viewArray)
+                                for view in viewArray! {
+                                    if view is PropertyValueView {
+                                        let propertyView = view as! PropertyValueView
+                                        propertyView.wantsLayer = true
+                                        propertyView.layer?.borderWidth = 0.1
+                                        propertyView.layer?.borderColor = .black
+                                        propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
+                                        
+                                        propertyView.slider.minValue = vProperty.minValue
+                                        propertyView.slider.maxValue = vProperty.maxValue
+                                        propertyView.slider.doubleValue = vProperty.initValue
+                                        
+                                        propertyView.edittableValue.doubleValue = vProperty.initValue
+                                        
+                                        propertyView.bvcButton.title = vProperty.name
+                                        
+                                        propertyView.component = vProperty
+                                        
+                                        propertyView.frame = NSRect(x: 0, y: pCount + 20, width: 270, height: 40)
+                                        
+                                        filterView.addSubview(propertyView)
+                                        pCount += 40
+                                    }
+                                }
                             }
                         }
+                        addSubview(filterView)
                     }
                 }
-                addSubview(filterView)
+                
             }
         }
+    }
+}
+
+class PropertyContainerView : FlippedView {
+    @IBOutlet var disclosure: NSButton!
+    @IBOutlet var filterLabel: NSTextField!
+    
+    @IBAction func openProperties(_ sender: NSButton) {
+        
     }
 }
 

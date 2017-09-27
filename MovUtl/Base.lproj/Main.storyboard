@@ -757,6 +757,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="editEndFrameField:" target="N8m-Q1-atd" id="yio-oX-9b8"/>
+                                                </connections>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T4u-Eh-bR2">
                                                 <rect key="frame" x="65" y="9" width="25" height="22"/>
@@ -770,6 +773,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="editStartFrameField:" target="N8m-Q1-atd" id="nO6-p0-jjn"/>
+                                                </connections>
                                             </textField>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="nq2-QS-s5V">
                                                 <rect key="frame" x="98" y="10" width="80" height="20"/>
@@ -845,7 +851,7 @@
                                     </popUpButton>
                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-3A-vvQ">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="251"/>
-                                        <clipView key="contentView" id="XeJ-1Q-KLZ">
+                                        <clipView key="contentView" copiesOnScroll="NO" id="XeJ-1Q-KLZ">
                                             <rect key="frame" x="1" y="1" width="463" height="234"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>

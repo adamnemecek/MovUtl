@@ -1,6 +1,6 @@
 import Cocoa
 
-class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, TimeLineLayerObjectViewDelegate {
+class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, TimeLineLayerObjectViewDelegate, PropertyViewDelegate {
     @IBOutlet var editView: EditView!
     @IBOutlet var timeLineView: NSView!
     @IBOutlet var propertyView: PropertyView!
@@ -38,6 +38,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        propertyView.delegate = self
+        
         headerView = TimeLineLayerLineHeaderView(id: 0, frame: NSRect(origin: .zero, size: CGSize(width: 80, height: 40)))
         headerView?.delegate = self
         layerScrollView.addFloatingSubview(headerView!, for: .horizontal)
@@ -46,6 +48,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         layerScrollContentsView.addSubview(newLayerView)
         
         let newData = TimeLineObject()
+        newData.endFrame = 60
         newData.filters.append(Filter(type:.test, object: newData))
         document?.data.objects.append(newData)
         let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX, y: 0, width: 100, height: 30))
@@ -100,6 +103,50 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         
         propertyView.startFrameNumField?.intValue = Int32(object.startFrame)
         propertyView.endFrameNumField?.intValue = Int32(object.endFrame)
+    }
+    
+    // PropertyView's delegate methods
+    func pushedEnable(_ a:Any) {
+        
+    }
+    func pushedIn3D(_ a:Any) {
+        
+    }
+    func pushedReset(_ a:Any) {
+        
+    }
+    func pushedModeChange(_ a:Any) {
+        
+    }
+    
+    func editStartFrame(_ newValue:UInt64) {
+        for object in selected {
+            object.startFrame = newValue
+        }
+        for contentsSub in layerScrollContentsView.subviews {
+            if let layer = contentsSub as? TimeLineLayerLineView {
+                for layerContentsSub in layer.contentsView.subviews {
+                    if let object = layerContentsSub as? TimeLineLayerObjectView {
+                        object.needsDisplay = true
+                    }
+                }
+            }
+        }
+    }
+    
+    func editEndFrame(_ newValue:UInt64) {
+        for object in selected {
+            object.endFrame = newValue
+        }
+        for contentsSub in layerScrollContentsView.subviews {
+            if let layer = contentsSub as? TimeLineLayerLineView {
+                for layerContentsSub in layer.contentsView.subviews {
+                    if let object = layerContentsSub as? TimeLineLayerObjectView {
+                        object.needsDisplay = true
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func backFrame(_ sender: NSButton) {
