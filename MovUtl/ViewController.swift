@@ -56,6 +56,24 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         newLayerView.contentsView?.addSubview(newObject)
     }
     
+    
+    func objectsOn(current: UInt64) -> [TimeLineObject] {
+        var result : [TimeLineObject] = []
+        
+        for object in (document?.data.objects)! {
+            if current <= object.startFrame && object.endFrame <= current {
+                
+                if object.isEnabled {
+                    result.append(object)
+                }
+                
+            }
+        }
+        
+        return result
+    }
+    
+    
     // TimeLineLayerLineHeaderView's delegate methods
     func insertLayer(_ sender: Any) {
         
@@ -96,7 +114,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     func updateTLLayerObject(view: NSView, object: TimeLineObject) {
         let ratio = scaleLevel.doubleValue
         let newValue = Double(view.frame.minX) * ratio
-        Swift.print(newValue)
+        
         let diff = object.endFrame - object.startFrame
         object.startFrame = UInt64(newValue)
         object.endFrame = UInt64(newValue) + diff

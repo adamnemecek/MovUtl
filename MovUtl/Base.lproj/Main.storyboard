@@ -855,7 +855,7 @@
                                             <rect key="frame" x="1" y="1" width="463" height="234"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <view translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot" customClass="FlippedView" customModule="MovUtl" customModuleProvider="target">
+                                                <view translatesAutoresizingMaskIntoConstraints="NO" id="jgw-gv-3Ot" customClass="TimeLineContentsView" customModule="MovUtl" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="234"/>
                                                 </view>
                                             </subviews>

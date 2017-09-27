@@ -1,5 +1,56 @@
 import Cocoa
 
+class TimeLineContentsView: FlippedView {
+    var renderingEditBarX : CGFloat = 80
+    var renderRatio : CGFloat = 1
+    
+    override func draw(_ dirtyRect: NSRect) {
+        renderRatio = ((window?.contentViewController as! ViewController).document?.data.scale)!
+        
+        let scrollAmount = (self.superview?.superview as! NSScrollView).documentVisibleRect.origin.x
+        
+        let playingFrame = -1 //TODO implement to player
+        let endFrame = ((window?.contentViewController as! ViewController).document?.data.totalFrame)!
+        
+        NSColor.red.setStroke()
+        let editBarPath = NSBezierPath()
+        editBarPath.move(to: NSPoint(x: CGFloat(renderingEditBarX) * renderRatio + scrollAmount, y: 0))
+        editBarPath.line(to: NSPoint(x: CGFloat(renderingEditBarX) * renderRatio + scrollAmount, y: frame.height))
+        editBarPath.stroke()
+        
+        
+        NSColor.green.setStroke()
+        let playBarPath = NSBezierPath()
+        
+        
+        NSColor.gray.setStroke()
+        let movieEndPath = NSBezierPath()
+        let patArray : [CGFloat] = [5.0, 2.0]
+        movieEndPath.setLineDash(patArray, count: 2, phase: 0)
+        movieEndPath.move(to: NSPoint(x: CGFloat(endFrame) * renderRatio + scrollAmount, y: 0))
+        movieEndPath.line(to: NSPoint(x: CGFloat(endFrame) * renderRatio + scrollAmount, y: frame.height))
+        movieEndPath.stroke()
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        if event.locationInWindow.x >= 80 {
+            renderingEditBarX = event.locationInWindow.x
+        }
+        self.needsDisplay = true
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        if event.locationInWindow.x >= 80 {
+            renderingEditBarX = event.locationInWindow.x
+        }
+        self.needsDisplay = true
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        (window?.contentViewController as! ViewController).document?.data.currentFrame = UInt64((renderingEditBarX - 80.0) / renderRatio)
+    }
+}
+
 class TimeLineLayerLineView: NSView {
     var contentsView: NSView!
     
@@ -55,6 +106,7 @@ class TimeLineLayerLineHeaderView: NSView {
         framePath.line(to: NSPoint(x: frame.maxX, y: frame.maxY))
         framePath.line(to: NSPoint(x: 0, y: frame.maxY))
         framePath.close()
+        framePath.stroke()
         
         super.draw(dirtyRect)
     }
