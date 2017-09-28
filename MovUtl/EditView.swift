@@ -11,10 +11,14 @@ class EditView : NSOpenGLView {
     }
     
     override func draw(_ dirtyRect: NSRect) {
+        let currentFrame = (self.window!.contentViewController as! ViewController).document!.data.currentFrame
+        
         glClearColor(0, 0, 0, 0)
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
         
-        
+        for object in (self.window!.contentViewController as! ViewController).objectsOn(current: currentFrame) {
+            object.render(at: currentFrame)
+        }
         
         glFlush()
     }

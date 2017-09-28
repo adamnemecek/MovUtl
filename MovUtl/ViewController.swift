@@ -25,7 +25,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
             propertyScrollView.autohidesScrollers = true
         }
     }
-    @IBOutlet var layerScrollContentsView: FlippedView!
+    @IBOutlet var layerScrollContentsView: TimeLineContentsView!
     @IBOutlet var propertyComponentsContentsView: PropertyComponentsView!
     
     var rulerView: NSRulerView?
@@ -35,8 +35,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     var selected: [TimeLineObject] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear() {
+        super.viewWillAppear()
         
         propertyView.delegate = self
         
@@ -47,10 +47,11 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         let newLayerView = TimeLineLayerLineView(id: 0)
         layerScrollContentsView.addSubview(newLayerView)
         
-        let newData = TimeLineObject()
+        let newData = MediaObject()
         newData.endFrame = 60
         newData.filters.append(Filter(type:.test, object: newData))
-        document?.data.objects.append(newData)
+        document!.data.objects.append(newData)
+        
         let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX, y: 0, width: 100, height: 30))
         newObject.delegate = self
         newLayerView.contentsView?.addSubview(newObject)
@@ -60,8 +61,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     func objectsOn(current: UInt64) -> [TimeLineObject] {
         var result : [TimeLineObject] = []
         
-        for object in (document?.data.objects)! {
-            if current <= object.startFrame && object.endFrame <= current {
+        for object in document!.data.objects {
+            if object.startFrame <= current && current <= object.endFrame {
                 
                 if object.isEnabled {
                     result.append(object)
@@ -73,6 +74,13 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         return result
     }
     
+    
+    func updateTitle() {
+        layerScrollContentsView.updateVar(current: CGFloat((document?.data.currentFrame)!), playing: 0)
+        document?.mainWindow.window?.title = document!.mainWindow.windowTitle(forDocumentDisplayName: document!.displayName)
+        
+        editView.needsDisplay = true
+    }
     
     // TimeLineLayerLineHeaderView's delegate methods
     func insertLayer(_ sender: Any) {
@@ -170,12 +178,14 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     @IBAction func backFrame(_ sender: NSButton) {
         if document?.data.currentFrame != 0 {
             document?.data.currentFrame -= 1
+            updateTitle()
         }
     }
     
     @IBAction func nextFrame(_ sender: NSButton) {
         if document?.data.currentFrame != document?.data.totalFrame {
             document?.data.currentFrame += 1
+            updateTitle()
         }
     }
     

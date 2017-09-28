@@ -2,12 +2,7 @@ import Cocoa
 import CoreGraphics
 import AVFoundation
 
-protocol VisibleTimeLineProtocol {
-    func updateCGLayer()
-    func render(at present:UInt64) -> CGImage?
-}
-
-class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
+class TimeLineObject: NSObject, NSCoding {
     var endFrame: UInt64 = 0
     var startFrame: UInt64 = 0
     var layerDepth: Int = 0
@@ -25,15 +20,8 @@ class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
     var blendMode: CGBlendMode = .normal
     var alpha: CGFloat = 0.0
     
-    func updateCGLayer() {
-        // TODO
-    }
-    
-    func render(at present:UInt64) -> CGImage? {
-        let buffer: CVPixelBuffer? = nil
+    func render(at present:UInt64) {
         
-        
-        return nil
     }
     
     func encode(with aCoder: NSCoder) {
@@ -76,59 +64,27 @@ class TimeLineObject: NSObject, NSCoding, VisibleTimeLineProtocol {
 }
 
 class MediaObject: TimeLineObject {
-    var objectType: MediaObjectType = .movie
+    var objectType: MediaObjectType = .test
     
     var samples: [CMSampleBuffer] = []
     
-    override func updateCGLayer() {
+    override func render(at present: UInt64) {
         switch objectType {
-        case .movie:
-            let asset = AVAsset(url: URL(fileURLWithPath: referencingFile))
-            var reader: AVAssetReader!
-            do {
-                reader = try AVAssetReader(asset: asset)
-            } catch {
-                Swift.print(error.localizedDescription)
-            }
-                
-            guard let videoTrack = asset.tracks(withMediaType: AVMediaType.video).first else {
-                return
-            }
-                
-            let readerOutputSettings: [String: Any] = [kCVPixelBufferPixelFormatTypeKey as String : Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
-            let readerOutput = AVAssetReaderTrackOutput(track: videoTrack, outputSettings: readerOutputSettings)
-            reader.add(readerOutput)
-            reader.startReading()
+        case .test:
+            //Test
+            glColor3d(0.8, 0.8, 0.8)
+            glBegin(GLenum(GL_TRIANGLES))
             
-            while let sample = readerOutput.copyNextSampleBuffer() {
-                samples.append(sample)
-            }
+            glVertex2d(-0.5, 0)
+            glVertex2d(0.5, -1.0)
+            glVertex2d(0.5, 1.0)
             
-        //case .scene:
-            // Implemented after beta
+            glEnd()
             
-        case .picture:
-            guard let image = CIImage(contentsOf: URL(fileURLWithPath: referencingFile))?.cgImage else {
-                return
-            }
-            
-            layer?.context?.draw(image, in: frame)
-            
-            
-        default: break
+            glRotated(360.0 * GLdouble(present - startFrame), 1, 0, 0)
+        default:
+            break
         }
-    }
-    
-    override func render(at present: UInt64) -> CGImage? {
-        switch objectType {
-        case .movie:
-            let pos = present - startFrame
-            let imageBuf = CMSampleBufferGetImageBuffer(samples[Int(pos)])!
-            return CIImage(cvImageBuffer: imageBuf).cgImage!
-        default: break
-        }
-        
-        return nil
     }
 }
 
@@ -137,14 +93,9 @@ class AudioObject: TimeLineObject {
 }
 
 class FilterObject: TimeLineObject {
-    override func updateCGLayer() {
-        // TODO
-    }
-    
-    override func render(at present: UInt64) -> CGImage? {
+    override func render(at present: UInt64) {
         // TODO
         
-        return nil
     }
 }
 
@@ -237,6 +188,7 @@ class TextComponent : Component {
 }
 
 enum MediaObjectType: Int {
+    case test = -1
     case movie = 0
     case scene = 1 // Without sound
     case picture = 2

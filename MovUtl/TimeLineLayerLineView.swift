@@ -4,6 +4,11 @@ class TimeLineContentsView: FlippedView {
     var renderingEditBarX : CGFloat = 80
     var renderRatio : CGFloat = 1
     
+    func updateVar(current: CGFloat, playing: CGFloat) {
+        renderingEditBarX = current + 80
+        needsDisplay = true
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         renderRatio = ((window?.contentViewController as! ViewController).document?.data.scale)!
         
@@ -48,6 +53,8 @@ class TimeLineContentsView: FlippedView {
     
     override func mouseUp(with event: NSEvent) {
         (window?.contentViewController as! ViewController).document?.data.currentFrame = UInt64((renderingEditBarX - 80.0) / renderRatio)
+        (window?.contentViewController as! ViewController).editView.needsDisplay = true
+        (window?.contentViewController as! ViewController).updateTitle()
     }
 }
 
