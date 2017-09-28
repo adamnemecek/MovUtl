@@ -13,8 +13,9 @@
             <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-32-O5b">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRJ-32-O5b">
                     <rect key="frame" x="185" y="3" width="81" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UCi-lj-ehT">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -23,18 +24,17 @@
                         <action selector="pushBVCButton:" target="c22-O7-iKe" id="LlF-fX-ERN"/>
                     </connections>
                 </button>
-                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-7x-TWD">
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ylG-7x-TWD">
                     <rect key="frame" x="8" y="11" width="133" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="uF6-yk-woA"/>
                     <connections>
                         <action selector="slide:" target="c22-O7-iKe" id="erU-h3-cKH"/>
                     </connections>
                 </slider>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-AN-Vs7">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-AN-Vs7">
                     <rect key="frame" x="144" y="10" width="42" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="42" id="k5p-1t-NqQ"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fSu-pP-mJF">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="8CD-oz-WD4"/>
                         <font key="font" metaFont="system"/>
@@ -46,18 +46,6 @@
                     </connections>
                 </textField>
             </subviews>
-            <constraints>
-                <constraint firstItem="ylG-7x-TWD" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="12" id="3tz-A8-HlK"/>
-                <constraint firstItem="zRJ-32-O5b" firstAttribute="leading" secondItem="SgU-AN-Vs7" secondAttribute="trailing" constant="5" id="5BM-vu-1hg"/>
-                <constraint firstItem="zRJ-32-O5b" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="8ey-yF-8XQ"/>
-                <constraint firstAttribute="bottom" secondItem="zRJ-32-O5b" secondAttribute="bottom" constant="10" id="C1E-X3-g9v"/>
-                <constraint firstAttribute="trailing" secondItem="zRJ-32-O5b" secondAttribute="trailing" constant="10" id="Ety-67-V9a"/>
-                <constraint firstItem="SgU-AN-Vs7" firstAttribute="leading" secondItem="ylG-7x-TWD" secondAttribute="trailing" constant="5" id="PcZ-n4-i7O"/>
-                <constraint firstItem="ylG-7x-TWD" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="gTt-hQ-Cja"/>
-                <constraint firstAttribute="bottom" secondItem="SgU-AN-Vs7" secondAttribute="bottom" constant="10" id="iYu-eI-S7d"/>
-                <constraint firstAttribute="bottom" secondItem="ylG-7x-TWD" secondAttribute="bottom" constant="13" id="s4H-AT-WrE"/>
-                <constraint firstItem="SgU-AN-Vs7" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="9" id="zxa-4U-ZZO"/>
-            </constraints>
             <connections>
                 <outlet property="bvcButton" destination="zRJ-32-O5b" id="O7n-tJ-74l"/>
                 <outlet property="edittableValue" destination="SgU-AN-Vs7" id="x5B-ba-p8D"/>

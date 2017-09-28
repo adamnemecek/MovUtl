@@ -20,6 +20,9 @@
                         <constraint firstAttribute="width" constant="40" id="qn5-qi-lYI"/>
                     </constraints>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="setColor:" target="c22-O7-iKe" id="Y5t-BI-plY"/>
+                    </connections>
                 </colorWell>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BFR-Os-Ug5">
                     <rect key="frame" x="10" y="12" width="89" height="16"/>
@@ -40,6 +43,7 @@
                 <constraint firstItem="nDK-N1-9ck" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="yQF-9u-yMs"/>
             </constraints>
             <connections>
+                <outlet property="colorName" destination="BFR-Os-Ug5" id="Mv7-1Q-W6M"/>
                 <outlet property="colorWell" destination="nDK-N1-9ck" id="eOY-jC-d77"/>
             </connections>
         </customView>

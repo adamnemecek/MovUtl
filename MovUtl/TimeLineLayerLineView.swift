@@ -115,7 +115,7 @@ class TimeLineLayerLineHeaderView: NSView {
         framePath.close()
         framePath.stroke()
         
-        super.draw(dirtyRect)
+        
     }
     
     override func menu(for event: NSEvent) -> NSMenu? {
@@ -170,7 +170,7 @@ class TimeLineLayerObjectView: NSView {
         let gradient = NSGradient(colors: [.blue, .black])
         gradient?.draw(in: dirtyRect, angle: 0)
         
-        super.draw(dirtyRect)
+        
     }
     
     override func mouseDown(with event: NSEvent) {

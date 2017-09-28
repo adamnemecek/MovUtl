@@ -35,6 +35,8 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
     }
     var selected: [TimeLineObject] = []
     
+    var layerLineContentsViews : [NSView] = []
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         
@@ -46,15 +48,7 @@ class ViewController: NSViewController, TimeLineLayerLineHeaderViewDelegate, Tim
         
         let newLayerView = TimeLineLayerLineView(id: 0)
         layerScrollContentsView.addSubview(newLayerView)
-        
-        let newData = MediaObject()
-        newData.endFrame = 60
-        newData.filters.append(Filter(type:.test, object: newData))
-        document!.data.objects.append(newData)
-        
-        let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: newLayerView.frame.minX, y: 0, width: 100, height: 30))
-        newObject.delegate = self
-        newLayerView.contentsView?.addSubview(newObject)
+        layerLineContentsViews.append(newLayerView.contentsView)
     }
     
     

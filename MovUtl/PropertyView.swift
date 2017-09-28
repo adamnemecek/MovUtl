@@ -55,7 +55,7 @@ class PropertyView : NSView {
 
 class PropertyRatioView : NSView {
     override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+        
         
         NSGradient(starting: .blue, ending: .black)?.draw(in: dirtyRect, angle: 0)
         
@@ -96,6 +96,28 @@ class PropertyComponentsView : NSView {
                             if let bProperty = property as? BoolComponent {
                                 
                             } else if let cProperty = property as? ColorComponent {
+                                var viewArray : NSArray? = NSArray()
+                                Bundle.main.loadNibNamed(NSNib.Name(rawValue: "PropertyColorView"), owner: self, topLevelObjects: &viewArray)
+                                for view in viewArray! {
+                                    if view is PropertyColorView {
+                                        let propertyView = view as! PropertyColorView
+                                        propertyView.wantsLayer = true
+                                        propertyView.layer?.borderWidth = 0.1
+                                        propertyView.layer?.borderColor = .black
+                                        propertyView.layer?.backgroundColor = CGColor(gray: 0.8, alpha: 0.8)
+                                        
+                                        propertyView.colorWell.color = cProperty.currentColor
+                                        
+                                        propertyView.colorName.stringValue = cProperty.name
+                                        
+                                        propertyView.component = cProperty
+                                        
+                                        propertyView.frame = NSRect(x: 0, y: pCount + 20, width: 270, height: 40)
+                                        
+                                        filterView.addSubview(propertyView)
+                                        pCount += 40
+                                    }
+                                }
                                 
                             } else if let tProperty = property as? TextComponent {
                                 
@@ -144,7 +166,24 @@ class PropertyContainerView : FlippedView {
     @IBOutlet var filterLabel: NSTextField!
     
     @IBAction func openProperties(_ sender: NSButton) {
-        
+        switch disclosure.state {
+        case .off:
+            for subView in subviews {
+                if subView != disclosure && subView != filterLabel {
+                    subView.isHidden = true
+                }
+            }
+        case .on:
+            for subView in subviews {
+                subView.isHidden = false
+            }
+        default: break
+        }
+    }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        NSColor.lightGray.setFill()
+        NSBezierPath.fill(dirtyRect)
     }
 }
 
@@ -184,7 +223,13 @@ class PropertyValueView : NSView {
 
 class PropertyColorView : NSView {
     @IBOutlet var colorWell: NSColorWell!
+    @IBOutlet var colorName: NSTextField!
     
+    var component : ColorComponent?
+    
+    @IBAction func setColor(_ sender: NSColorWell) {
+        component?.currentColor = colorWell.color
+    }
 }
 
 class PropertyFileReferenceView : NSView {
@@ -229,7 +274,7 @@ class BVCView : NSView {
     var component : ValueComponent?
     
     override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+        
         
         //Render background
         NSColor.gray.setStroke()

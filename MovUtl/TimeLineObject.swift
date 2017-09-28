@@ -100,22 +100,34 @@ class FilterObject: TimeLineObject {
 }
 
 class Filter {
-    var name : String = "Test"
+    var name : String = ""
     var componentProperties : [Component] = []
     var parentObject : TimeLineObject?
     
     init(type:FilterType, object:TimeLineObject) {
-        let testV = ValueComponent()
-        testV.maxValue = 10.0
-        testV.initValue = 5.0
-        testV.name = "X"
-        componentProperties.append(testV)
+        let comX = ValueComponent()
+        comX.maxValue = 10.0
+        comX.initValue = 5.0
+        comX.name = "X"
+        componentProperties.append(comX)
         
-        let testV2 = ValueComponent()
-        testV2.maxValue = 100.0
-        testV2.initValue = 20.0
-        testV2.name = "Y"
-        componentProperties.append(testV2)
+        let comY = ValueComponent()
+        comY.maxValue = 100.0
+        comY.initValue = 20.0
+        comY.name = "Y"
+        componentProperties.append(comY)
+        
+        let comScale = ValueComponent()
+        comScale.maxValue = 400.0
+        comScale.initValue = 100.0
+        comScale.name = "Scale"
+        componentProperties.append(comScale)
+        
+        let comAlpha = ValueComponent()
+        comAlpha.maxValue = 1.0
+        comAlpha.initValue = 1.0
+        comAlpha.name = "Alpha"
+        componentProperties.append(comAlpha)
     }
     
     func render(at present:UInt64, buffer:CVPixelBuffer?) {
@@ -152,6 +164,8 @@ class ValueComponent : Component {
 }
 
 class BoolComponent : Component {
+    var name : String = ""
+    
     var initValue : Bool = false {
         didSet {
             currentValue = initValue
@@ -161,6 +175,8 @@ class BoolComponent : Component {
 }
 
 class ColorComponent : Component {
+    var name : String = ""
+    
     var initColor : NSColor = .white {
         didSet {
             currentColor = initColor
@@ -170,6 +186,8 @@ class ColorComponent : Component {
 }
 
 class FileComponent : Component {
+    var name : String = ""
+    
     var initBundle : Bundle? {
         didSet {
             currentBundle = initBundle
@@ -207,7 +225,7 @@ enum AudioObjectType: Int {
 }
 
 enum FilterType: Int {
-    case test = -1
+    case base = -1
     case sceneChange = 0
     case colorToneCollection = 1
     case extendedColorToneCollection = 2
