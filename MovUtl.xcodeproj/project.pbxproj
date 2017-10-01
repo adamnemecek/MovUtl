@@ -33,6 +33,8 @@
 		7BD12DD31EE6C1E10017D6A8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */; };
 		7BD12DD41EE6C1E10017D6A8 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */; };
 		7BD12DD61EE6C45E0017D6A8 /* MovUtlDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */; };
+		7BDD09E41F813B7500F4FC20 /* TimeLineObjectViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD09E31F813B7500F4FC20 /* TimeLineObjectViewCotroller.swift */; };
+		7BDD09E61F81428C00F4FC20 /* ComponentPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD09E51F81428C00F4FC20 /* ComponentPropertiesViewController.swift */; };
 		7BE4CB311EE85555003303B1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD12DC61EE6C1BD0017D6A8 /* OpenGL.framework */; };
 		7BE7A6A11EF1808800AEBE30 /* TimeLineLayerLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE7A6A01EF1808800AEBE30 /* TimeLineLayerLineView.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		7BD12DD11EE6C1E10017D6A8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7BD12DD21EE6C1E10017D6A8 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		7BD12DD51EE6C45E0017D6A8 /* MovUtlDocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovUtlDocumentController.swift; sourceTree = "<group>"; };
+		7BDD09E31F813B7500F4FC20 /* TimeLineObjectViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineObjectViewCotroller.swift; sourceTree = "<group>"; };
+		7BDD09E51F81428C00F4FC20 /* ComponentPropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPropertiesViewController.swift; sourceTree = "<group>"; };
 		7BE7A6A01EF1808800AEBE30 /* TimeLineLayerLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineLayerLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,7 @@
 				7BB993A51F5BB42B0086C0A6 /* Property Views */,
 				7BD12DAF1EE6C0E50017D6A8 /* AppDelegate.swift */,
 				7BD12DB11EE6C0E50017D6A8 /* ViewController.swift */,
+				7BDD09E21F813B4800F4FC20 /* Sub ViewControllers */,
 				7BD12DB31EE6C0E50017D6A8 /* Document.swift */,
 				7B10B47A1EEC34B10014020A /* MainWindowController.swift */,
 				7B10B4781EEC246F0014020A /* ProjectData.swift */,
@@ -164,6 +169,15 @@
 				7BD12DC61EE6C1BD0017D6A8 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BDD09E21F813B4800F4FC20 /* Sub ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD09E31F813B7500F4FC20 /* TimeLineObjectViewCotroller.swift */,
+				7BDD09E51F81428C00F4FC20 /* ComponentPropertiesViewController.swift */,
+			);
+			name = "Sub ViewControllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,9 +267,11 @@
 				7B240BB81EE82836001F2500 /* EditView.swift in Sources */,
 				7BD12DB21EE6C0E50017D6A8 /* ViewController.swift in Sources */,
 				7BD12DB01EE6C0E50017D6A8 /* AppDelegate.swift in Sources */,
+				7BDD09E41F813B7500F4FC20 /* TimeLineObjectViewCotroller.swift in Sources */,
 				7BE7A6A11EF1808800AEBE30 /* TimeLineLayerLineView.swift in Sources */,
 				7BD12DB41EE6C0E50017D6A8 /* Document.swift in Sources */,
 				7BB993A71F5BB4AC0086C0A6 /* PropertyView.swift in Sources */,
+				7BDD09E61F81428C00F4FC20 /* ComponentPropertiesViewController.swift in Sources */,
 				7B10B4791EEC246F0014020A /* ProjectData.swift in Sources */,
 				7B10B47B1EEC34B10014020A /* MainWindowController.swift in Sources */,
 			);

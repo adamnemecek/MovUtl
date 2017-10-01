@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="13196"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -660,10 +661,10 @@
                                             <action selector="seek:" target="9tK-tg-Vwi" id="eWo-Nu-gC4"/>
                                         </connections>
                                     </slider>
-                                    <openGLView fixedFrame="YES" colorSize="16bit_RGB_16bit_Alpha_float" depthSize="32bit" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" wantsBestResolutionOpenGLSurface="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V05-jc-UDH" customClass="EditView" customModule="MovUtl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="33" width="480" height="362"/>
+                                    <avPlayerView fixedFrame="YES" controlsStyle="none" videoGravity="resizeAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eow-8M-UUx" customClass="EditView" customModule="MovUtl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35" width="480" height="360"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </openGLView>
+                                    </avPlayerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="480" id="IRn-yC-kV0"/>
@@ -927,7 +928,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editView" destination="V05-jc-UDH" id="IGB-7s-RHj"/>
+                        <outlet property="editView" destination="Eow-8M-UUx" id="HIY-2k-GvI"/>
                         <outlet property="layerScrollContentsView" destination="jgw-gv-3Ot" id="atV-uf-G8a"/>
                         <outlet property="layerScrollView" destination="jCL-3A-vvQ" id="4xY-fz-rUr"/>
                         <outlet property="propertyComponentsContentsView" destination="Hi3-dJ-muI" id="xNA-k9-irk"/>

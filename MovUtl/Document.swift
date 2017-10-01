@@ -8,44 +8,17 @@ class Document: NSDocument {
     var data: ProjectData
     
     @IBAction func addMediaObject(_ sender:NSMenuItem) {
-        let vc = (mainWindow.contentViewController as! ViewController)
+        let panel = NSOpenPanel(contentViewController: mainWindow.window!.contentViewController!)
+        let url = panel.urls[0]
+        let asset = AVURLAsset(url: url)
         
-        let newData = MediaObject()
-        newData.endFrame = 60
-        let newFilter = Filter(type:.base, object: newData)
-        newFilter.name = "Base Component"
-        newData.filters.append(newFilter)
+        let id = data.composition!.unusedTrackID()
+        data.composition?.addMutableTrack(withMediaType: .video, preferredTrackID: id)
+        do {
+            try data.composition?.track(withTrackID: id)?.insertTimeRange(CMTimeRangeMake(kCMTimeZero, asset.duration), of: asset.tracks(withMediaType: .video)[0], at: asset.duration)
+        } catch {
         
-        switch sender.title {
-            case "Text":
-            let comSize = ValueComponent()
-            comSize.maxValue = 100.0
-            comSize.initValue = 30.0
-            comSize.name = "Size"
-            newData.filters[0].componentProperties.append(comSize)
-            
-            let comFontColor = ColorComponent()
-            comFontColor.initColor = .white
-            comFontColor.name = "Font Color"
-            newData.filters[0].componentProperties.append(comFontColor)
-            
-            let comBackColor = ColorComponent()
-            comBackColor.initColor = .black
-            comBackColor.name = "Background Color"
-            newData.filters[0].componentProperties.append(comBackColor)
-            
-            let comText = TextComponent()
-            newData.filters[0].componentProperties.append(comText)
-            
-            default: break
         }
-        
-        data.objects.append(newData)
-        
-        let newObject = TimeLineLayerObjectView(referencingObject: newData, frameRect: NSRect(x: 80 + CGFloat(data.currentFrame), y: 0, width: 100, height: 30))
-        newObject.delegate = vc
-        
-        vc.layerLineContentsViews[0].addSubview(newObject)
     }
     
     @IBAction func addFilterObject(_ sender:NSMenuItem) {
